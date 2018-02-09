@@ -1,0 +1,56 @@
+﻿@using System.Web.Mvc.Html
+@model FNSB.Projects.UI.Models.ManagerProjectViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h2>@string.Format("{0} {1}", @Model.ProjectManagerProfileObject.firstname, @Model.ProjectManagerProfileObject.lastname)</h2>
+<div>
+
+<table class="table">
+<tr>
+    <th>
+        Project Name
+    </th>
+    <th>
+        Project
+    </th>
+    <th>
+        Active Date
+    </th>
+    <th></th>
+</tr>
+
+@foreach (var item in Model.ProjectProfileObject.ToList())
+{ 
+    <tr>
+        <td>
+            @Html.ActionLink(item.PPM_Project_Name, "Details", "Projects", new {id = item.PPM_Recordid}, null)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PPM_Project_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PPM_Active_Date)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id = item.PPM_Recordid}) |
+            @Html.ActionLink("Details", "Details", new {id = item.PPM_Recordid}) |
+            @Html.ActionLink("Delete", "Delete", new {id = item.PPM_Recordid})
+        </td>
+    </tr>
+}
+
+</table>
+</div>
+    
+    
+    
+
+</div>
+<p>
+   @* @Html.ActionLink("Edit", "Edit", new { id = @model.ppr_recordid }) |*@
+    @Html.ActionLink("Back to List", "Index")
+</p>

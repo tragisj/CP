@@ -1,0 +1,322 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FNSB_Facilities_Projects
+</name>
+</assembly>
+<members>
+<member name="T:FNSB_Facilities_Projects.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources._126_Edit_32x32_72">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources._1532_Flag_system_red">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.ActiveFundingRecordAssignment">
+<summary>
+  Looks up a localized string similar to The selected funding record is already assigned to an active project. Choose OK to reassign the selected fund to the select project or Cancel to exit without reassigning..
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.add">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.Annotate_Blocked_large">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.basic_savebmp">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.book_notebook">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.BudgetAlterStatement">
+<summary>
+  Looks up a localized string similar to Removing funding from this project may alter its budget amount. Select OK to continue removing funds or Cancel to exit without removing..
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.ConfirmDelete">
+<summary>
+  Looks up a localized string similar to Delete selected funding record?.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.ConfirmDeleteImportNotSaved">
+<summary>
+  Looks up a localized string similar to You are currently importing funding records. Select Yes to remove the selected rows from the current import or No to keep them in the list..
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.CurrencyFormatErrorMessage">
+<summary>
+  Looks up a localized string similar to The amount entered was not formatted correctly..
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.err">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.F8">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.Flag_greenHS">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.FloppyDisk">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.FundingImportUnassigned">
+<summary>
+  Looks up a localized string similar to There are funding records currently imported but have not been assigned. These remaining imports can be assigned during the next import session. Continue to edit mode?.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.GlkeyAcceptionsFile">
+<summary>
+  Looks up a localized string similar to \\Tundra2\Workgrps\FNSB-db\Update\FacilitiesAndProjects\TrackingGlkeyAcceptions\tracking_exceptions.xml.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.help">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.ImageNotFound">
+<summary>
+  Looks up a localized string similar to Image file not found. Check source location.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.InactiveAdd">
+<summary>
+  Looks up a localized string similar to You&apos;re adding a new project to the inactive projects list. Select Ok to move to active projects mode and create a New record or Cancel to stay in Inactive Mode..
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.InactiveFundingRecordAssignment">
+<summary>
+  Looks up a localized string similar to This funding record is assigned to an inactive project. Select OK to reassign the selected fund or Cancel to exit without reassigning..
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.information">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.locked">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.MC__AppWiz">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.OpenFileDialogCsvFilter">
+<summary>
+  Looks up a localized string similar to CSV files (*.csv)|*.csv.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.PrimaryDialogTitle">
+<summary>
+  Looks up a localized string similar to Public Works Project Tracking.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.project">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.ProjectsAddWarning">
+<summary>
+  Looks up a localized string similar to A project has already been added but not saved. Select OK to save it and all other project changes before adding a new project or Cancel to keep working on the current new project..
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.PublicworksProjectHeader">
+<summary>
+  Looks up a localized string similar to Public Works Projects.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.RefreshDocViewHS">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.reports">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.save">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.Save16x16">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.SaveFundsBeforeImport">
+<summary>
+  Looks up a localized string similar to Save changes to funding records prior to importing?.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.search">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.textdoc">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:FNSB_Facilities_Projects.My.Resources.Resources.warning">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="T:FNSB_Facilities_Projects.PublicWorks">
+ <summary>
+ Business Objects is a demo class that queries CSPRojects Project_User_Definition and load into an ArrayList
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.FrmProjectTrack.AddprojectButtonClick(System.Object,System.EventArgs)">
+ <summary>
+ Adds a project to the underlying binding source / grid
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.FrmProjectTrack.UndoButtonClick(System.Object,System.EventArgs)">
+ <summary>
+ Returns the project bindings back to last state of accept changes
+ </summary>
+ <param name="sender"></param>
+ <param name="e"></param>
+ <remarks></remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.FrmProjectTrack.ProjectBindingListChanged(System.Object,System.ComponentModel.ListChangedEventArgs)">
+ <summary>
+ Project Binding Source List has changed through an Add, Delete, Modify
+ </summary>
+ <param name="sender"></param>
+ <param name="cevent"></param>
+ <remarks></remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.FrmProjectTrack.MyParseTool(System.Object,System.Windows.Forms.ConvertEventArgs)">
+ <summary>
+ ParseTool To handle the look and feel of the active_date / status check and the inactive_date status check
+ </summary>
+ <param name="sender"></param>
+ <param name="cevent"></param>
+ <remarks></remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.FrmProjectTrack.TimePickerSaveSign(System.DateTime)">
+ <summary>
+ Called to verify DateTimePicker changes so the grid can flag the row as changed / needing saved
+ </summary>
+ <param name="timepickDate"></param>
+ <remarks></remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.PublicWorksFunding.FundingModifyForm(System.Data.DataSet@,System.Int32)">
+ <summary>
+ Used to set the datasource to the funding data grid on the funding edit form
+ </summary>
+ <param name="id">'used to pass the current Active project into form to flow project</param>
+ <remarks>links to the funding datatable using a dataview so all changes are reflected on both forms </remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.PublicWorksFunding.FundsEditModeSelection(System.Int32)">
+ <summary>
+ sets the position of the binding source to the passed on ppm_record
+ </summary>
+ <param name="id">Project.Id</param>
+ <remarks></remarks>
+
+</member>
+<member name="M:FNSB_Facilities_Projects.PublicWorksFunding.ImportFundsSetup">
+ <summary>
+ Creates a duplicate datatable to import new/updated funding records from the flat file
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.PublicWorksFunding.CheckFundRecordsForModifications">
+ <summary>
+ Checks the funding Dataview for changes and prompts the user with a save option
+ </summary>
+ <remarks>Looks for adds, deletes and modifies</remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.PublicWorksFunding.ResetDefaultFundBindings">
+ <summary>
+ Method used to setup the funding datatable to again relate to project data using the dataset relation object
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="T:FNSB_Facilities_Projects.PublicWorksQueries">
+ <summary>
+ Project Track Query queries CSPRojects Project_User_Definition and load into an ArrayList
+ </summary>
+ <remarks></remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.PublicWorksQueries.ProjectsMiniView(FNSB_Facilities_Projects.PublicWorks.Type,System.String)">
+ <summary>
+ ProjectsMiniView returns an abbreviated full Projects list instead of the full return of all data.
+ Includes the recordid, project name, project number, project status, and project description.
+ </summary>
+ <param name="Project"></param>
+ <param name="SQL"></param>
+ <returns></returns>
+ <remarks>Used in the funding add sequence - do not delete (yet)</remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.PublicWorksQueries.ProjectFunding(System.String)">
+ <summary>
+ ProjectFunding loads all the funding records into a datatable
+ </summary>
+ <param name="CommandSQL"></param>
+ <returns></returns>
+ <remarks>sort and filtering on front</remarks>
+</member>
+<member name="M:FNSB_Facilities_Projects.PublicWorksQueries.ProjectsMiniView(System.String)">
+ <summary>
+ ProjectsMiniView returns an abbreviated full Projects list instead of the full return of all data.
+ Includes the recordid, project name, project number, project status, and project description.
+ </summary>
+ <param name="SQL"></param>
+ <returns></returns>
+ <remarks></remarks>
+</member>
+</members>
+</doc>

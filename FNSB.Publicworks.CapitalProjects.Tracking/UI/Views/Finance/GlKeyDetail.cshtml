@@ -1,0 +1,33 @@
+﻿
+@model IEnumerable<FNSB.PW.Projects.Web.Models.Fund>
+    
+
+<script type="text/javascript">
+    function d(id){
+        var url = "/Finance/KeyPart/";
+        $.post(url, {id: id})
+            .done(function (response) {
+            }
+                $("#PartData").html(response);
+            });
+</script>
+
+
+
+@foreach (var c in Model)
+{
+    <tr>
+        <td>@c.ppf_glkey</td>
+        <td>@c.ppf_glkey_name</td>
+        <td class="text-right">@string.Format("{0:C}", c.ppf_budget)</td>
+        <td class="text-right">@string.Format("{0:C}", c.ppf_encumbrances)</td>
+        <td class="text-right">@string.Format("{0:C}",c.ppf_expenditures)</td>
+        <td class="text-right">@string.Format("{0:C}", c.ppf_balance)</td>
+        <td>
+            <button class="btn btn-xs btn-info" onclick="d(@c.ppf_glkey)">
+                <span class="glyphicon glyphicon-expand"></span>
+            </button>
+        </td>
+    </tr>
+}
+       

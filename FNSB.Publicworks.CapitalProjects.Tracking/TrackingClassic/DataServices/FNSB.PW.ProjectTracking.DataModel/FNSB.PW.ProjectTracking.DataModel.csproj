@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{730A2C42-1836-4CE2-AC29-40629A1A36C2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FNSB.Publicworks.Projects.DataLayer</RootNamespace>
+    <AssemblyName>ProjectTracking.DL</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Fireweed|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Fireweed\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\FNSB.PW.ProjectTracking.DataModel.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\ArchitectEngineer.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ArchitectEngineer.Names.cs" />
+    <Compile Include="Model\Consultant.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Contractor.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Fund.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\FundingType.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ImportAcceptionList.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ObservableListSource.cs" />
+    <Compile Include="Model\Project.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProjectManager.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProjectManager.Names.cs" />
+    <Compile Include="Model\ProjectManager.ProjectCalcs.cs" />
+    <Compile Include="Model\ProjectType.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ProjectTypes.ProjectCalcs.cs" />
+    <Compile Include="Model\PublicworksTrackingModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PublicworksTrackingModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PublicworksTrackingModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PublicworksTrackingModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PublicworksTrackingModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Reporting\CapitalProjectFinancialsReport.cs" />
+    <Compile Include="Model\Reporting\CapitalProjectsIndexByProject.cs" />
+    <Compile Include="Model\Reporting\CapitalProjectsReport.cs" />
+    <Compile Include="Model\Reporting\FinancialsByProjectNumberReport.cs" />
+    <Compile Include="Model\Reporting\ProjectActiveDetailReport.cs" />
+    <Compile Include="Model\Reporting\ProjectManagerReport.cs" />
+    <Compile Include="Model\Reporting\ProjectSecretaryReport.cs" />
+    <Compile Include="Model\Reporting\ProjectsClosedReport.cs" />
+    <Compile Include="Model\Reporting\ManagerSummaryList.cs" />
+    <Compile Include="Model\Reporting\ProjectTypeList.cs" />
+    <Compile Include="Model\Reporting\SubstantialCompletionReport.cs" />
+    <Compile Include="Model\Secretary.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Secretary.Names.cs" />
+    <Compile Include="Model\Staff.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\User.cs">
+      <DependentUpon>PublicworksTrackingModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ArchitectEngineerService.cs" />
+    <Compile Include="Service\FundService.cs" />
+    <Compile Include="Service\GlkeyImportManager.cs" />
+    <Compile Include="Service\ProjectManagerService.cs" />
+    <Compile Include="Service\ProjectsService.cs" />
+    <Compile Include="Service\SecretaryService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="Model\PublicworksTrackingModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PublicworksTrackingModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\PublicworksTrackingModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PublicworksTrackingModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Model\PublicworksTrackingModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>PublicworksTrackingModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-1.8.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<assembly>
+		<name>GrapeCity.ActiveReports.Serializer.v11</name>
+	</assembly>
+	<members>
+		<member name="T:GrapeCity.ActiveReports.Serializer.ControlCodeDomSerializer">
+			<summary>
+            Summary description for ControlCodeDomSerializer.
+            </summary>
+		</member>
+		<member name="T:GrapeCity.ActiveReports.Serializer.ReportCodeDomSerializer">
+			<summary>
+            ReportCodeDomSerializer - codeDom serializer that serializes the ActiveReport object itself.
+            </summary>
+		</member>
+		<member name="T:GrapeCity.ActiveReports.Serializer.ReportRootCodeDomSerializer">
+			<summary>
+            The RootCodeDomSerializerAttribute is on the class ActiveReports3
+            </summary>
+		</member>
+		<member name="M:GrapeCity.ActiveReports.Serializer.ReportRootCodeDomSerializer.Deserialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)">
+			<summary>
+            Deserialize
+            </summary>
+			<param name="manager"></param>
+			<param name="codeObject"></param>
+			<returns></returns>
+		</member>
+		<member name="M:GrapeCity.ActiveReports.Serializer.ReportRootCodeDomSerializer.Serialize(System.ComponentModel.Design.Serialization.IDesignerSerializationManager,System.Object)">
+			<summary>
+            Serialize
+            </summary>
+			<param name="manager"></param>
+			<param name="value"></param>
+			<returns></returns>
+		</member>
+	</members>
+</doc>

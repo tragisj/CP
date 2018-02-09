@@ -1,0 +1,62 @@
+﻿@using System.Security.Policy
+@using System.Web.UI.WebControls
+@using FNSB.PW.Projects.Web.Models
+
+@model string
+
+@{
+    ViewBag.Title = "Active Projects List";
+
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "projectTable"
+    };
+}
+
+<h2>Projects</h2>
+
+
+@*class="form-group"*@
+<div id="search-area">
+    
+
+    @using (Ajax.BeginForm("ActiveProjectsData", options))
+    {
+        @*@Html.Label("Active", new {@for = "psr1", @class = "radio-inline"})
+        @Html.RadioButton("projectStatus", "Active", true, new {id = "psr1", @class = "radio-inline" })
+
+        @Html.Label("Inactive", new {@for = "psr2", @class = "radio-inline"})
+        @Html.RadioButton("projectStatus", "Inactive", false, new {id = "psr2", @class = "radio-inline" })
+
+        @Html.Label("All", new {@for = "psr3", @class = "radio-inline"})
+        @Html.RadioButton("projectStatus", "All", false, new {id = "psr3", @class = "radio-inline" })*@
+    
+        <div class="col-md-10">
+
+            @*<labl>@Html.CheckBox("projectStatus", true)</label>*@
+            @*<label>@Html.RadioButton("active", true)Active Projects</label>
+            <label>@Html.RadioButton("inactive", false)Inactive Projects</label>*@
+            
+            <ul class="list-inline">
+                <li>@Html.Label("Status")</li>
+                <li>@Html.DropDownList("selectedStatus", new SelectList(Enum.GetNames(typeof(Project.SelectStatus))))</li>
+                <li>@Html.TextBox("projectSearch", null, new {id = "projectSearch"})</li>
+                <li><input type="submit" value="Search"/></li>
+
+            </ul>
+        </div>
+    }
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Number</th>
+            <th>Active Date</th>
+        </tr>
+        </thead>
+        <tbody id="projectTable">
+        @Html.Action("ActiveProjectsData",  new {projectSearch = Model})
+        </tbody>
+    </table>
+</div>

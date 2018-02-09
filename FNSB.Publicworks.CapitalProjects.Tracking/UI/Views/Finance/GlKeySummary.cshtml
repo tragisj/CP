@@ -1,0 +1,17 @@
+﻿@using FNSB.PW.Projects.Web.Models
+@model IEnumerable<FNSB.PW.Projects.Web.Models.Fund>
+
+@{
+    ViewBag.Title = "Project Finance";
+}
+
+<h2>Projects Finance Page</h2>
+
+@foreach (Fund key in Model)
+{
+    <tr>
+        <td>
+        @key.ppf_glkey
+        </td>
+    </tr>
+}

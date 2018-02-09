@@ -1,0 +1,57 @@
+﻿@model IEnumerable<FNSB.PW.Projects.Web.Models.Project>
+    
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Active Projects</title>
+</head>
+
+<body>
+
+<table class="table">
+<tr>
+    <th>
+        @Html.DisplayNameFor(model => model.PPM_Project_Name)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.PPM_Project_Number)
+    </th>
+    <th>
+        @Html.DisplayNameFor(model => model.PPM_Active_Date)
+    </th>
+
+    <th></th>
+</tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PPM_Project_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PPM_Project_Number)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PPM_Active_Date)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.PPM_Recordid }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PPM_Recordid }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PPM_Recordid })*@
+        </td>
+    </tr>
+}
+
+</table>
+
+
+</body>
+
+
+</html>

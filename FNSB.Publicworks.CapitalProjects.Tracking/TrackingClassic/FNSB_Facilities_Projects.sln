@@ -1,0 +1,135 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNSB.PW.ProjectTracking.DataModel", "DataServices\FNSB.PW.ProjectTracking.DataModel\FNSB.PW.ProjectTracking.DataModel.csproj", "{730A2C42-1836-4CE2-AC29-40629A1A36C2}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FNSB_Facilities_Projects", "FNSB_Facilities_Projects.vbproj", "{D4F8868E-0475-4AE4-AE28-4FA28834961C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PWTrackingReporting", "DataServices\PWTrackingReporting\PWTrackingReporting.csproj", "{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNSB.Projects.UI", "..\FNSB.Projects.UI\FNSB.Projects.UI.csproj", "{094B58A7-6B43-488A-A5D5-444F4F7AC64F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FNSB.PW.Finance.Import", "..\FNSB.PW.Finance.Import\FNSB.PW.Finance.Import.csproj", "{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Fireweed|Any CPU = Fireweed|Any CPU
+		Fireweed|Mixed Platforms = Fireweed|Mixed Platforms
+		Fireweed|x86 = Fireweed|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Debug|Any CPU.Build.0 = Debug|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Debug|x86.ActiveCfg = Debug|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Debug|x86.Build.0 = Debug|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Fireweed|Any CPU.ActiveCfg = Fireweed|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Fireweed|Mixed Platforms.ActiveCfg = Fireweed|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Fireweed|Mixed Platforms.Build.0 = Fireweed|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Fireweed|x86.ActiveCfg = Fireweed|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Fireweed|x86.Build.0 = Fireweed|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Release|Any CPU.ActiveCfg = Release|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Release|Mixed Platforms.Build.0 = Release|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Release|x86.ActiveCfg = Release|x86
+		{730A2C42-1836-4CE2-AC29-40629A1A36C2}.Release|x86.Build.0 = Release|x86
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Fireweed|Any CPU.ActiveCfg = Fireweed|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Fireweed|Any CPU.Build.0 = Fireweed|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Fireweed|Mixed Platforms.ActiveCfg = Fireweed|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Fireweed|Mixed Platforms.Build.0 = Fireweed|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Fireweed|x86.ActiveCfg = Fireweed|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{D4F8868E-0475-4AE4-AE28-4FA28834961C}.Release|x86.ActiveCfg = Release|Any CPU
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Debug|Any CPU.Build.0 = Debug|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Debug|x86.ActiveCfg = Debug|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Debug|x86.Build.0 = Debug|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Fireweed|Any CPU.ActiveCfg = Fireweed|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Fireweed|Mixed Platforms.ActiveCfg = Fireweed|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Fireweed|Mixed Platforms.Build.0 = Fireweed|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Fireweed|x86.ActiveCfg = Fireweed|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Fireweed|x86.Build.0 = Fireweed|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Release|Any CPU.ActiveCfg = Release|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Release|Mixed Platforms.Build.0 = Release|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Release|x86.ActiveCfg = Release|x86
+		{2DB3CFAF-EA8A-45FD-A6D3-E83A8724BE8E}.Release|x86.Build.0 = Release|x86
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Debug|x86.Build.0 = Debug|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Fireweed|Any CPU.ActiveCfg = Release|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Fireweed|Any CPU.Build.0 = Release|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Fireweed|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Fireweed|Mixed Platforms.Build.0 = Release|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Fireweed|x86.ActiveCfg = Release|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Fireweed|x86.Build.0 = Release|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Release|x86.ActiveCfg = Release|Any CPU
+		{094B58A7-6B43-488A-A5D5-444F4F7AC64F}.Release|x86.Build.0 = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Debug|x86.Build.0 = Debug|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Fireweed|Any CPU.ActiveCfg = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Fireweed|Any CPU.Build.0 = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Fireweed|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Fireweed|Mixed Platforms.Build.0 = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Fireweed|x86.ActiveCfg = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Fireweed|x86.Build.0 = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Release|x86.ActiveCfg = Release|Any CPU
+		{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {835344BA-6DDA-4475-BFCD-D74DD405CCC4}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://tetlin:8080/tfs/playground
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DataServices\\FNSB.PW.ProjectTracking.DataModel\\FNSB.PW.ProjectTracking.DataModel.csproj
+		SccProjectName1 = DataServices/FNSB.PW.ProjectTracking.DataModel
+		SccLocalPath1 = DataServices\\FNSB.PW.ProjectTracking.DataModel
+		SccProjectUniqueName2 = FNSB_Facilities_Projects.vbproj
+		SccLocalPath2 = .
+		SccProjectUniqueName3 = DataServices\\PWTrackingReporting\\PWTrackingReporting.csproj
+		SccProjectName3 = DataServices/PWTrackingReporting
+		SccLocalPath3 = DataServices\\PWTrackingReporting
+		SccProjectUniqueName4 = ..\\FNSB.Projects.UI\\FNSB.Projects.UI.csproj
+		SccProjectName4 = ../FNSB.Projects.UI
+		SccLocalPath4 = ..\\FNSB.Projects.UI
+		SccProjectUniqueName5 = ..\\FNSB.PW.Finance.Import\\FNSB.PW.Finance.Import.csproj
+		SccProjectName5 = ../FNSB.PW.Finance.Import
+		SccLocalPath5 = ..\\FNSB.PW.Finance.Import
+	EndGlobalSection
+EndGlobal

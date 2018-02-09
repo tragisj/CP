@@ -1,0 +1,375 @@
+﻿@using System.Diagnostics
+@model FNSB.Projects.UI.Models.Project
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+<h4>Project</h4>
+<hr/>
+<dl class="dl-horizontal">
+    
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Project_Name)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Project_Name)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Project_Number)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Project_Number)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Project_Active)
+</dt>
+
+<dd>
+    @{
+        Debug.Assert(Model.PPM_Project_Active != null, "Model.PPM_Project_Active != null");
+    }
+    @((bool)Model.PPM_Project_Active ? "Active" : "Inactive"  )
+</dd>
+    
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Active_Date)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Active_Date)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Inactive_Date)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Inactive_Date)
+</dd>
+    
+<dd>
+    <hr/>
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Status_Desc)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Status_Desc)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Per_Des_Complete)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Per_Des_Complete)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Proj_Scope)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Proj_Scope)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_MSA_Update)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_MSA_Update)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Consultant_Fee)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Consultant_Fee)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Contract_Amount)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Contract_Amount)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Contract_Amendments)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Contract_Amendments)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_CO)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_CO)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_Per_Const_Complete)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_Per_Const_Complete)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_IFB_RFQ)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_IFB_RFQ)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_User_Letter)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_User_Letter)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPM_RFP_Number)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPM_RFP_Number)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_RFP)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_RFP)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Scope)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Scope)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Advertise_for_Bid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Advertise_for_Bid)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Original_Bid_Date)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Original_Bid_Date)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Bid_Opening)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Bid_Opening)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Gen_Serv_Review)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Gen_Serv_Review)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Consultant_Award)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Consultant_Award)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Construction_Bid_Award)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Construction_Bid_Award)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Design_Complete)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Design_Complete)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Agenda_Setting)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Agenda_Setting)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Assembly_Approval)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Assembly_Approval)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_NTP)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_NTP)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Substantial_Completion)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Substantial_Completion)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Final)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Final)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Warranty_Period_Ends)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Warranty_Period_Ends)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NDI_Closed)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NDI_Closed)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPS_Recordid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPS_Recordid)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPU_Recordid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPU_Recordid)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPT_Recordid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPT_Recordid)
+</dd>
+
+    @*Project Manager*@
+<dt>
+    @Html.DisplayNameFor(model => model.ppr_recordid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.ppr_recordid)
+</dd>
+    
+    @*Contractor*@
+<dt>
+    @Html.DisplayNameFor(model => model.PPC_Recordid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPC_Recordid)
+</dd>
+    
+    @*Architect / Engineer*@
+<dt>
+    @Html.DisplayNameFor(model => model.PPA_Recordid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPA_Recordid)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.PPN_Recordid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.PPN_Recordid)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.NOU_Recordid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.NOU_Recordid)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.FFM_Recordid)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.FFM_Recordid)
+</dd>
+
+<dt>
+    @Html.DisplayNameFor(model => model.ppm_project_complete)
+</dt>
+
+<dd>
+    @Html.DisplayFor(model => model.ppm_project_complete)
+</dd>
+
+</dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {id = Model.PPM_Recordid}) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

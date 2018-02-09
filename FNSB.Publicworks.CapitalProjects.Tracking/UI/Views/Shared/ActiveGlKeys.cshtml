@@ -1,0 +1,28 @@
+﻿<div class="col-md-8" id="listOfGlKeys">
+    <table class="table table-condensed">
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.ppf_glkey</td>
+                <td>@c.ppf_glkey_name</td>
+                <td>@c.ppf_budget</td>
+                <td>@c.ppf_encumbrances</td>
+                <td>@c.ppf_expenditures</td>
+                <td>
+                    <button class="btn btn-xs btn-danger" onclick="d(@c.ppm_recordid)">
+                        <span class="glyphicon glyphicon-expand"></span>
+                    </button>
+                </td>
+            </tr>
+        }
+
+        <tr>
+            <td></td>
+            <td></td>
+            <td>Budget</td>
+            <td>Encumb</td>
+            <td>Expend</td>
+        </tr>
+
+    </table>
+</div>

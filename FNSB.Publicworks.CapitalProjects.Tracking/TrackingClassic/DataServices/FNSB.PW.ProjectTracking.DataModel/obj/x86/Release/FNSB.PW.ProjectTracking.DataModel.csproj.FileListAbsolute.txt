@@ -1,0 +1,10 @@
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\obj\x86\Release\FNSB.Publicworks.Projects.DataLayer.Properties.Resources.resources
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\obj\x86\Release\FNSB.PW.ProjectTracking.DataModel.csproj.GenerateResource.Cache
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\obj\x86\Release\FNSB.PW.ProjectTracking.DataModel.csproj.CoreCompileInputs.cache
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\ProjectTracking.DL.dll.config
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\obj\x86\Release\ProjectTracking.DL.dll
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\obj\x86\Release\ProjectTracking.DL.pdb
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\ProjectTracking.DL.dll
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\ProjectTracking.DL.pdb
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\EntityFramework.dll
+D:\projects\TeamCode\Publicworks\ProjectTrack\DataServices\FNSB.PW.ProjectTracking.DataModel\EntityFramework.xml

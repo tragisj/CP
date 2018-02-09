@@ -1,0 +1,4 @@
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\DataModel\obj\x86\Debug\DataModel.csprojResolveAssemblyReference.cache
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\DataModel\obj\x86\Debug\FNSB.Publicworks.Projects.DataLayer.Properties.Resources.resources
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\DataModel\obj\x86\Debug\DataModel.csproj.GenerateResource.Cache
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\DataModel\obj\x86\Debug\DataModel.csproj.CoreCompileInputs.cache

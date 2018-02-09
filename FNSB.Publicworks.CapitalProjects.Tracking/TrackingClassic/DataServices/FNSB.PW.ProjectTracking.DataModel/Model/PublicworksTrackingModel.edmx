@@ -1,0 +1,816 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="publicworksModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="ArchitectEngineers">
+          <Key>
+            <PropertyRef Name="recordid" />
+          </Key>
+          <Property Name="recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Consultants">
+          <Key>
+            <PropertyRef Name="ppc_recordid" />
+          </Key>
+          <Property Name="ppc_recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="consultantname" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Contractors">
+          <Key>
+            <PropertyRef Name="ppn_recordid" />
+          </Key>
+          <Property Name="ppn_recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="contractorname" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="FundingTypes">
+          <Key>
+            <PropertyRef Name="ppy_recordid" />
+          </Key>
+          <Property Name="ppy_recordid" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="fundsource" Type="nvarchar" MaxLength="20" />
+          <Property Name="fundname" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Funds">
+          <Key>
+            <PropertyRef Name="ppf_recordid" />
+          </Key>
+          <Property Name="ppf_recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ppf_funding" Type="nvarchar" MaxLength="10" />
+          <Property Name="ppf_department" Type="nvarchar" MaxLength="10" />
+          <Property Name="ppf_glkey" Type="nvarchar" MaxLength="10" />
+          <Property Name="ppf_glkey_name" Type="nvarchar" MaxLength="255" />
+          <Property Name="ppf_budget" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="ppf_expenditures" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="ppf_encumbrances" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="ppf_balance" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="ppm_recordid" Type="int" />
+        </EntityType>
+        <EntityType Name="ProjectManagers">
+          <Key>
+            <PropertyRef Name="ppr_recordid" />
+          </Key>
+          <Property Name="ppr_recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="PPM_Recordid" />
+          </Key>
+          <Property Name="PPM_Recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PPM_Project_Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="PPM_Project_Number" Type="nvarchar" MaxLength="255" />
+          <Property Name="PPM_Active_Date" Type="datetime" />
+          <Property Name="PPM_Inactive_Date" Type="datetime" />
+          <Property Name="PPM_Project_Active" Type="bit" />
+          <Property Name="PPM_Status_Desc" Type="nvarchar(max)" />
+          <Property Name="PPM_Per_Des_Complete" Type="int" />
+          <Property Name="PPM_Proj_Scope" Type="nvarchar(max)" />
+          <Property Name="PPM_MSA_Update" Type="bit" />
+          <Property Name="PPM_Consultant_Fee" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="PPM_Contract_Amount" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="PPM_Contract_Amendments" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="PPM_CO" Type="decimal" Precision="19" Scale="2" />
+          <Property Name="PPM_Per_Const_Complete" Type="int" />
+          <Property Name="PPM_IFB_RFQ" Type="nvarchar" MaxLength="255" />
+          <Property Name="PPM_User_Letter" Type="bit" />
+          <Property Name="PPM_RFP_Number" Type="nvarchar" MaxLength="255" />
+          <Property Name="NDI_RFP" Type="datetime" />
+          <Property Name="NDI_Scope" Type="datetime" />
+          <Property Name="NDI_Advertise_for_Bid" Type="datetime" />
+          <Property Name="NDI_Original_Bid_Date" Type="datetime" />
+          <Property Name="NDI_Bid_Opening" Type="datetime" />
+          <Property Name="NDI_Gen_Serv_Review" Type="datetime" />
+          <Property Name="NDI_Consultant_Award" Type="datetime" />
+          <Property Name="NDI_Construction_Bid_Award" Type="datetime" />
+          <Property Name="NDI_Design_Complete" Type="datetime" />
+          <Property Name="NDI_Agenda_Setting" Type="datetime" />
+          <Property Name="NDI_Assembly_Approval" Type="datetime" />
+          <Property Name="NDI_NTP" Type="datetime" />
+          <Property Name="NDI_Substantial_Completion" Type="datetime" />
+          <Property Name="NDI_Final" Type="datetime" />
+          <Property Name="NDI_Warranty_Period_Ends" Type="datetime" />
+          <Property Name="NDI_Closed" Type="datetime" />
+          <Property Name="PPS_Recordid" Type="int" />
+          <Property Name="PPU_Recordid" Type="int" Nullable="false" />
+          <Property Name="PPT_Recordid" Type="int" />
+          <Property Name="PPR_Recordid" Type="int" Nullable="false" />
+          <Property Name="PPC_Recordid" Type="int" Nullable="false" />
+          <Property Name="PPA_Recordid" Type="int" Nullable="false" />
+          <Property Name="PPN_Recordid" Type="int" Nullable="false" />
+          <Property Name="NOU_Recordid" Type="int" />
+          <Property Name="FFM_Recordid" Type="int" />
+          <Property Name="ppm_project_complete" Type="bit" />
+        </EntityType>
+        <EntityType Name="ProjectTypes">
+          <Key>
+            <PropertyRef Name="ppt_recordid" />
+          </Key>
+          <Property Name="ppt_recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="Secretary">
+          <Key>
+            <PropertyRef Name="pps_recordid" />
+          </Key>
+          <Property Name="pps_recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="50" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="50" />
+          <Property Name="initials" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Recordid" />
+          </Key>
+          <Property Name="Recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActiveEmployee" Type="bit" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PhoneNumber" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DisplaySorting" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="ppu_recordid" />
+          </Key>
+          <Property Name="ppu_recordid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="firstname" Type="nvarchar" MaxLength="255" />
+          <Property Name="lastname" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <Function Name="usp_ppi_delete_funding" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Publicworks">
+          <Parameter Name="ppf_recordid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ppi_ifas_selectall" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Publicworks" />
+        <Function Name="usp_ppi_insert_funding" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Publicworks">
+          <Parameter Name="ppf_funding" Type="nvarchar" Mode="In" />
+          <Parameter Name="ppf_department" Type="nvarchar" Mode="In" />
+          <Parameter Name="ppf_glkey" Type="nvarchar" Mode="In" />
+          <Parameter Name="ppf_glkey_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="ppf_budget" Type="decimal" Mode="In" />
+          <Parameter Name="ppf_expenditures" Type="decimal" Mode="In" />
+          <Parameter Name="ppf_encumbrances" Type="decimal" Mode="In" />
+          <Parameter Name="ppf_balance" Type="decimal" Mode="In" />
+          <Parameter Name="ppm_recordid" Type="int" Mode="In" />
+          <Parameter Name="Id" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="usp_ppi_update_funding" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Publicworks">
+          <Parameter Name="ppf_funding" Type="nvarchar" Mode="In" />
+          <Parameter Name="ppf_department" Type="nvarchar" Mode="In" />
+          <Parameter Name="ppf_glkey" Type="nvarchar" Mode="In" />
+          <Parameter Name="ppf_glkey_name" Type="nvarchar" Mode="In" />
+          <Parameter Name="ppf_budget" Type="decimal" Mode="In" />
+          <Parameter Name="ppf_expenditures" Type="decimal" Mode="In" />
+          <Parameter Name="ppf_encumbrances" Type="decimal" Mode="In" />
+          <Parameter Name="ppf_balance" Type="decimal" Mode="In" />
+          <Parameter Name="ppm_recordid" Type="int" Mode="In" />
+          <Parameter Name="ppf_recordid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ppm_delete_mainbyrecordid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Publicworks">
+          <Parameter Name="PPM_Recordid" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ppm_insert_main" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Publicworks">
+          <Parameter Name="PPM_Project_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_Project_Number" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_Active_Date" Type="smalldatetime" Mode="In" />
+          <Parameter Name="PPM_Inactive_Date" Type="smalldatetime" Mode="In" />
+          <Parameter Name="PPM_Project_Active" Type="bit" Mode="In" />
+          <Parameter Name="PPM_Status_Desc" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_Per_Des_Complete" Type="int" Mode="In" />
+          <Parameter Name="PPM_Proj_Scope" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_MSA_Update" Type="bit" Mode="In" />
+          <Parameter Name="PPM_Consultant_Fee" Type="decimal" Mode="In" />
+          <Parameter Name="PPM_Contract_Amount" Type="decimal" Mode="In" />
+          <Parameter Name="PPM_Contract_Amendments" Type="decimal" Mode="In" />
+          <Parameter Name="PPM_CO" Type="decimal" Mode="In" />
+          <Parameter Name="PPM_Per_Const_Complete" Type="int" Mode="In" />
+          <Parameter Name="PPM_IFB_RFQ" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_User_Letter" Type="bit" Mode="In" />
+          <Parameter Name="PPM_RFP_Number" Type="nvarchar" Mode="In" />
+          <Parameter Name="NDI_RFP" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Scope" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Advertise_for_Bid" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Original_Bid_Date" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Bid_Opening" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Design_Complete" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Gen_Serv_Review" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Consultant_Award" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Construction_Bid_Award" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Agenda_Setting" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Assembly_Approval" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_NTP" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Substantial_Completion" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Final" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Warranty_Period_Ends" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Closed" Type="smalldatetime" Mode="In" />
+          <Parameter Name="PPS_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPU_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPT_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPR_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPC_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPA_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPN_Recordid" Type="int" Mode="In" />
+          <Parameter Name="NOU_Recordid" Type="int" Mode="In" />
+          <Parameter Name="FFM_Recordid" Type="int" Mode="In" />
+          <Parameter Name="ppm_project_complete" Type="bit" Mode="In" />
+          <Parameter Name="Id" Type="int" Mode="InOut" />
+        </Function>
+        <Function Name="usp_ppm_main_selectall" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Publicworks" />
+        <Function Name="usp_ppm_update_main" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="Publicworks">
+          <Parameter Name="PPM_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPM_Project_Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_Project_Number" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_Active_Date" Type="smalldatetime" Mode="In" />
+          <Parameter Name="PPM_Inactive_Date" Type="smalldatetime" Mode="In" />
+          <Parameter Name="PPM_Project_Active" Type="bit" Mode="In" />
+          <Parameter Name="PPM_Status_Desc" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_Per_Des_Complete" Type="int" Mode="In" />
+          <Parameter Name="PPM_Proj_Scope" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_MSA_Update" Type="bit" Mode="In" />
+          <Parameter Name="PPM_Consultant_Fee" Type="money" Mode="In" />
+          <Parameter Name="PPM_Contract_Amount" Type="money" Mode="In" />
+          <Parameter Name="PPM_Contract_Amendments" Type="money" Mode="In" />
+          <Parameter Name="PPM_CO" Type="money" Mode="In" />
+          <Parameter Name="PPM_Per_Const_Complete" Type="int" Mode="In" />
+          <Parameter Name="PPM_IFB_RFQ" Type="nvarchar" Mode="In" />
+          <Parameter Name="PPM_User_Letter" Type="bit" Mode="In" />
+          <Parameter Name="PPM_RFP_Number" Type="nvarchar" Mode="In" />
+          <Parameter Name="NDI_RFP" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Scope" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Advertise_for_Bid" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Original_Bid_Date" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Bid_Opening" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Design_Complete" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Gen_Serv_Review" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Consultant_Award" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Construction_Bid_Award" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Agenda_Setting" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Assembly_Approval" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_NTP" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Substantial_Completion" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Final" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Warranty_Period_Ends" Type="smalldatetime" Mode="In" />
+          <Parameter Name="NDI_Closed" Type="smalldatetime" Mode="In" />
+          <Parameter Name="PPS_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPU_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPT_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPR_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPC_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPA_Recordid" Type="int" Mode="In" />
+          <Parameter Name="PPN_Recordid" Type="int" Mode="In" />
+          <Parameter Name="NOU_Recordid" Type="int" Mode="In" />
+          <Parameter Name="FFM_Recordid" Type="int" Mode="In" />
+          <Parameter Name="ppm_project_complete" Type="bit" Mode="In" />
+        </Function>
+        <EntityContainer Name="publicworksModelStoreContainer">
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ArchitectEngineers" EntityType="Self.ArchitectEngineers" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="Consultants" EntityType="Self.Consultants" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="Contractors" EntityType="Self.Contractors" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="FundingTypes" EntityType="Self.FundingTypes" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="Funds" EntityType="Self.Funds" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="ProjectManagers" EntityType="Self.ProjectManagers" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="ProjectTypes" EntityType="Self.ProjectTypes" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="Secretary" EntityType="Self.Secretary" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="Staff" EntityType="Self.Staff" Schema="Publicworks" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="Publicworks" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="publicworksModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="publicworksEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ArchitectEngineers" EntityType="publicworksModel.ArchitectEngineer" />
+          <EntitySet Name="Consultants" EntityType="publicworksModel.Consultant" />
+          <EntitySet Name="Contractors" EntityType="publicworksModel.Contractor" />
+          <EntitySet Name="FundingTypes" EntityType="publicworksModel.FundingType" />
+          <EntitySet Name="Funds" EntityType="publicworksModel.Fund" />
+          <EntitySet Name="ProjectManagers" EntityType="publicworksModel.ProjectManager" />
+          <EntitySet Name="Projects" EntityType="publicworksModel.Project" />
+          <EntitySet Name="ProjectTypes" EntityType="publicworksModel.ProjectType" />
+          <EntitySet Name="Secretaries" EntityType="publicworksModel.Secretary" />
+          <EntitySet Name="Users" EntityType="publicworksModel.User" />
+          <AssociationSet Name="FK_Projects_ArchitectEngineers" Association="publicworksModel.FK_Projects_ArchitectEngineers">
+            <End Role="ArchitectEngineers" EntitySet="ArchitectEngineers" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_Consultants" Association="publicworksModel.FK_Projects_Consultants">
+            <End Role="Consultants" EntitySet="Consultants" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_Contractors" Association="publicworksModel.FK_Projects_Contractors">
+            <End Role="Contractors" EntitySet="Contractors" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funds_Projects" Association="publicworksModel.FK_Funds_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="Funds" EntitySet="Funds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectManagers" Association="publicworksModel.FK_Projects_ProjectManagers">
+            <End Role="ProjectManagers" EntitySet="ProjectManagers" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_ProjectTypes" Association="publicworksModel.FK_Projects_ProjectTypes">
+            <End Role="ProjectTypes" EntitySet="ProjectTypes" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_Secretary" Association="publicworksModel.FK_Projects_Secretary">
+            <End Role="Secretary" EntitySet="Secretaries" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_Users" Association="publicworksModel.FK_Projects_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <EntitySet Name="Staffs" EntityType="publicworksModel.Staff" />
+          <EntitySet Name="sysdiagrams" EntityType="publicworksModel.sysdiagram" />
+        </EntityContainer>
+        <EntityType Name="ArchitectEngineer">
+          <Key>
+            <PropertyRef Name="recordid" />
+          </Key>
+          <Property Name="recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lastname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="publicworksModel.FK_Projects_ArchitectEngineers" FromRole="ArchitectEngineers" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Consultant">
+          <Key>
+            <PropertyRef Name="ppc_recordid" />
+          </Key>
+          <Property Name="ppc_recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="consultantname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="publicworksModel.FK_Projects_Consultants" FromRole="Consultants" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Contractor">
+          <Key>
+            <PropertyRef Name="ppn_recordid" />
+          </Key>
+          <Property Name="ppn_recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="contractorname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="publicworksModel.FK_Projects_Contractors" FromRole="Contractors" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="FundingType">
+          <Key>
+            <PropertyRef Name="ppy_recordid" />
+          </Key>
+          <Property Name="ppy_recordid" Type="Guid" Nullable="false" />
+          <Property Name="fundsource" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="fundname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Fund">
+          <Key>
+            <PropertyRef Name="ppf_recordid" />
+          </Key>
+          <Property Name="ppf_recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ppf_funding" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ppf_department" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ppf_glkey" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ppf_glkey_name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="ppf_budget" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="ppf_expenditures" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="ppf_encumbrances" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="ppf_balance" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="ppm_recordid" Type="Int32" />
+          <NavigationProperty Name="Project" Relationship="publicworksModel.FK_Funds_Projects" FromRole="Funds" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="ProjectManager">
+          <Key>
+            <PropertyRef Name="ppr_recordid" />
+          </Key>
+          <Property Name="ppr_recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lastname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="publicworksModel.FK_Projects_ProjectManagers" FromRole="ProjectManagers" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Project">
+          <Key>
+            <PropertyRef Name="PPM_Recordid" />
+          </Key>
+          <Property Name="PPM_Recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PPM_Project_Name" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PPM_Project_Number" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PPM_Active_Date" Type="DateTime" Precision="3" />
+          <Property Name="PPM_Inactive_Date" Type="DateTime" Precision="3" />
+          <Property Name="PPM_Project_Active" Type="Boolean" />
+          <Property Name="PPM_Status_Desc" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PPM_Per_Des_Complete" Type="Int32" />
+          <Property Name="PPM_Proj_Scope" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="PPM_MSA_Update" Type="Boolean" />
+          <Property Name="PPM_Consultant_Fee" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="PPM_Contract_Amount" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="PPM_Contract_Amendments" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="PPM_CO" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="PPM_Per_Const_Complete" Type="Int32" />
+          <Property Name="PPM_IFB_RFQ" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="PPM_User_Letter" Type="Boolean" />
+          <Property Name="PPM_RFP_Number" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="NDI_RFP" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Scope" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Advertise_for_Bid" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Original_Bid_Date" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Bid_Opening" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Gen_Serv_Review" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Consultant_Award" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Construction_Bid_Award" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Design_Complete" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Agenda_Setting" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Assembly_Approval" Type="DateTime" Precision="3" />
+          <Property Name="NDI_NTP" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Substantial_Completion" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Final" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Warranty_Period_Ends" Type="DateTime" Precision="3" />
+          <Property Name="NDI_Closed" Type="DateTime" Precision="3" />
+          <Property Name="PPS_Recordid" Type="Int32" />
+          <Property Name="PPU_Recordid" Type="Int32" Nullable="false" />
+          <Property Name="PPT_Recordid" Type="Int32" />
+          <Property Name="PPR_Recordid" Type="Int32" Nullable="false" />
+          <Property Name="PPC_Recordid" Type="Int32" Nullable="false" />
+          <Property Name="PPA_Recordid" Type="Int32" Nullable="false" />
+          <Property Name="PPN_Recordid" Type="Int32" Nullable="false" />
+          <Property Name="NOU_Recordid" Type="Int32" />
+          <Property Name="FFM_Recordid" Type="Int32" />
+          <NavigationProperty Name="ArchitectEngineer" Relationship="publicworksModel.FK_Projects_ArchitectEngineers" FromRole="Projects" ToRole="ArchitectEngineers" />
+          <NavigationProperty Name="Consultant" Relationship="publicworksModel.FK_Projects_Consultants" FromRole="Projects" ToRole="Consultants" />
+          <NavigationProperty Name="Contractor" Relationship="publicworksModel.FK_Projects_Contractors" FromRole="Projects" ToRole="Contractors" />
+          <NavigationProperty Name="Funds" Relationship="publicworksModel.FK_Funds_Projects" FromRole="Projects" ToRole="Funds" />
+          <NavigationProperty Name="ProjectManager" Relationship="publicworksModel.FK_Projects_ProjectManagers" FromRole="Projects" ToRole="ProjectManagers" />
+          <NavigationProperty Name="ProjectType" Relationship="publicworksModel.FK_Projects_ProjectTypes" FromRole="Projects" ToRole="ProjectTypes" />
+          <NavigationProperty Name="Secretary" Relationship="publicworksModel.FK_Projects_Secretary" FromRole="Projects" ToRole="Secretary" />
+          <NavigationProperty Name="User" Relationship="publicworksModel.FK_Projects_Users" FromRole="Projects" ToRole="Users" />
+          <Property Name="ppm_project_complete" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="ProjectType">
+          <Key>
+            <PropertyRef Name="ppt_recordid" />
+          </Key>
+          <Property Name="ppt_recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="publicworksModel.FK_Projects_ProjectTypes" FromRole="ProjectTypes" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Secretary">
+          <Key>
+            <PropertyRef Name="pps_recordid" />
+          </Key>
+          <Property Name="pps_recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="lastname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="initials" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="publicworksModel.FK_Projects_Secretary" FromRole="Secretary" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ppu_recordid" />
+          </Key>
+          <Property Name="ppu_recordid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="firstname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <Property Name="lastname" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Projects" Relationship="publicworksModel.FK_Projects_Users" FromRole="Users" ToRole="Projects" />
+        </EntityType>
+        <Association Name="FK_Projects_ArchitectEngineers">
+          <End Role="ArchitectEngineers" Type="publicworksModel.ArchitectEngineer" Multiplicity="1" />
+          <End Role="Projects" Type="publicworksModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ArchitectEngineers">
+              <PropertyRef Name="recordid" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="PPA_Recordid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_Consultants">
+          <End Role="Consultants" Type="publicworksModel.Consultant" Multiplicity="1" />
+          <End Role="Projects" Type="publicworksModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Consultants">
+              <PropertyRef Name="ppc_recordid" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="PPC_Recordid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_Contractors">
+          <End Role="Contractors" Type="publicworksModel.Contractor" Multiplicity="1" />
+          <End Role="Projects" Type="publicworksModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contractors">
+              <PropertyRef Name="ppn_recordid" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="PPN_Recordid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Funds_Projects">
+          <End Role="Projects" Type="publicworksModel.Project" Multiplicity="0..1" />
+          <End Role="Funds" Type="publicworksModel.Fund" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="PPM_Recordid" />
+            </Principal>
+            <Dependent Role="Funds">
+              <PropertyRef Name="ppm_recordid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectManagers">
+          <End Role="ProjectManagers" Type="publicworksModel.ProjectManager" Multiplicity="1" />
+          <End Role="Projects" Type="publicworksModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectManagers">
+              <PropertyRef Name="ppr_recordid" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="PPR_Recordid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_ProjectTypes">
+          <End Role="ProjectTypes" Type="publicworksModel.ProjectType" Multiplicity="0..1" />
+          <End Role="Projects" Type="publicworksModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProjectTypes">
+              <PropertyRef Name="ppt_recordid" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="PPT_Recordid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_Secretary">
+          <End Role="Secretary" Type="publicworksModel.Secretary" Multiplicity="0..1" />
+          <End Role="Projects" Type="publicworksModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Secretary">
+              <PropertyRef Name="pps_recordid" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="PPS_Recordid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_Users">
+          <End Role="Users" Type="publicworksModel.User" Multiplicity="1" />
+          <End Role="Projects" Type="publicworksModel.Project" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="ppu_recordid" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="PPU_Recordid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="ImportAcceptionList" />
+        <EntityType Name="Staff">
+          <Key>
+            <PropertyRef Name="Recordid" />
+          </Key>
+          <Property Type="Int32" Name="Recordid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Boolean" Name="ActiveEmployee" Nullable="false" />
+          <Property Type="String" Name="Position" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FirstName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LastName" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PhoneNumber" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="EmailAddress" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DisplaySorting" Type="Byte" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="publicworksModelStoreContainer" CdmEntityContainer="publicworksEntities">
+          <EntitySetMapping Name="ArchitectEngineers"><EntityTypeMapping TypeName="publicworksModel.ArchitectEngineer"><MappingFragment StoreEntitySet="ArchitectEngineers">
+            <ScalarProperty Name="recordid" ColumnName="recordid" />
+            <ScalarProperty Name="firstname" ColumnName="firstname" />
+            <ScalarProperty Name="lastname" ColumnName="lastname" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Consultants"><EntityTypeMapping TypeName="publicworksModel.Consultant"><MappingFragment StoreEntitySet="Consultants">
+            <ScalarProperty Name="ppc_recordid" ColumnName="ppc_recordid" />
+            <ScalarProperty Name="consultantname" ColumnName="consultantname" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Contractors"><EntityTypeMapping TypeName="publicworksModel.Contractor"><MappingFragment StoreEntitySet="Contractors">
+            <ScalarProperty Name="ppn_recordid" ColumnName="ppn_recordid" />
+            <ScalarProperty Name="contractorname" ColumnName="contractorname" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="FundingTypes"><EntityTypeMapping TypeName="publicworksModel.FundingType"><MappingFragment StoreEntitySet="FundingTypes">
+            <ScalarProperty Name="ppy_recordid" ColumnName="ppy_recordid" />
+            <ScalarProperty Name="fundsource" ColumnName="fundsource" />
+            <ScalarProperty Name="fundname" ColumnName="fundname" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Funds"><EntityTypeMapping TypeName="publicworksModel.Fund"><MappingFragment StoreEntitySet="Funds">
+            <ScalarProperty Name="ppf_recordid" ColumnName="ppf_recordid" />
+            <ScalarProperty Name="ppf_funding" ColumnName="ppf_funding" />
+            <ScalarProperty Name="ppf_department" ColumnName="ppf_department" />
+            <ScalarProperty Name="ppf_glkey" ColumnName="ppf_glkey" />
+            <ScalarProperty Name="ppf_glkey_name" ColumnName="ppf_glkey_name" />
+            <ScalarProperty Name="ppf_budget" ColumnName="ppf_budget" />
+            <ScalarProperty Name="ppf_expenditures" ColumnName="ppf_expenditures" />
+            <ScalarProperty Name="ppf_encumbrances" ColumnName="ppf_encumbrances" />
+            <ScalarProperty Name="ppf_balance" ColumnName="ppf_balance" />
+            <ScalarProperty Name="ppm_recordid" ColumnName="ppm_recordid" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProjectManagers"><EntityTypeMapping TypeName="publicworksModel.ProjectManager"><MappingFragment StoreEntitySet="ProjectManagers">
+            <ScalarProperty Name="ppr_recordid" ColumnName="ppr_recordid" />
+            <ScalarProperty Name="firstname" ColumnName="firstname" />
+            <ScalarProperty Name="lastname" ColumnName="lastname" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Projects"><EntityTypeMapping TypeName="publicworksModel.Project"><MappingFragment StoreEntitySet="Projects">
+            <ScalarProperty Name="ppm_project_complete" ColumnName="ppm_project_complete" />
+                <ScalarProperty Name="PPM_Recordid" ColumnName="PPM_Recordid" />
+            <ScalarProperty Name="PPM_Project_Name" ColumnName="PPM_Project_Name" />
+            <ScalarProperty Name="PPM_Project_Number" ColumnName="PPM_Project_Number" />
+            <ScalarProperty Name="PPM_Active_Date" ColumnName="PPM_Active_Date" />
+            <ScalarProperty Name="PPM_Inactive_Date" ColumnName="PPM_Inactive_Date" />
+            <ScalarProperty Name="PPM_Project_Active" ColumnName="PPM_Project_Active" />
+            <ScalarProperty Name="PPM_Status_Desc" ColumnName="PPM_Status_Desc" />
+            <ScalarProperty Name="PPM_Per_Des_Complete" ColumnName="PPM_Per_Des_Complete" />
+            <ScalarProperty Name="PPM_Proj_Scope" ColumnName="PPM_Proj_Scope" />
+            <ScalarProperty Name="PPM_MSA_Update" ColumnName="PPM_MSA_Update" />
+            <ScalarProperty Name="PPM_Consultant_Fee" ColumnName="PPM_Consultant_Fee" />
+            <ScalarProperty Name="PPM_Contract_Amount" ColumnName="PPM_Contract_Amount" />
+            <ScalarProperty Name="PPM_Contract_Amendments" ColumnName="PPM_Contract_Amendments" />
+            <ScalarProperty Name="PPM_CO" ColumnName="PPM_CO" />
+            <ScalarProperty Name="PPM_Per_Const_Complete" ColumnName="PPM_Per_Const_Complete" />
+            <ScalarProperty Name="PPM_IFB_RFQ" ColumnName="PPM_IFB_RFQ" />
+            <ScalarProperty Name="PPM_User_Letter" ColumnName="PPM_User_Letter" />
+            <ScalarProperty Name="PPM_RFP_Number" ColumnName="PPM_RFP_Number" />
+            <ScalarProperty Name="NDI_RFP" ColumnName="NDI_RFP" />
+            <ScalarProperty Name="NDI_Scope" ColumnName="NDI_Scope" />
+            <ScalarProperty Name="NDI_Advertise_for_Bid" ColumnName="NDI_Advertise_for_Bid" />
+            <ScalarProperty Name="NDI_Original_Bid_Date" ColumnName="NDI_Original_Bid_Date" />
+            <ScalarProperty Name="NDI_Bid_Opening" ColumnName="NDI_Bid_Opening" />
+            <ScalarProperty Name="NDI_Gen_Serv_Review" ColumnName="NDI_Gen_Serv_Review" />
+            <ScalarProperty Name="NDI_Consultant_Award" ColumnName="NDI_Consultant_Award" />
+            <ScalarProperty Name="NDI_Construction_Bid_Award" ColumnName="NDI_Construction_Bid_Award" />
+            <ScalarProperty Name="NDI_Design_Complete" ColumnName="NDI_Design_Complete" />
+            <ScalarProperty Name="NDI_Agenda_Setting" ColumnName="NDI_Agenda_Setting" />
+            <ScalarProperty Name="NDI_Assembly_Approval" ColumnName="NDI_Assembly_Approval" />
+            <ScalarProperty Name="NDI_NTP" ColumnName="NDI_NTP" />
+            <ScalarProperty Name="NDI_Substantial_Completion" ColumnName="NDI_Substantial_Completion" />
+            <ScalarProperty Name="NDI_Final" ColumnName="NDI_Final" />
+            <ScalarProperty Name="NDI_Warranty_Period_Ends" ColumnName="NDI_Warranty_Period_Ends" />
+            <ScalarProperty Name="NDI_Closed" ColumnName="NDI_Closed" />
+            <ScalarProperty Name="PPS_Recordid" ColumnName="PPS_Recordid" />
+            <ScalarProperty Name="PPU_Recordid" ColumnName="PPU_Recordid" />
+            <ScalarProperty Name="PPT_Recordid" ColumnName="PPT_Recordid" />
+            <ScalarProperty Name="PPR_Recordid" ColumnName="PPR_Recordid" />
+            <ScalarProperty Name="PPC_Recordid" ColumnName="PPC_Recordid" />
+            <ScalarProperty Name="PPA_Recordid" ColumnName="PPA_Recordid" />
+            <ScalarProperty Name="PPN_Recordid" ColumnName="PPN_Recordid" />
+            <ScalarProperty Name="NOU_Recordid" ColumnName="NOU_Recordid" />
+            <ScalarProperty Name="FFM_Recordid" ColumnName="FFM_Recordid" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="ProjectTypes"><EntityTypeMapping TypeName="publicworksModel.ProjectType"><MappingFragment StoreEntitySet="ProjectTypes">
+            <ScalarProperty Name="ppt_recordid" ColumnName="ppt_recordid" />
+            <ScalarProperty Name="category" ColumnName="category" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Secretaries"><EntityTypeMapping TypeName="publicworksModel.Secretary"><MappingFragment StoreEntitySet="Secretary">
+            <ScalarProperty Name="pps_recordid" ColumnName="pps_recordid" />
+            <ScalarProperty Name="firstname" ColumnName="firstname" />
+            <ScalarProperty Name="lastname" ColumnName="lastname" />
+            <ScalarProperty Name="initials" ColumnName="initials" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Users"><EntityTypeMapping TypeName="publicworksModel.User"><MappingFragment StoreEntitySet="Users">
+            <ScalarProperty Name="ppu_recordid" ColumnName="ppu_recordid" />
+            <ScalarProperty Name="firstname" ColumnName="firstname" />
+            <ScalarProperty Name="lastname" ColumnName="lastname" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Staffs">
+            <EntityTypeMapping TypeName="publicworksModel.Staff">
+              <MappingFragment StoreEntitySet="Staff">
+                <ScalarProperty Name="DisplaySorting" ColumnName="DisplaySorting" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="ActiveEmployee" ColumnName="ActiveEmployee" />
+                <ScalarProperty Name="Recordid" ColumnName="Recordid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="publicworksModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="PublicworksTrackingModel" ZoomLevel="64">
+        <EntityTypeShape EntityType="publicworksModel.ArchitectEngineer" Width="1.5" PointX="0.75" PointY="5.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="publicworksModel.Consultant" Width="1.5" PointX="0.75" PointY="9.125" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="publicworksModel.Contractor" Width="1.5" PointX="0.75" PointY="11.5" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="publicworksModel.FundingType" Width="1.5" PointX="7.125" PointY="0.875" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="publicworksModel.Fund" Width="1.5" PointX="6.875" PointY="5" Height="3.1340950520833317" IsExpanded="true" />
+        <EntityTypeShape EntityType="publicworksModel.ProjectManager" Width="1.5" PointX="0.75" PointY="13.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="publicworksModel.Project" Width="2.625" PointX="3" PointY="1.375" Height="10.826152343750003" IsExpanded="true" />
+        <EntityTypeShape EntityType="publicworksModel.ProjectType" Width="1.5" PointX="0.75" PointY="16.375" Height="1.595683593749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="publicworksModel.Secretary" Width="1.5" PointX="0.75" PointY="18.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="publicworksModel.User" Width="1.5" PointX="0.75" PointY="21.375" Height="1.7879850260416674" IsExpanded="true" />
+        <AssociationConnector Association="publicworksModel.FK_Projects_ArchitectEngineers" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="6.7689925130208337" />
+          <ConnectorPoint PointX="3" PointY="6.7689925130208337" />
+        </AssociationConnector>
+        <AssociationConnector Association="publicworksModel.FK_Projects_Consultants" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="9.922841796875" />
+          <ConnectorPoint PointX="3" PointY="9.922841796875" />
+        </AssociationConnector>
+        <AssociationConnector Association="publicworksModel.FK_Projects_Contractors" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="11.819323671875008" />
+          <ConnectorPoint PointX="3" PointY="11.819323671875008" />
+        </AssociationConnector>
+        <AssociationConnector Association="publicworksModel.FK_Funds_Projects" ManuallyRouted="false">
+          <ConnectorPoint PointX="5.625" PointY="6.5670475260416659" />
+          <ConnectorPoint PointX="6.875" PointY="6.5670475260416659" />
+        </AssociationConnector>
+        <AssociationConnector Association="publicworksModel.FK_Projects_ProjectManagers" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="14.768992513020834" />
+          <ConnectorPoint PointX="3.5651035416666663" PointY="14.768992513020834" />
+          <ConnectorPoint PointX="3.7317702083333333" PointY="14.768992513020834" />
+          <ConnectorPoint PointX="3.9215501822916665" PointY="14.768992513020834" />
+          <ConnectorPoint PointX="4.088216848958333" PointY="14.768992513020834" />
+          <ConnectorPoint PointX="4.2779968229166672" PointY="14.768992513020834" />
+          <ConnectorPoint PointX="4.4446634895833332" PointY="14.768992513020834" />
+          <ConnectorPoint PointX="5.0742234375" PointY="14.768992513020834" />
+          <ConnectorPoint PointX="5.0742234375" PointY="12.201152343750003" />
+        </AssociationConnector>
+        <AssociationConnector Association="publicworksModel.FK_Projects_ProjectTypes" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="17.172841796874998" />
+          <ConnectorPoint PointX="3.648436875" PointY="17.172841796874998" />
+          <ConnectorPoint PointX="3.648436875" PointY="12.201152343750003" />
+        </AssociationConnector>
+        <AssociationConnector Association="publicworksModel.FK_Projects_Secretary" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="19.740143229166666" />
+          <ConnectorPoint PointX="3.9215501822916665" PointY="19.740143229166666" />
+          <ConnectorPoint PointX="4.088216848958333" PointY="19.740143229166666" />
+          <ConnectorPoint PointX="4.36133015625" PointY="19.740143229166666" />
+          <ConnectorPoint PointX="4.36133015625" PointY="12.201152343750003" />
+        </AssociationConnector>
+        <AssociationConnector Association="publicworksModel.FK_Projects_Users" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="22.268992513020834" />
+          <ConnectorPoint PointX="4.004883515625" PointY="22.268992513020834" />
+          <ConnectorPoint PointX="4.004883515625" PointY="12.201152343750003" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="publicworksModel.Staff" Width="2.5" PointX="9.375" PointY="0.875" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="publicworksModel.sysdiagram" Width="1.5" PointX="9.375" PointY="4.75" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,25 @@
+﻿@using FNSB.PW.Projects.Web.Models
+@model IEnumerable<FNSB.PW.Projects.Web.Models.Project>
+
+@foreach (Project p in Model)
+{
+    <tr>
+        <td class="project-name-display">
+            @p.PPM_Project_Name
+        </td>
+        <td>
+            @Html.ActionLink(p.PPM_Project_Number, "Details", new { id = p.PPM_Recordid })
+        </td>
+        <td>
+            @Html.DisplayFor(model => p.PPM_Active_Date)
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id = p.PPM_Recordid}) |
+            @Html.ActionLink("Delete", "Delete", new {id = p.PPM_Recordid})
+        </td>
+    </tr>
+}
+
+
+

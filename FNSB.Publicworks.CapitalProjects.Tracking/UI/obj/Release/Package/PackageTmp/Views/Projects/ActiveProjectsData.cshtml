@@ -1,0 +1,26 @@
+﻿@using FNSB.Projects.UI.Models
+@model IEnumerable<Project>
+
+@foreach (Project p in Model)
+{
+    <tr>
+        <td>
+            @p.PPM_Project_Name
+        </td>
+        <td>
+            @p.PPM_Project_Number
+        </td>
+        <td>
+            @p.PPM_Active_Date
+        </td>
+
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {id = p.PPM_Recordid}) |
+            @Html.ActionLink("Details", "Details", new {id = p.PPM_Recordid}) |
+            @Html.ActionLink("Delete", "Delete", new {id = p.PPM_Recordid})
+        </td>
+    </tr>
+}
+
+
+

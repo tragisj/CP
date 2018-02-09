@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>FNSB.PW.Finance.Import</RootNamespace>
+    <AssemblyName>FNSB.PW.Finance.Import</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\OneSolutionKeyPart.cs" />
+    <Compile Include="Data\PublicworksProjectData.cs" />
+    <Compile Include="Domain\Helpers\EncumbranceCalculations.cs" />
+    <Compile Include="Domain\Helpers\ActualsBalance.cs" />
+    <Compile Include="Domain\Helpers\ActualsCalculations.cs" />
+    <Compile Include="Domain\Helpers\LegacyCompare.cs" />
+    <Compile Include="Domain\KeyPartDetail.cs" />
+    <Compile Include="Domain\ProjectTrackingFinance.cs" />
+    <Compile Include="Domain\LegacyAdhocFile.cs" />
+    <Compile Include="Domain\Helpers\BudgetBalance.cs" />
+    <Compile Include="Domain\Budget.cs" />
+    <Compile Include="Domain\Actuals.cs" />
+    <Compile Include="Data\BudgetData.cs" />
+    <Compile Include="Data\EncumbranceData.cs" />
+    <Compile Include="Domain\Helpers\BudgetCalculations.cs" />
+    <Compile Include="Domain\Helpers\BudgetVersions.cs" />
+    <Compile Include="Domain\Encumbrances.cs" />
+    <Compile Include="Domain\Helpers\EncumbranceBalance.cs" />
+    <Compile Include="Domain\Helpers\CalendarCalculations.cs" />
+    <Compile Include="Domain\Helpers\KeyObjectFinanceBuilder.cs" />
+    <Compile Include="Domain\OneSolutionBudgetActualDataList.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Data\OneSolutionBudActPersist.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="LocalResource\BudgetVersions.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BudgetVersions.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="LocalResource\BudgetVersions.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>BudgetVersions.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UI\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

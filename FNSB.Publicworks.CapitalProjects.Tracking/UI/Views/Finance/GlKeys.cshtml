@@ -1,0 +1,53 @@
+﻿@{
+    ViewBag.Title = "Project Finance";
+
+    AjaxOptions options = new AjaxOptions
+    {
+        UpdateTargetId = "keydataTable"
+    };
+}
+
+<h2>The Finance Page for CP</h2>
+
+<br/>
+@using (Ajax.BeginForm("GlKeyDetail", options))
+{
+    @*@Html.Label("Active", new {@for = "psr1", @class = "radio-inline"})
+        @Html.RadioButton("projectStatus", "Active", true, new {id = "psr1", @class = "radio-inline" })
+
+        @Html.Label("Inactive", new {@for = "psr2", @class = "radio-inline"})
+        @Html.RadioButton("projectStatus", "Inactive", false, new {id = "psr2", @class = "radio-inline" })
+
+        @Html.Label("All", new {@for = "psr3", @class = "radio-inline"})
+        @Html.RadioButton("projectStatus", "All", false, new {id = "psr3", @class = "radio-inline" })*@
+
+    <div class="col-md-10">
+
+        @*<labl>@Html.CheckBox("projectStatus", true)</label>*@
+        @*<label>@Html.RadioButton("active", true)Active Projects</label>
+            <label>@Html.RadioButton("inactive", false)Inactive Projects</label>*@
+
+        <ul class="list-inline">
+            <li>@Html.Label("GLkey Lookup")</li>
+            <li>@Html.TextBox("keySearch", null, new { id = "keySearch" })</li>
+            <li><input type="submit" value="Search" /></li>
+
+        </ul>
+    </div>
+}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Key</th>
+                <th>Desc</th>
+                <th class="text-right">Budget</th>
+                <th class="text-right">Encumbrance</th>
+                <th class="text-right">Actuals</th>
+                <th class="text-right">Balance</th>
+            </tr>
+        </thead>
+        <tbody id="keydataTable">
+            @Html.Action("GlKeyDetail", new { keySearch = Model })
+        </tbody>
+    </table>
