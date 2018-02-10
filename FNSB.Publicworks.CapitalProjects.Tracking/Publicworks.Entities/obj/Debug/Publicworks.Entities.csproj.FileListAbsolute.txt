@@ -8,3 +8,4 @@ D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\P
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.csproj.CoreCompileInputs.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.pdb
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.csprojResolveAssemblyReference.cache

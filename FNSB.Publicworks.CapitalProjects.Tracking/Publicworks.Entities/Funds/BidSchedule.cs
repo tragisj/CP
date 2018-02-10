@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
-using Publicworks.Entities.Funds;
+using Publicworks.Entities.Agents;
 
-namespace Publicworks.Entities.Agents
+namespace Publicworks.Entities.Funds
 {
     public class BidSchedule
     {
@@ -31,20 +26,9 @@ namespace Publicworks.Entities.Agents
 
         public Guid GeneralLedgerKeyID { get; set; }
 
-        public Guid ContractorID { get; set; }
+        public virtual Contractor Contractor { get; set; }
 
-        [ForeignKey("ContractorID")]
-        public Contractor Contractor { get; set; }
-
-        public Guid ConsultantID { get; set; }
-        [ForeignKey("ConsultantID")]
-        public Consultant Consultant { get; set; }
-
-        [ForeignKey("GeneralLedgerKeyID")]
-        public GeneralLedgerKey GeneralLedgerKey { get; set; }
-
-
-
+        public virtual Consultant Consultant { get; set; }
 
     }
 }

@@ -26,19 +26,19 @@ namespace Publicworks.Entities.Projects
 
         [MaxLength(1000)] public string StatusDescription { get; set; }
 
-
-
         [MaxLength(4000)] public string ProjectScope { get; set; }
 
 
         public DateTime ActiveDate { get; set; }
         public DateTime ClosedDate { get; set; }
-        public virtual Consultant Consultant { get; set; }
-        public virtual Contractor Contractor { get; set; }
+
         public virtual ArchitectEngineer ArchitectEngineer { get; set; }
+
         public virtual ProjectManager ProjectManager { get; set; }
+ 
         public virtual ProjectType ProjectType { get; set; }
         public virtual ProjectUser ProjectUser { get; set; }
+
         public virtual IEnumerable<GeneralLedgerKey> GeneralLedgerKeys { get; set; }
 
 

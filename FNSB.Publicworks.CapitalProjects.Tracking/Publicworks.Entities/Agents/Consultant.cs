@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Publicworks.Entities.Funds;
 using Publicworks.Entities.Projects;
 
 namespace Publicworks.Entities.Agents
@@ -24,7 +25,7 @@ namespace Publicworks.Entities.Agents
         [MaxLength(255)]
         public string Description { get; set; }
 
-        public virtual IEnumerable<CapitalProject> CapitalProjects { get; set; }
+        public virtual IEnumerable<BidSchedule> BidSchedules { get; set; }
 
     }
 }

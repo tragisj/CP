@@ -51,6 +51,15 @@
     <Compile Include="Agents\AgentsRepository.cs" />
     <Compile Include="Context\Context.cs" />
     <Compile Include="Funds\FundsRepository.cs" />
+    <Compile Include="Migrations\201802090135144_InitialCreate.cs" />
+    <Compile Include="Migrations\201802090135144_InitialCreate.Designer.cs">
+      <DependentUpon>201802090135144_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802100201347_AddBidSchedule.cs" />
+    <Compile Include="Migrations\201802100201347_AddBidSchedule.Designer.cs">
+      <DependentUpon>201802100201347_AddBidSchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Projects\ProjectsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,6 +73,13 @@
       <Name>Publicworks.Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201802090135144_InitialCreate.resx">
+      <DependentUpon>201802090135144_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802100201347_AddBidSchedule.resx">
+      <DependentUpon>201802100201347_AddBidSchedule.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
