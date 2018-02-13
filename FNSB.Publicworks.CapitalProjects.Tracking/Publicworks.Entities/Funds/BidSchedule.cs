@@ -11,6 +11,9 @@ namespace Publicworks.Entities.Funds
         [Column(Order = 1)]
         public Guid  BidScheduleID { get; set; }
 
+        [MaxLength(255)]
+        public string BidDescription { get; set; }
+
         public DateTime BidDate { get; set; }
         public DateTime OriginalBidDate { get; set; }
         public DateTime BidOpen { get; set; }
@@ -23,8 +26,6 @@ namespace Publicworks.Entities.Funds
 
         public DateTime DesignComplete { get; set; }
         public DateTime AgendaSetting { get; set; }
-
-        public Guid GeneralLedgerKeyID { get; set; }
 
         public virtual Contractor Contractor { get; set; }
 

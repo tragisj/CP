@@ -16,22 +16,14 @@ namespace Publicworks.Entities.Funds
         [Key]
         [Column(Order = 1)]
         public Guid GeneralLedgerKeyID { get; set; }
-
+   
         [Required]
         public string GLKey { get; set; }
         public DateTime FinanceImportDate { get; set; }
 
-
+        [ForeignKey("CapitalProjectID")]
+        private Guid CapitalProjectID { get; set; }
         public virtual CapitalProject Project { get; set; }
-
-        public virtual BidSchedule BidSchedule { get; set; }
-
-
-        
-
-
-
-
 
     }
 }
