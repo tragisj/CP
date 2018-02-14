@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -51,13 +54,13 @@
     <Compile Include="Agents\AgentsRepository.cs" />
     <Compile Include="Context\Context.cs" />
     <Compile Include="Funds\FundsRepository.cs" />
-    <Compile Include="Migrations\201802090135144_InitialCreate.cs" />
-    <Compile Include="Migrations\201802090135144_InitialCreate.Designer.cs">
-      <DependentUpon>201802090135144_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201802132032397_Initial.cs" />
+    <Compile Include="Migrations\201802132032397_Initial.Designer.cs">
+      <DependentUpon>201802132032397_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201802100201347_AddBidSchedule.cs" />
-    <Compile Include="Migrations\201802100201347_AddBidSchedule.Designer.cs">
-      <DependentUpon>201802100201347_AddBidSchedule.cs</DependentUpon>
+    <Compile Include="Migrations\201802140021449_Reset.cs" />
+    <Compile Include="Migrations\201802140021449_Reset.Designer.cs">
+      <DependentUpon>201802140021449_Reset.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Projects\ProjectsRepository.cs" />
@@ -74,11 +77,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802090135144_InitialCreate.resx">
-      <DependentUpon>201802090135144_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802132032397_Initial.resx">
+      <DependentUpon>201802132032397_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802100201347_AddBidSchedule.resx">
-      <DependentUpon>201802100201347_AddBidSchedule.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802140021449_Reset.resx">
+      <DependentUpon>201802140021449_Reset.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,13 +7,13 @@ namespace Publicworks.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddBidSchedule : IMigrationMetadata
+    public sealed partial class Reset : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddBidSchedule));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Reset));
         
         string IMigrationMetadata.Id
         {
-            get { return "201802100201347_AddBidSchedule"; }
+            get { return "201802140021449_Reset"; }
         }
         
         string IMigrationMetadata.Source

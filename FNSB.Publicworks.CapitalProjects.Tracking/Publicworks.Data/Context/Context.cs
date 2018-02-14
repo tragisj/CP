@@ -20,8 +20,6 @@ namespace Publicworks.Data.Context
 
         }
 
-
-        public DbSet<BidSchedule> BidSchedules { get; set; }
         public DbSet<CapitalProject> CapitalProjects { get; set; }
         public DbSet<Entities.Projects.ProjectType> ProjectTypes { get; set; }
         public DbSet<GeneralLedgerKey> GeneralLedgetKeys { get; set; }

@@ -30,28 +30,38 @@ namespace Publicworks.Entities.Projects
         [MaxLength(4000)] public string ProjectScope { get; set; }
 
         public DateTime ActiveDate { get; set; }
-        public DateTime ClosedDate { get; set; }
+        public DateTime? ClosedDate { get; set; }
 
-        public DateTime BidDate { get; set; }
-        public DateTime OriginalBidDate { get; set; }
-        public DateTime BidOpen { get; set; }
-        public DateTime ConstructionBidAward { get; set; }
-        public DateTime DesignComplete { get; set; }
-        public DateTime AgendaSetting { get; set; }
+        public DateTime? BidDate { get; set; }
+        public DateTime? OriginalBidDate { get; set; }
+        public DateTime? BidOpen { get; set; }
+        public DateTime? ConstructionBidAward { get; set; }
+        public DateTime? DesignComplete { get; set; }
+        public DateTime? AgendaSetting { get; set; }
 
         [Required]
         [Range(0, 100)]
         public int PercentDesignComplete { get; set; }
 
-        [ForeignKey("ContractorID")]
         public Guid ContractorID { get; set; }
         public virtual Contractor Contractor { get; set; }
 
+        public Guid ConsultantID { get; set; }
         public virtual Consultant Consultant { get; set; }
+
+        public Guid SecretaryID { get; set; }
         public virtual Secretary Secretary { get; set; }
+
+        public Guid ArchitectEngineerID { get; set; }
         public virtual ArchitectEngineer ArchitectEngineer { get; set; }
+
+        public Guid ProjectManagerID { get; set; }
         public virtual ProjectManager ProjectManager { get; set; }
+
+        public Guid ProjectTypeID { get; set; }
         public virtual ProjectType ProjectType { get; set; }
+
+        public Guid ProjectUserID { get; set; }
         public virtual ProjectUser ProjectUser { get; set; }
 
         public virtual IEnumerable<GeneralLedgerKey> GeneralLedgerKeys { get; set; }

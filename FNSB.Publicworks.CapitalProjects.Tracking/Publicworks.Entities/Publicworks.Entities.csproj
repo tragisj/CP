@@ -50,7 +50,6 @@
     <Compile Include="Admin\ProjectUser.cs" />
     <Compile Include="Agents\Consultant.cs" />
     <Compile Include="Agents\Contractor.cs" />
-    <Compile Include="Funds\BidSchedule.cs" />
     <Compile Include="Funds\GeneralLedgerKey.cs" />
     <Compile Include="Admin\Secretary.cs" />
     <Compile Include="Admin\ArchitectEngineer.cs" />

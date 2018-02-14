@@ -23,6 +23,5 @@ namespace Publicworks.Entities.Agents
         [MaxLength(255)]
         public string Description { get; set; }
 
-        public virtual IEnumerable<BidSchedule> BidSchedules { get; set; }
     }
 }
