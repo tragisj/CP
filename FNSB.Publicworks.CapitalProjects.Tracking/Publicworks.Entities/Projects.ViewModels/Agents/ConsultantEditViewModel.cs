@@ -1,19 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Publicworks.Entities.Projects.ViewModels
+namespace Publicworks.Entities.Projects.ViewModels.Agents
 {
     public class ConsultantEditViewModel
     {
-
         [Required]
-        [Display(Name = "Customer Number")]
+        [Display(Name = "Customer ID")]
         public string ConsultantID { get; set; }
-
 
         [Required]
         [Display(Name = "Consultant Name")]
@@ -23,7 +16,5 @@ namespace Publicworks.Entities.Projects.ViewModels
         [Display(Name = "Consultant Description")]
         [StringLength(255)]
         public string Description { get; set; }
-
-
     }
 }

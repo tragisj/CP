@@ -20,9 +20,9 @@
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication>disabled</IISExpressAnonymousAuthentication>
-    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>disabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
     <UseGlobalApplicationHostFile />
     <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
     <NuGetPackageImportStamp>
@@ -149,8 +149,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArchitectEngineerController.cs" />
     <Compile Include="Controllers\ConsultantController.cs" />
+    <Compile Include="Controllers\ContractorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\ProjectManagerController.cs" />
+    <Compile Include="Controllers\ProjectUserController.cs" />
+    <Compile Include="Controllers\SecretaryController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -197,7 +203,25 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Consultant\Create.cshtml" />
     <Content Include="Views\Consultant\Index.cshtml" />
+    <Content Include="Views\ProjectManager\Index.cshtml" />
+    <Content Include="Views\ProjectManager\Create.cshtml" />
+    <Content Include="Views\Contractor\Index.cshtml" />
+    <Content Include="Views\Contractor\Create.cshtml" />
+    <Content Include="Views\ArchitectEngineer\Create.cshtml" />
+    <Content Include="Views\ArchitectEngineer\Index.cshtml" />
+    <Content Include="Views\Secretary\Index.cshtml" />
+    <Content Include="Views\Secretary\Create.cshtml" />
+    <Content Include="Views\ProjectUser\Index.cshtml" />
+    <Content Include="Views\ProjectUser\Create.cshtml" />
+    <Content Include="Views\ProjectUser\Edit.cshtml" />
+    <Content Include="Views\ArchitectEngineer\Edit.cshtml" />
+    <Content Include="Views\ProjectManager\Edit.cshtml" />
+    <Content Include="Views\Contractor\Edit.cshtml" />
     <Content Include="Views\Consultant\Edit.cshtml" />
+    <Content Include="Views\Secretary\Edit.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
+    <Content Include="Views\Project\Edit.cshtml" />
+    <Content Include="Views\ArchitectEngineer\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

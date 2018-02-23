@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Publicworks.Data.Agents;
+using Publicworks.Data.Projects;
 
 namespace Publicworks.Web.Controllers
 {
@@ -11,8 +12,6 @@ namespace Publicworks.Web.Controllers
     {
         public ActionResult Index()
         {
-
-            //using ()
             return View();
         }
 

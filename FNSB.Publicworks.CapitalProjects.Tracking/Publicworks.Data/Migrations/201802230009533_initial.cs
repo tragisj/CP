@@ -3,7 +3,7 @@ namespace Publicworks.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Initial : DbMigration
+    public partial class initial : DbMigration
     {
         public override void Up()
         {
@@ -14,14 +14,15 @@ namespace Publicworks.Data.Migrations
                         ArchitectEngineerID = c.Guid(nullable: false),
                         FirstName = c.String(maxLength: 50),
                         LastName = c.String(maxLength: 50),
+                        Active = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ArchitectEngineerID);
             
             CreateTable(
-                "dbo.CapitalProjects",
+                "dbo.Projects",
                 c => new
                     {
-                        CapitalProjectID = c.Guid(nullable: false),
+                        ProjectID = c.Guid(nullable: false),
                         ProjectNumber = c.String(nullable: false, maxLength: 20),
                         ProjectName = c.String(nullable: false, maxLength: 128),
                         ProjectStatus = c.Boolean(nullable: false),
@@ -44,7 +45,7 @@ namespace Publicworks.Data.Migrations
                         ProjectTypeID = c.Guid(nullable: false),
                         ProjectUserID = c.Guid(nullable: false),
                     })
-                .PrimaryKey(t => t.CapitalProjectID)
+                .PrimaryKey(t => t.ProjectID)
                 .ForeignKey("dbo.ArchitectEngineers", t => t.ArchitectEngineerID, cascadeDelete: true)
                 .ForeignKey("dbo.Consultants", t => t.ConsultantID, cascadeDelete: true)
                 .ForeignKey("dbo.Contractors", t => t.ContractorID, cascadeDelete: true)
@@ -67,6 +68,7 @@ namespace Publicworks.Data.Migrations
                         ConsultantID = c.Guid(nullable: false),
                         ConsultantName = c.String(nullable: false, maxLength: 128),
                         Description = c.String(maxLength: 255),
+                        Active = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ConsultantID);
             
@@ -77,8 +79,22 @@ namespace Publicworks.Data.Migrations
                         ContractorID = c.Guid(nullable: false),
                         ContractorName = c.String(nullable: false, maxLength: 128),
                         Description = c.String(maxLength: 255),
+                        Active = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ContractorID);
+            
+            CreateTable(
+                "dbo.GeneralLedgerKeys",
+                c => new
+                    {
+                        GeneralLedgerKeyID = c.Guid(nullable: false),
+                        GLKey = c.String(nullable: false),
+                        FinanceImportDate = c.DateTime(nullable: false),
+                        Project_ProjectID = c.Guid(),
+                    })
+                .PrimaryKey(t => t.GeneralLedgerKeyID)
+                .ForeignKey("dbo.Projects", t => t.Project_ProjectID)
+                .Index(t => t.Project_ProjectID);
             
             CreateTable(
                 "dbo.ProjectManagers",
@@ -87,6 +103,7 @@ namespace Publicworks.Data.Migrations
                         ProjectManagerID = c.Guid(nullable: false),
                         FirstName = c.String(maxLength: 50),
                         LastName = c.String(maxLength: 50),
+                        Active = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ProjectManagerID);
             
@@ -97,6 +114,7 @@ namespace Publicworks.Data.Migrations
                         ProjectTypeID = c.Guid(nullable: false),
                         Name = c.String(nullable: false, maxLength: 50),
                         Description = c.String(maxLength: 128),
+                        Active = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ProjectTypeID);
             
@@ -107,6 +125,8 @@ namespace Publicworks.Data.Migrations
                         ProjectUserID = c.Guid(nullable: false),
                         FirstName = c.String(maxLength: 50),
                         LastName = c.String(maxLength: 50),
+                        Department = c.String(maxLength: 50),
+                        Active = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.ProjectUserID);
             
@@ -117,50 +137,38 @@ namespace Publicworks.Data.Migrations
                         SecretaryID = c.Guid(nullable: false),
                         FirstName = c.String(maxLength: 50),
                         LastName = c.String(maxLength: 50),
+                        Active = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.SecretaryID);
-            
-            CreateTable(
-                "dbo.GeneralLedgerKeys",
-                c => new
-                    {
-                        GeneralLedgerKeyID = c.Guid(nullable: false),
-                        GLKey = c.String(nullable: false),
-                        FinanceImportDate = c.DateTime(nullable: false),
-                        Project_CapitalProjectID = c.Guid(),
-                    })
-                .PrimaryKey(t => t.GeneralLedgerKeyID)
-                .ForeignKey("dbo.CapitalProjects", t => t.Project_CapitalProjectID)
-                .Index(t => t.Project_CapitalProjectID);
             
         }
         
         public override void Down()
         {
-            DropForeignKey("dbo.GeneralLedgerKeys", "Project_CapitalProjectID", "dbo.CapitalProjects");
-            DropForeignKey("dbo.CapitalProjects", "SecretaryID", "dbo.Secretaries");
-            DropForeignKey("dbo.CapitalProjects", "ProjectUserID", "dbo.ProjectUsers");
-            DropForeignKey("dbo.CapitalProjects", "ProjectTypeID", "dbo.ProjectTypes");
-            DropForeignKey("dbo.CapitalProjects", "ProjectManagerID", "dbo.ProjectManagers");
-            DropForeignKey("dbo.CapitalProjects", "ContractorID", "dbo.Contractors");
-            DropForeignKey("dbo.CapitalProjects", "ConsultantID", "dbo.Consultants");
-            DropForeignKey("dbo.CapitalProjects", "ArchitectEngineerID", "dbo.ArchitectEngineers");
-            DropIndex("dbo.GeneralLedgerKeys", new[] { "Project_CapitalProjectID" });
-            DropIndex("dbo.CapitalProjects", new[] { "ProjectUserID" });
-            DropIndex("dbo.CapitalProjects", new[] { "ProjectTypeID" });
-            DropIndex("dbo.CapitalProjects", new[] { "ProjectManagerID" });
-            DropIndex("dbo.CapitalProjects", new[] { "ArchitectEngineerID" });
-            DropIndex("dbo.CapitalProjects", new[] { "SecretaryID" });
-            DropIndex("dbo.CapitalProjects", new[] { "ConsultantID" });
-            DropIndex("dbo.CapitalProjects", new[] { "ContractorID" });
-            DropTable("dbo.GeneralLedgerKeys");
+            DropForeignKey("dbo.Projects", "SecretaryID", "dbo.Secretaries");
+            DropForeignKey("dbo.Projects", "ProjectUserID", "dbo.ProjectUsers");
+            DropForeignKey("dbo.Projects", "ProjectTypeID", "dbo.ProjectTypes");
+            DropForeignKey("dbo.Projects", "ProjectManagerID", "dbo.ProjectManagers");
+            DropForeignKey("dbo.GeneralLedgerKeys", "Project_ProjectID", "dbo.Projects");
+            DropForeignKey("dbo.Projects", "ContractorID", "dbo.Contractors");
+            DropForeignKey("dbo.Projects", "ConsultantID", "dbo.Consultants");
+            DropForeignKey("dbo.Projects", "ArchitectEngineerID", "dbo.ArchitectEngineers");
+            DropIndex("dbo.GeneralLedgerKeys", new[] { "Project_ProjectID" });
+            DropIndex("dbo.Projects", new[] { "ProjectUserID" });
+            DropIndex("dbo.Projects", new[] { "ProjectTypeID" });
+            DropIndex("dbo.Projects", new[] { "ProjectManagerID" });
+            DropIndex("dbo.Projects", new[] { "ArchitectEngineerID" });
+            DropIndex("dbo.Projects", new[] { "SecretaryID" });
+            DropIndex("dbo.Projects", new[] { "ConsultantID" });
+            DropIndex("dbo.Projects", new[] { "ContractorID" });
             DropTable("dbo.Secretaries");
             DropTable("dbo.ProjectUsers");
             DropTable("dbo.ProjectTypes");
             DropTable("dbo.ProjectManagers");
+            DropTable("dbo.GeneralLedgerKeys");
             DropTable("dbo.Contractors");
             DropTable("dbo.Consultants");
-            DropTable("dbo.CapitalProjects");
+            DropTable("dbo.Projects");
             DropTable("dbo.ArchitectEngineers");
         }
     }

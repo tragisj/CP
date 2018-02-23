@@ -23,5 +23,10 @@ namespace Publicworks.Entities.Agents
         [MaxLength(255)]
         public string Description { get; set; }
 
+        [Required]
+        public bool Active { get; set; }
+
+        public virtual ICollection<Project> Projects { get; set; }
+
     }
 }

@@ -8,8 +8,6 @@ namespace Publicworks.Entities.Admin
 {
     public class Secretary
     {
-
-
         [Key]
         [Column(Order = 1)]
         public Guid SecretaryID { get; set; }
@@ -20,8 +18,9 @@ namespace Publicworks.Entities.Admin
         [MaxLength(50)]
         public string LastName { get; set; }
 
-        public virtual IEnumerable<CapitalProject> CapitalProjects { get; set; }
+        [Required]
+        public bool Active { get; set; }
 
-
+        public virtual ICollection<Project> Projects { get; set; }
     }
 }

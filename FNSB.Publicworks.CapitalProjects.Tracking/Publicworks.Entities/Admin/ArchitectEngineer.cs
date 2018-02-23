@@ -19,9 +19,9 @@ namespace Publicworks.Entities.Admin
         [MaxLength(50)]
         public string LastName { get; set; }
 
-        public virtual IEnumerable<CapitalProject> CapitalProjects { get; set; }
+        [Required]
+        public bool Active { get; set; }
 
-
-
+        public ICollection<Project> Projects { get; set; }
     }
 }

@@ -54,10 +54,23 @@
     <Compile Include="Admin\Secretary.cs" />
     <Compile Include="Admin\ArchitectEngineer.cs" />
     <Compile Include="Admin\ProjectManager.cs" />
-    <Compile Include="Projects.ViewModels\ConsultantDisplayViewModel.cs" />
-    <Compile Include="Projects.ViewModels\ConsultantEditViewModel.cs" />
-    <Compile Include="Projects.ViewModels\ProjectsDisplayViewModel.cs" />
-    <Compile Include="Projects\CapitalProject.cs" />
+    <Compile Include="Projects.ViewModels\Admin\ArchitectEngineerViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Admin\ArchitectEngineerEditViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Admin\ProjectUserViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Admin\SecretaryEditViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Admin\SecretaryViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Agents\ConsultantViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Agents\ConsultantEditViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Agents\ContractorViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Agents\ContractorEditViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Admin\ProjectManagerViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Admin\ProjectManagerEditViewModel.cs" />
+    <Compile Include="Projects.ViewModels\ProjectViewModel.cs" />
+    <Compile Include="Projects.ViewModels\ProjectEditViewModel.cs" />
+    <Compile Include="Projects.ViewModels\ProjectTypeViewModel.cs" />
+    <Compile Include="Projects.ViewModels\ProjectTypeEditViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Admin\ProjectUserEditViewModel.cs" />
+    <Compile Include="Projects\Project.cs" />
     <Compile Include="Projects\ProjectType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

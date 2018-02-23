@@ -50,17 +50,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\AdminRepository.cs" />
+    <Compile Include="Admin\ProjectManagerRepository.cs" />
+    <Compile Include="Admin\ArchitectEngineerRepository.cs" />
+    <Compile Include="Admin\ProjectUserRepository.cs" />
+    <Compile Include="Admin\SecretaryRepository.cs" />
     <Compile Include="Agents\AgentsRepository.cs" />
     <Compile Include="Context\Context.cs" />
     <Compile Include="Funds\FundsRepository.cs" />
-    <Compile Include="Migrations\201802132032397_Initial.cs" />
-    <Compile Include="Migrations\201802132032397_Initial.Designer.cs">
-      <DependentUpon>201802132032397_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201802140021449_Reset.cs" />
-    <Compile Include="Migrations\201802140021449_Reset.Designer.cs">
-      <DependentUpon>201802140021449_Reset.cs</DependentUpon>
+    <Compile Include="Migrations\201802230009533_initial.cs" />
+    <Compile Include="Migrations\201802230009533_initial.Designer.cs">
+      <DependentUpon>201802230009533_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Projects\ProjectsRepository.cs" />
@@ -77,11 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802132032397_Initial.resx">
-      <DependentUpon>201802132032397_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201802140021449_Reset.resx">
-      <DependentUpon>201802140021449_Reset.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201802230009533_initial.resx">
+      <DependentUpon>201802230009533_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

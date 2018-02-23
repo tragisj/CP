@@ -12,8 +12,6 @@ namespace Publicworks.Entities.Agents
 {
     public class Consultant
     {
-
-
         [Key]
         [Column(Order = 1)]
         public Guid ConsultantID { get; set; }
@@ -25,5 +23,9 @@ namespace Publicworks.Entities.Agents
         [MaxLength(255)]
         public string Description { get; set; }
 
+        [Required]
+        public bool Active { get; set; }
+
+        public virtual ICollection<Project> Projects { get; set; }
     }
 }

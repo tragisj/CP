@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using Publicworks.Data.Agents;
 using Publicworks.Entities.Projects.ViewModels;
+using Publicworks.Entities.Projects.ViewModels.Agents;
 
 namespace Publicworks.Web.Controllers
 {
@@ -62,10 +63,36 @@ namespace Publicworks.Web.Controllers
                 bool isGuid = Guid.TryParse(id, out Guid consultantId);
                 if (isGuid && consultantId != Guid.Empty)
                 {
-                    return View();
+                    var repo = new AgentsRepository();
+                    var model = repo.GetConsultant(consultantId);
+                    return View(model);
                 }
             }
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ConsultantEditViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var repo = new AgentsRepository();
+                var saved = repo.UpdateConsultant(model);
+                if (saved)
+                {
+                    bool isGuid = Guid.TryParse(model.ConsultantID, out Guid consultantId);
+                    if (isGuid)
+                    {
+                        var modelUpdate = repo.GetConsultant(consultantId);
+                        ViewBag.EditMessage = "Success";
+                        return View(modelUpdate);
+                    }
+                }
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
+
+
     }
 }

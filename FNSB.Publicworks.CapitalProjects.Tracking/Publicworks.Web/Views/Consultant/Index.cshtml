@@ -1,7 +1,7 @@
-﻿@model IEnumerable<Publicworks.Entities.Projects.ViewModels.ConsultantDisplayViewModel>
+﻿@model IEnumerable<Publicworks.Entities.Projects.ViewModels.Agents.ConsultantViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Consultant List";
 }
 
 <h2>Consultant List</h2>
@@ -11,9 +11,9 @@
 
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CustomerID)
-        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ConsultantID)
+        </th>*@
         <th>
             @Html.DisplayNameFor(model => model.ConsultantName)
         </th>
@@ -27,9 +27,9 @@
     @foreach(var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CustomerID)
-            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.ConsultantID)
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.ConsultantName)
             </td>
@@ -37,7 +37,7 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.CustomerID }) @*|
+                @Html.ActionLink("Edit", "Edit", new { id=item.ConsultantID }) @*|
     @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
     @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
             </td> 

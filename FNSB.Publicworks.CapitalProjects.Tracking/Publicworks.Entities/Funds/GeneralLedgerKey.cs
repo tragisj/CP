@@ -21,8 +21,8 @@ namespace Publicworks.Entities.Funds
         public string GLKey { get; set; }
         public DateTime FinanceImportDate { get; set; }
 
-        private Guid CapitalProjectID { get; set; }
-        public virtual CapitalProject Project { get; set; }
+        private Guid ProjectID { get; set; }
+        public virtual Project Project { get; set; }
 
     }
 }

@@ -25,8 +25,6 @@ namespace Publicworks.Data.Migrations
 
             try
             {
-
-
                 //Contractor List
                 var crs = new List<Contractor>
                 {
@@ -34,7 +32,8 @@ namespace Publicworks.Data.Migrations
                     {
                         Description = "Summit Enterprise (Contractor)",
                         ContractorName = "Summit Enterprise",
-                        ContractorID = Guid.NewGuid()
+                        ContractorID = Guid.NewGuid(),
+                        Active = true
                         
                     },
 
@@ -42,7 +41,8 @@ namespace Publicworks.Data.Migrations
                     {
                         Description = "Groundhogs, LLC (Contractor)",
                         ContractorName = "Groundhogs, LLC",
-                        ContractorID = Guid.NewGuid()
+                        ContractorID = Guid.NewGuid(),
+                        Active = true
                     }
                 };
 
@@ -57,14 +57,16 @@ namespace Publicworks.Data.Migrations
                     {
                         Description = "Stantec Consulting Services, Inc. (Consultant)",
                         ConsultantName = "Stantec Consulting Services, Inc.",
-                        ConsultantID = Guid.NewGuid()
+                        ConsultantID = Guid.NewGuid(),
+                        Active = true
                     },
 
                     new Consultant
                     {
                         Description = "Stutzman Engineering Associates, Inc. (Consultant)",
                         ConsultantName = "Stutzman Engineering Associates, Inc.",
-                        ConsultantID = Guid.NewGuid()
+                        ConsultantID = Guid.NewGuid(),
+                        Active = true
                     }
                 };
 
@@ -78,13 +80,15 @@ namespace Publicworks.Data.Migrations
                     {
                         FirstName = "April",
                         LastName = "Newman",
-                        SecretaryID = Guid.NewGuid()
+                        SecretaryID = Guid.NewGuid(),
+                        Active = true
                     },
                     new Secretary
                     {
                         FirstName = "Suzn",
                         LastName = "Hanson",
-                        SecretaryID = Guid.NewGuid()
+                        SecretaryID = Guid.NewGuid(),
+                        Active = true
                     }
                 };
 
@@ -103,7 +107,8 @@ namespace Publicworks.Data.Migrations
                     {
                         FirstName = "Dave",
                         LastName = "Vanairsdale",
-                        ArchitectEngineerID = Guid.NewGuid()
+                        ArchitectEngineerID = Guid.NewGuid(),
+                        Active = true
                     },
 
 
@@ -111,7 +116,8 @@ namespace Publicworks.Data.Migrations
                     {
                         FirstName = "Janet",
                         LastName = "Smith",
-                        ArchitectEngineerID = Guid.NewGuid()
+                        ArchitectEngineerID = Guid.NewGuid(),
+                        Active = true
                     }
                 };
 
@@ -128,7 +134,8 @@ namespace Publicworks.Data.Migrations
 
                         FirstName = "Benjamin",
                         LastName = "Loeffler",
-                        ProjectManagerID = Guid.NewGuid()
+                        ProjectManagerID = Guid.NewGuid(),
+                        Active = true
                     },
 
                     new ProjectManager
@@ -136,7 +143,8 @@ namespace Publicworks.Data.Migrations
 
                         FirstName = "Dan",
                         LastName = "Sloan",
-                        ProjectManagerID = Guid.NewGuid()
+                        ProjectManagerID = Guid.NewGuid(),
+                        Active = true
                     }
                 };
 
@@ -151,20 +159,23 @@ namespace Publicworks.Data.Migrations
                     {
                         Name = "Unassigned",
                         Description = "Currently Unassigned",
-                        ProjectTypeID = Guid.NewGuid()
+                        ProjectTypeID = Guid.NewGuid(),
+                        Active = true
                     },
 
                     new ProjectType
                     {
                         Name =  "Schools",
                         Description = "Project related to all schools",
-                        ProjectTypeID = Guid.NewGuid()
+                        ProjectTypeID = Guid.NewGuid(),
+                        Active = true
                     },
 
                     new ProjectType
                     {
                         Name = "Parks and Recreation",
-                        Description = "Parks and Recreation Capital Projects"
+                        Description = "Parks and Recreation Capital Projects",
+                        Active = true
                     }
                 };
 
@@ -178,21 +189,24 @@ namespace Publicworks.Data.Migrations
                     {
                         FirstName = "Melissa",
                         LastName = "Harter",
-                        ProjectUserID = Guid.NewGuid()
+                        ProjectUserID = Guid.NewGuid(),
+                        Active = true
                     },
 
                     new ProjectUser
                     {
                         FirstName = "Dan",
                         LastName = "Sloan",
-                        ProjectUserID = Guid.NewGuid()
+                        ProjectUserID = Guid.NewGuid(),
+                        Active = true
                     },
 
                     new ProjectUser
                     {
                         FirstName = "Mary Ellen",
                         LastName = "Baker",
-                        ProjectUserID = Guid.NewGuid()
+                        ProjectUserID = Guid.NewGuid(),
+                        Active = true
                     }
                 };
 
@@ -202,11 +216,11 @@ namespace Publicworks.Data.Migrations
 
 
 
-                var cps = new List<CapitalProject>
+                var cps = new List<Project>
                 {
-                    new CapitalProject()
+                    new Project()
                     {
-                        CapitalProjectID = Guid.NewGuid(),
+                        ProjectID = Guid.NewGuid(),
                         ProjectNumber = "17-BHSPRJ-1",
                         ProjectName = "Birch Hill Fuel Dispensing Station",
                         ActiveDate = new DateTime(2017,12,11,0,0,0),
@@ -222,9 +236,9 @@ namespace Publicworks.Data.Migrations
                         StatusDescription = @"Project issued for bid on January 22, 2018.  Bid date February 6, 2018."
                     },
 
-                    new CapitalProject()
+                    new Project()
                     {
-                        CapitalProjectID = Guid.NewGuid(),
+                        ProjectID = Guid.NewGuid(),
                         ProjectNumber = "17-PRGPRJ-1",
                         ProjectName = "Ballfield Dugout Replacement Phase I",
                         ActiveDate = new DateTime(2017,12,06,0,0,0),
@@ -241,9 +255,9 @@ namespace Publicworks.Data.Migrations
                         ProjectScope = @"Replace failing roofs at ball fields"
                     },
 
-                    new CapitalProject()
+                    new Project()
                     {
-                        CapitalProjectID = Guid.NewGuid(),
+                        ProjectID = Guid.NewGuid(),
                         ProjectNumber = "17-PRGPRJ-3",
                         ProjectName = "Parks Fencing Repairs/Replacement Phase 1",
                         ActiveDate = new DateTime(2017,12,06,0,0,0),
@@ -261,9 +275,9 @@ namespace Publicworks.Data.Migrations
 
                     },
 
-                    new CapitalProject()
+                    new Project()
                     {
-                        CapitalProjectID = Guid.NewGuid(),
+                        ProjectID = Guid.NewGuid(),
                         ProjectNumber = "17-RVBPRJ-1",
                         ProjectName = "River Boat Nenana Structural Investigation",
                         ActiveDate = new DateTime(2017,12,06,0,0,0),
@@ -282,7 +296,7 @@ namespace Publicworks.Data.Migrations
                     }
                 };
 
-                cps.ForEach(s => context.CapitalProjects.AddOrUpdate(p => p.CapitalProjectID, s));
+                cps.ForEach(s => context.Projects.AddOrUpdate(p => p.ProjectID, s));
                 context.SaveChanges();
 
             }

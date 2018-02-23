@@ -10,7 +10,6 @@ namespace Publicworks.Entities.Projects
 {
     public class ProjectType
     {
-
         [Key]
         [Column(Order = 1)]
         public Guid ProjectTypeID { get; set; }
@@ -22,7 +21,9 @@ namespace Publicworks.Entities.Projects
         [MaxLength(128)]
         public string Description { get; set; }
 
-        public virtual IEnumerable<CapitalProject> CapitalProjects { get; set; }
+        [Required]
+        public bool Active { get; set; }
 
+        public virtual ICollection<Project> Projects { get; set; }
     }
 }
