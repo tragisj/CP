@@ -1,0 +1,182 @@
+﻿@model Publicworks.Entities.Projects.ViewModels.ProjectViewModel
+
+@{
+    ViewBag.Title = "Detail";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProjectViewModel</h4>
+
+    <hr />
+    
+    <div title="@Model.ConsultantDesc">@Model.Consultant</div>
+
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatusDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatusDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectScope)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectScope)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BidDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BidDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OriginalBidDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OriginalBidDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BidOpen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BidOpen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConstructionBidAward)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConstructionBidAward)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DesignComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DesignComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AgendaSetting)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgendaSetting)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercentDesignComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercentDesignComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Contractor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Contractor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Consultant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consultant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArchitectEngineer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArchitectEngineer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectManager)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectManager)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Secretary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Secretary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

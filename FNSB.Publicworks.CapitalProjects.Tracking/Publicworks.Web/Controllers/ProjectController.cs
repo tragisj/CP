@@ -21,17 +21,36 @@ namespace Publicworks.Web.Controllers
         }
 
 
+        public ActionResult Detail(string id)
+        {
+
+            if (!String.IsNullOrWhiteSpace(id))
+            {
+                bool isGuid = Guid.TryParse(id, out Guid projectId);
+
+                if (isGuid && projectId != Guid.Empty)
+                {
+                    var repo = new ProjectsRepository();
+                    var model = repo.GetProject(projectId);
+                    return View(model);
+                }
+            }
+
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
+
+
         public ActionResult Edit(string id)
         {
 
             if (!String.IsNullOrWhiteSpace(id))
             {
-                bool isGuid = Guid.TryParse(id, out Guid projectUserId);
+                bool isGuid = Guid.TryParse(id, out Guid projectId);
 
-                if (isGuid && projectUserId != Guid.Empty)
+                if (isGuid && projectId != Guid.Empty)
                 {
                     var repo = new ProjectsRepository();
-                    var model = repo.GetProject(projectUserId);
+                    var model = repo.GetProject(projectId);
                     return View(model);
                 }
             }

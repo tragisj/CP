@@ -46,9 +46,54 @@ namespace Publicworks.Entities.Projects
         public DateTime? DesignComplete { get; set; }
         public DateTime? AgendaSetting { get; set; }
 
+        public decimal ConsultantFees { get; set; }
+        public decimal ContractAmount { get; set; }
+        public decimal ContractAmendments { get; set; }
+        public decimal ChangeOrders { get; set; }
+
+
+        //[PPM_Consultant_Fee]
+        //[PPM_Contract_Amount]
+        //[PPM_Contract_Amendments]
+        //[PPM_CO]
+        //[PPM_Per_Const_Complete]
+        //[PPM_IFB_RFQ]
+        //[PPM_User_Letter]
+        //[PPM_RFP_Number]
+        //[NDI_RFP]
+        //[NDI_Scope]
+        //[NDI_Advertise_for_Bid]
+        //[NDI_Original_Bid_Date]
+        //[NDI_Bid_Opening]
+        //[NDI_Gen_Serv_Review]
+        //[NDI_Consultant_Award]
+        //[NDI_Construction_Bid_Award]
+        //[NDI_Design_Complete]
+        //[NDI_Agenda_Setting]
+        //[NDI_Assembly_Approval]
+        //[NDI_NTP]
+        //[NDI_Substantial_Completion]
+        //[NDI_Final]
+        //[NDI_Warranty_Period_Ends]
+        //[NDI_Closed]
+        //[PPS_Recordid]
+        //[PPU_Recordid]
+        //[PPT_Recordid]
+        //[PPR_Recordid]
+        //[PPC_Recordid]
+        //[PPA_Recordid]
+        //[PPN_Recordid]
+        //[NOU_Recordid]
+        //[FFM_Recordid]
+        //[ppm_project_complete]
+
+
+
         [Required]
         [Range(0, 100)]
         public int PercentDesignComplete { get; set; }
+
+        public int PercentProjectComplete { get; set; }
 
         public Guid ContractorID { get; set; }
         [ForeignKey("ContractorID")]
@@ -62,7 +107,6 @@ namespace Publicworks.Entities.Projects
         [ForeignKey("SecretaryID")]
         public virtual Secretary Secretary { get; set; }
 
-        
         public Guid ArchitectEngineerID { get; set; }
         [ForeignKey("ArchitectEngineerID")]
         public virtual ArchitectEngineer ArchitectEngineer { get; set; }
