@@ -57,10 +57,6 @@
     <Compile Include="Agents\AgentsRepository.cs" />
     <Compile Include="Context\Context.cs" />
     <Compile Include="Funds\FundsRepository.cs" />
-    <Compile Include="Migrations\201802230009533_initial.cs" />
-    <Compile Include="Migrations\201802230009533_initial.Designer.cs">
-      <DependentUpon>201802230009533_initial.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Projects\ProjectsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -74,11 +70,6 @@
       <Project>{0a05281d-3176-4fce-883f-430213208b9e}</Project>
       <Name>Publicworks.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201802230009533_initial.resx">
-      <DependentUpon>201802230009533_initial.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

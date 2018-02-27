@@ -32,11 +32,11 @@ namespace Publicworks.Data.Projects
                             ProjectID = x.ProjectID,
                             ProjectName = x.ProjectName,
                             ProjectNumber = x.ProjectNumber,
-                            ProjectStatus = x.ProjectStatus,
+                            ActiveProject = x.ActiveProject,
                             StatusDescription = x.StatusDescription,
                             ProjectScope = x.ProjectScope,
-                            BidDate = x.BidDate,
-                            ActiveDate = x.ActiveDate
+                            BidOpening = x.BidDate,
+                            ActiveDate = x.Activated
                         };
 
                         projectsDisplay.Add(projectDisplay);
@@ -64,7 +64,7 @@ namespace Publicworks.Data.Projects
                         {
                             ProjectName = Project.ProjectName.Trim(),
                             ProjectNumber = Project.ProjectNumber.Trim(),
-                            ProjectStatus = Project.ProjectStatus,
+                            ActiveProject = Project.ActiveProject,
                             StatusDescription = Project.StatusDescription.Trim(),
                             ProjectManager = $"{Project.ProjectManager.FirstName} {Project.ProjectManager.LastName}",
                             ArchitectEngineer = $"{Project.ArchitectEngineer.FirstName} {Project.ArchitectEngineer.LastName}",
@@ -74,13 +74,13 @@ namespace Publicworks.Data.Projects
                             ConsultantDesc = Project.Consultant.Description,
                             Contractor = $"{Project.Contractor.ContractorName}",
                             ProjectType = Project.ProjectType.Name,
-                            ActiveDate = Project.ActiveDate,
-                            BidDate = Project.BidDate,
+                            ActiveDate = Project.Activated,
+                            BidOpening = Project.BidDate,
                             ProjectScope = Project.ProjectScope,
                             AgendaSetting = Project.AgendaSetting,
-                            BidOpen = Project.BidOpen,
+                            BidOpening = Project.BidOpening,
                             ConstructionBidAward = Project.ConstructionBidAward,
-                            DesignComplete = Project.DesignComplete,
+                            DesignCompleted = Project.DesignCompleted,
                             OriginalBidDate = Project.OriginalBidDate,
                             PercentDesignComplete = Project.PercentDesignComplete
                         };
