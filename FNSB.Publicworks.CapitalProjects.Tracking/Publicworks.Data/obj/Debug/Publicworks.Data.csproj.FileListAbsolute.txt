@@ -17,5 +17,5 @@ D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\P
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Conversion.exe
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Conversion.pdb
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Conversion.exe.config
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.Migrations.InitPro.resources
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.Migrations.InitPro3.resources
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csproj.GenerateResource.Cache

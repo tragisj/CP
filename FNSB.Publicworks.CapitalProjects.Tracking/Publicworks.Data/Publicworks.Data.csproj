@@ -57,9 +57,9 @@
     <Compile Include="Agents\AgentsRepository.cs" />
     <Compile Include="Context\Context.cs" />
     <Compile Include="Funds\FundsRepository.cs" />
-    <Compile Include="Migrations\201803020217412_InitPro.cs" />
-    <Compile Include="Migrations\201803020217412_InitPro.Designer.cs">
-      <DependentUpon>201803020217412_InitPro.cs</DependentUpon>
+    <Compile Include="Migrations\201803020226010_InitPro3.cs" />
+    <Compile Include="Migrations\201803020226010_InitPro3.Designer.cs">
+      <DependentUpon>201803020226010_InitPro3.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Projects\ProjectsRepository.cs" />
@@ -82,8 +82,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803020217412_InitPro.resx">
-      <DependentUpon>201803020217412_InitPro.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803020226010_InitPro3.resx">
+      <DependentUpon>201803020226010_InitPro3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

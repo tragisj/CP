@@ -203,9 +203,7 @@ namespace Publicworks.Data.Migrations
 
                 //someValue = condition ? newValue : someValue;
 
-                DateTime? foo;
-                foo = true ? (DateTime?)null : new DateTime(0);
-
+            
                 var cps = new List<Project>();
                 {
                     foreach (var x in corelist)
