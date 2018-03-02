@@ -22,7 +22,7 @@ namespace Publicworks.Data.Context
 
         public DbSet<Project> Projects { get; set; }
         public DbSet<Entities.Projects.ProjectType> ProjectTypes { get; set; }
-        public DbSet<GeneralLedgerKey> GeneralLedgetKeys { get; set; }
+        public DbSet<GeneralLedgerKey> GeneralLedgerKeys { get; set; }
         public DbSet<Consultant> Consultants { get; set; }
         public DbSet<Contractor> Contractors { get; set; }
         public DbSet<ArchitectEngineer> ArchitectEngineers { get; set; }

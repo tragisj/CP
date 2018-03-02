@@ -1,8 +1,14 @@
+using System.CodeDom;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.Entity.Core;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.Data.SqlClient;
+using System.Globalization;
+using Publicworks.Conversion;
 using Publicworks.Entities.Admin;
 using Publicworks.Entities.Agents;
+using Publicworks.Entities.Funds;
 using Publicworks.Entities.Projects;
 
 namespace Publicworks.Data.Migrations
@@ -25,24 +31,30 @@ namespace Publicworks.Data.Migrations
 
             try
             {
-                //Contractor List
-                var crs = new List<Contractor>
-                {
-                    new Contractor
-                    {
-                        Description = "Summit Enterprise (Contractor)",
-                        ContractorName = "Summit Enterprise",
-                        ContractorID = Guid.NewGuid(),
-                        Active = true
-                        
-                    },
+                var ac = new Publicworks.Conversion.AdminConversion();
+                List<AgencyAdminPerson> arclist = ac.GetArchitectFirstLast();
+                List<AgencyAdminPerson> pmlist = ac.GetProjectMgrFirstLast();
+                List<AgencyAdminPerson> seclist = ac.GetSecretaryFirstLast();
+                List<AgencyAdminPerson> userlist = ac.GetUserFirstLast();
+                List<AgencyName> consultantlist = ac.GetConsultantName();
+                List<AgencyName> contractorlist = ac.GetContractorName();
+                List<AgencyName> protypelist = ac.GetProjectTypeName();
 
-                    new Contractor
+                var pc = new Publicworks.Conversion.ProjectConversion();
+                List<ProjectData> corelist = pc.GetProjectCore();
+
+                //Contractor List
+                var crs = new List<Contractor>();
+                {
+                    foreach (var x in contractorlist)
                     {
-                        Description = "Groundhogs, LLC (Contractor)",
-                        ContractorName = "Groundhogs, LLC",
-                        ContractorID = Guid.NewGuid(),
-                        Active = true
+                        var c = new Contractor
+                        {
+                            ContractorName = x.Name,
+                            ContractorID = Guid.NewGuid(),
+                            Active = false
+                        };
+                        crs.Add(c);
                     }
                 };
 
@@ -50,48 +62,38 @@ namespace Publicworks.Data.Migrations
                 context.SaveChanges();
 
 
-                //Consultants List
-                var cns = new List<Consultant>
+                var cns = new List<Consultant>();
                 {
-                    new Consultant
+                    foreach (var x in consultantlist)
                     {
-                        Description = "Stantec Consulting Services, Inc. (Consultant)",
-                        ConsultantName = "Stantec Consulting Services, Inc.",
-                        ConsultantID = Guid.NewGuid(),
-                        Active = true
-                    },
-
-                    new Consultant
-                    {
-                        Description = "Stutzman Engineering Associates, Inc. (Consultant)",
-                        ConsultantName = "Stutzman Engineering Associates, Inc.",
-                        ConsultantID = Guid.NewGuid(),
-                        Active = true
+                        var c = new Consultant()
+                        {
+                            ConsultantName = x.Name,
+                            ConsultantID = Guid.NewGuid(),
+                            Active = false
+                        };
+                        cns.Add(c);
                     }
                 };
 
                 cns.ForEach(s => context.Consultants.AddOrUpdate(p => p.ConsultantID, s));
                 context.SaveChanges();
 
-                //Secretarys List
-                var scs = new List<Secretary>
+                //Secretary List
+                var scs = new List<Secretary>();
                 {
-                    new Secretary
+                    foreach (var x in seclist)
                     {
-                        FirstName = "April",
-                        LastName = "Newman",
-                        SecretaryID = Guid.NewGuid(),
-                        Active = true
-                    },
-                    new Secretary
-                    {
-                        FirstName = "Suzn",
-                        LastName = "Hanson",
-                        SecretaryID = Guid.NewGuid(),
-                        Active = true
+                        var c = new Secretary()
+                        {
+                            FirstName = x.First,
+                            LastName = x.Last,
+                            SecretaryID = Guid.NewGuid(),
+                            Active = false
+                        };
+                        scs.Add(c);
                     }
                 };
-
 
                 scs.ForEach(s => context.Secretaries.AddOrUpdate(p => p.SecretaryID, s));
                 context.SaveChanges();
@@ -99,25 +101,18 @@ namespace Publicworks.Data.Migrations
 
 
                 //Architect Engineer List
-
-                var erl = new List<ArchitectEngineer>
+                var erl = new List<ArchitectEngineer>();
                 {
-
-                    new ArchitectEngineer
+                    foreach (var x in arclist)
                     {
-                        FirstName = "Dave",
-                        LastName = "Vanairsdale",
-                        ArchitectEngineerID = Guid.NewGuid(),
-                        Active = true
-                    },
-
-
-                    new ArchitectEngineer
-                    {
-                        FirstName = "Janet",
-                        LastName = "Smith",
-                        ArchitectEngineerID = Guid.NewGuid(),
-                        Active = true
+                        var c = new ArchitectEngineer()
+                        {
+                            FirstName = x.First,
+                            LastName = x.Last,
+                            ArchitectEngineerID = Guid.NewGuid(),
+                            Active = false
+                        };
+                        erl.Add(c);
                     }
                 };
 
@@ -127,24 +122,18 @@ namespace Publicworks.Data.Migrations
 
                 //ProjectManager List
 
-                var pml = new List<ProjectManager>
+                var pml = new List<ProjectManager>();
                 {
-                    new ProjectManager
+                    foreach (var x in pmlist)
                     {
-
-                        FirstName = "Benjamin",
-                        LastName = "Loeffler",
-                        ProjectManagerID = Guid.NewGuid(),
-                        Active = true
-                    },
-
-                    new ProjectManager
-                    {
-
-                        FirstName = "Dan",
-                        LastName = "Sloan",
-                        ProjectManagerID = Guid.NewGuid(),
-                        Active = true
+                        var c = new ProjectManager()
+                        {
+                            FirstName = x.First,
+                            LastName = x.Last,
+                            ProjectManagerID = Guid.NewGuid(),
+                            Active = false
+                        };
+                        pml.Add(c);
                     }
                 };
 
@@ -153,29 +142,17 @@ namespace Publicworks.Data.Migrations
 
                 //ProjectType List
 
-                var ptl = new List<ProjectType>
+                var ptl = new List<ProjectType>();
                 {
-                    new ProjectType
+                    foreach (var x in protypelist)
                     {
-                        Name = "Unassigned",
-                        Description = "Currently Unassigned",
-                        ProjectTypeID = Guid.NewGuid(),
-                        Active = true
-                    },
-
-                    new ProjectType
-                    {
-                        Name =  "Schools",
-                        Description = "Project related to all schools",
-                        ProjectTypeID = Guid.NewGuid(),
-                        Active = true
-                    },
-
-                    new ProjectType
-                    {
-                        Name = "Parks and Recreation",
-                        Description = "Parks and Recreation Capital Projects",
-                        Active = true
+                        var c = new ProjectType()
+                        {
+                            Name = x.Name,
+                            ProjectTypeID = Guid.NewGuid(),
+                            Active = false
+                        };
+                        ptl.Add(c);
                     }
                 };
 
@@ -183,30 +160,19 @@ namespace Publicworks.Data.Migrations
                 context.SaveChanges();
 
 
-                var pul = new List<ProjectUser>
+
+                var pul = new List<ProjectUser>();
                 {
-                    new ProjectUser
+                    foreach (var x in userlist)
                     {
-                        FirstName = "Melissa",
-                        LastName = "Harter",
-                        ProjectUserID = Guid.NewGuid(),
-                        Active = true
-                    },
-
-                    new ProjectUser
-                    {
-                        FirstName = "Dan",
-                        LastName = "Sloan",
-                        ProjectUserID = Guid.NewGuid(),
-                        Active = true
-                    },
-
-                    new ProjectUser
-                    {
-                        FirstName = "Mary Ellen",
-                        LastName = "Baker",
-                        ProjectUserID = Guid.NewGuid(),
-                        Active = true
+                        var c = new ProjectUser()
+                        {
+                            FirstName = x.First,
+                            LastName = x.Last,
+                            ProjectUserID = Guid.NewGuid(),
+                            Active = false
+                        };
+                        pul.Add(c);
                     }
                 };
 
@@ -214,89 +180,77 @@ namespace Publicworks.Data.Migrations
                 context.SaveChanges();
 
 
+                //FUNDS
+
+                //var kl = new FNSB.PW.Finance.Import.Data.PublicworksProjectData();
+                //List<string> glkeys = kl.GetProjectConnectedFunds();
+
+                //var keys = new List<GeneralLedgerKey>();
+                //foreach (var x in glkeys)
+                //{
+                //    var fk = new GeneralLedgerKey
+                //    {
+                //        GeneralLedgerKeyID = Guid.NewGuid(),
+                //        GLKey = x.Trim()
+                //    };
+
+                //    keys.Add(fk);
+                //}
+
+                //keys.ForEach(s => context.GeneralLedgerKeys.AddOrUpdate(p => p.GeneralLedgerKeyID, s));
+                //context.SaveChanges();
 
 
-                var cps = new List<Project>
+                //someValue = condition ? newValue : someValue;
+
+                DateTime? foo;
+                foo = true ? (DateTime?)null : new DateTime(0);
+
+                var cps = new List<Project>();
                 {
-                    new Project()
+                    foreach (var x in corelist)
                     {
-                        ProjectID = Guid.NewGuid(),
-                        ProjectNumber = "17-BHSPRJ-1",
-                        ProjectName = "Birch Hill Fuel Dispensing Station",
-                        Activated = new DateTime(2017,12,11,0,0,0),
-                        ActiveProject = true,
-                        PercentProjectComplete = 0,
-                        PercentDesignComplete = 100,
-                        ContractorID = crs[0].ContractorID,
-                        ConsultantID = cns[0].ConsultantID,
-                        ProjectManagerID = pml[0].ProjectManagerID,
-                        ArchitectEngineerID = erl[0].ArchitectEngineerID,
-                        SecretaryID = scs[0].SecretaryID,
-                        ProjectUserID = pul[0].ProjectUserID,
-                        ProjectTypeID = ptl[2].ProjectTypeID,
-                        StatusDescription = @"Project issued for bid on January 22, 2018.  Bid date February 6, 2018."
-                    },
+                        var c = new Project()
+                        {
 
-                    new Project()
-                    {
-                        ProjectID = Guid.NewGuid(),
-                        ProjectNumber = "17-PRGPRJ-1",
-                        ProjectName = "Ballfield Dugout Replacement Phase I",
-                        Activated = new DateTime(2017,12,06,0,0,0),
-                        ActiveProject = true,
-                        PercentProjectComplete = 0,
-                        PercentDesignComplete = 0,
-                        ContractorID = crs[1].ContractorID,
-                        ConsultantID = cns[1].ConsultantID,
-                        ProjectManagerID = pml[1].ProjectManagerID,
-                        ArchitectEngineerID = erl[1].ArchitectEngineerID,
-                        SecretaryID = scs[1].SecretaryID,
-                        ProjectUserID = pul[1].ProjectUserID,
-                        ProjectTypeID = ptl[2].ProjectTypeID,
-                        StatusDescription = @"Project setup in progress.",
-                        ProjectScope = @"Replace failing roofs at ball fields"
-                    },
+                            ProjectID = Guid.NewGuid(),
+                            ActiveProject = x.ActiveProject,
+                            CompletedProject = x.CompletedProject,
+                            ProjectNumber = x.ProjectNumber,
+                            ProjectName = x.ProjectName,
+                            StatusDescription = x.StatusDesc,
+                            ProjectScope = x.ProjectScope,
+                            ChangeOrders = x.ChangeOrders,
+                            ContractAmendments = x.ContractAmendments,
+                            ConsultantFees = x.ConsultantFees,
+                            ContractAmount = x.ContractAmount,
+                            PercentConstructionComplete = x.PercentConstructionComplete,
+                            PercentDesignComplete = x.PercentDesignComplete,
+                            ProjectUserID = GetAgencyIdFromFirstLast(context, x.ProjectUserFirst, x.ProjectUserLast, "user"),
+                            ArchitectEngineerID = GetAgencyIdFromFirstLast(context, x.ArchitectFirst, x.ArchitectLast, "arc"),
+                            ProjectManagerID = GetAgencyIdFromFirstLast(context, x.ProjectManagerFirst, x.ProjectManagerLast, "pm"),
+                            SecretaryID = GetAgencyIdFromFirstLast(context, x.SecretaryFirst, x.SecretaryLast, "sec"),
+                            ProjectTypeID = GetAgencyIdFromFirstLast(context, x.ProjectType, "",  "type"),
+                            ConsultantID = GetAgencyIdFromFirstLast(context, x.ConsultantName, "",  "csn"),
+                            ContractorID = GetAgencyIdFromFirstLast(context, x.ContractorName, "",  "con"),
+                            Activated = x.Activated,
+                            Inactived = BoroDateNull(x.Inactivated),
+                            AgendaSetting = BoroDateNull(x.AgendaSetting),
+                            AssemblyApproval = BoroDateNull(x.AssemblyApproval),
+                            AdvertiseForBid = BoroDateNull(x.AdvertiseForBid),
+                            BidOpening = BoroDateNull(x.BidOpening),
+                            OriginalBidDate = BoroDateNull(x.OriginalBidDate),
+                            ConstructionBidAward = BoroDateNull(x.ConstructionBidAward),
+                            ConsultantBidAward = BoroDateNull(x.ConsultantBidAward),
+                            DesignCompleted = BoroDateNull(x.DesignCompleted),
+                            NoticeToProceed  = BoroDateNull(x.NoticeToProceed),
+                            SubstantialCompletion = BoroDateNull(x.SubstantialCompletion),
+                            FinalInspection = BoroDateNull(x.FinalInspection),
+                            WarrantyPeriodEnds = BoroDateNull(x.WarrantyPeriodEnds),
+                            ClosedDate = BoroDateNull(x.ClosedDate)
+                        };
 
-                    new Project()
-                    {
-                        ProjectID = Guid.NewGuid(),
-                        ProjectNumber = "17-PRGPRJ-3",
-                        ProjectName = "Parks Fencing Repairs/Replacement Phase 1",
-                        Activated = new DateTime(2017,12,06,0,0,0),
-                        ActiveProject = true,
-                        PercentProjectComplete = 0,
-                        PercentDesignComplete = 0,
-                        ContractorID = crs[0].ContractorID,
-                        ConsultantID = cns[0].ConsultantID,
-                        ProjectManagerID = pml[0].ProjectManagerID,
-                        ArchitectEngineerID = erl[0].ArchitectEngineerID,
-                        SecretaryID = scs[0].SecretaryID,
-                        ProjectUserID = pul[0].ProjectUserID,
-                        ProjectTypeID = ptl[2].ProjectTypeID,
-                        StatusDescription = @"Project will be completed through Parks & Recreation Dept.",
-                        ProjectScope = "Repair/Replace fencing throughout park facilities"
-
-                    },
-
-                    new Project()
-                    {
-                        ProjectID = Guid.NewGuid(),
-                        ProjectNumber = "17-RVBPRJ-1",
-                        ProjectName = "River Boat Nenana Structural Investigation",
-                        Activated = new DateTime(2017,12,06,0,0,0),
-                        ActiveProject = true,
-                        PercentProjectComplete = 0,
-                        PercentDesignComplete = 0,
-                        ContractorID = crs[1].ContractorID,
-                        ConsultantID = cns[1].ConsultantID,
-                        ProjectManagerID = pml[1].ProjectManagerID,
-                        ArchitectEngineerID = erl[1].ArchitectEngineerID,
-                        SecretaryID = scs[1].SecretaryID,
-                        ProjectUserID = pul[1].ProjectUserID,
-                        ProjectTypeID = ptl[2].ProjectTypeID,
-                        StatusDescription = string.Empty,
-                        ProjectScope = @"This project will investigate and report whether the existing structure meets 
-                                            the requirements of the current occupancy classification."
+                        cps.Add(c);
                     }
                 };
 
@@ -314,8 +268,52 @@ namespace Publicworks.Data.Migrations
                     // TODO: Do something with your errors
                 }
             }
-
-
         }
+
+
+
+        private DateTime? BoroDateNull(DateTime borodate)
+        {
+            DateTime bday = new DateTime(1964,6,30,0,0,0);
+
+            if (borodate != bday)
+            {
+                return borodate;
+            }
+
+            return null;
+        }
+
+
+        private Guid GetAgencyIdFromFirstLast(Publicworks.Data.Context.ApplicationDbContext context, string first, string last, string agency) 
+        {
+
+            switch (agency)
+            {
+               case "arc":
+                   return context.ArchitectEngineers
+                       .FirstOrDefault(f => f.FirstName == first && f.LastName == last).ArchitectEngineerID;
+                case "pm":
+                   return context.ProjectManagers
+                       .FirstOrDefault(f => f.FirstName == first && f.LastName == last).ProjectManagerID;
+                case "user":
+                   return context.Users
+                       .FirstOrDefault(f => f.FirstName == first && f.LastName == last).ProjectUserID;
+                case "sec":
+                   return context.Secretaries
+                       .FirstOrDefault(f => f.FirstName == first && f.LastName == last).SecretaryID;
+                case "type":
+                   return context.ProjectTypes.FirstOrDefault(f => f.Name == first).ProjectTypeID;
+                case "csn":
+                   return context.Consultants.FirstOrDefault(f => f.ConsultantName == first).ConsultantID;
+                case "con":
+                   return context.Contractors.FirstOrDefault(f => f.ContractorName == first).ContractorID;
+            }
+
+            return Guid.Empty;
+        }
+
+
+
     }
 }

@@ -65,6 +65,8 @@
     <Compile Include="Projects.ViewModels\Agents\ContractorEditViewModel.cs" />
     <Compile Include="Projects.ViewModels\Admin\ProjectManagerViewModel.cs" />
     <Compile Include="Projects.ViewModels\Admin\ProjectManagerEditViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Funds\FundKeysViewModel.cs" />
+    <Compile Include="Projects.ViewModels\ProjectViewIndexModel.cs" />
     <Compile Include="Projects.ViewModels\ProjectViewModel.cs" />
     <Compile Include="Projects.ViewModels\ProjectEditViewModel.cs" />
     <Compile Include="Projects.ViewModels\ProjectTypeViewModel.cs" />

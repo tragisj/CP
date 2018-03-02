@@ -9,7 +9,6 @@ namespace FNSB.PW.Finance.Import.Data
 {
     public class OneSolutionBudActPersist
     {
-
         public List<OneSolutionBudgetActualDataList> FinancialKeyObjects { get; set; }
 
         public OneSolutionBudActPersist()
@@ -65,7 +64,7 @@ namespace FNSB.PW.Finance.Import.Data
                                 Actuals13 = (decimal) reader["ac13"],
                                 Actuals14 = (decimal) reader["ac14"]
                             },
-                            Encumbrances = new Encumbrances
+                            Encumbrance = new Encumbrance
                             {
                                 En01 = (decimal) reader["en01"],
                                 En02 = (decimal) reader["en02"],

@@ -38,7 +38,7 @@ namespace FNSB.PW.Finance.Import.Domain.Helpers
 
         /// <summary>
         /// Returns the number of months between the start of the fiscal year and the current month. 
-        /// Use to calculate Encumbrances and Actual values from OneSolution fiscal system
+        /// Use to calculate Encumbrance and Actual values from OneSolution fiscal system
         /// </summary>
         /// <returns>Integer</returns>
         public int BudActSystemPeriod()

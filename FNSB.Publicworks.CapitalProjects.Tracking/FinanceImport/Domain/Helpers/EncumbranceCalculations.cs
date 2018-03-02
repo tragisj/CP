@@ -39,7 +39,7 @@ namespace FNSB.PW.Finance.Import.Domain.Helpers
                     var ab = new EncumbranceBalance();
                     var cfyEncumbrances = CalculateEncumbrances(
                         KeyObjectFinanceList.Where(k => k.Key == key && k.FiscalYear == CurrentFiscalYear)
-                            .Select(a => a.Encumbrances), SystemPeriod);
+                            .Select(a => a.Encumbrance), SystemPeriod);
 
                     ab.Amount = cfyEncumbrances;
                     result.Add(key, ab);
@@ -56,7 +56,7 @@ namespace FNSB.PW.Finance.Import.Domain.Helpers
 
 
 
-        private static decimal CalculateEncumbrances(IEnumerable<Encumbrances> enc, int sysPeriod)
+        private static decimal CalculateEncumbrances(IEnumerable<Encumbrance> enc, int sysPeriod)
         {
             try
             {

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Publicworks.Entities.Projects.ViewModels.ProjectViewModel>
+﻿@model IEnumerable<Publicworks.Entities.Projects.ViewModels.ProjectViewIndexModel>
 
 @{
     ViewBag.Title = "Index";
@@ -6,34 +6,22 @@
 
 <h2>Index</h2>
 
-<p>
-    @*@Html.ActionLink("Create New", "Create")*@
-</p>
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectStatus)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectID)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.ProjectNumber)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ProjectName)
         </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.ProjectID)
+        </th>*@
         <th>
-            @Html.DisplayNameFor(model => model.StatusDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectScope)
+            @Html.DisplayNameFor(model => model.ActiveProject)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ActiveDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BidDate)
         </th>
         <th></th>
     </tr>
@@ -41,32 +29,23 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.ProjectStatus)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectID)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.ProjectNumber)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ProjectName)
         </td>
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ProjectID)
+        </td>*@
         <td>
-            @Html.DisplayFor(modelItem => item.StatusDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectScope)
+            @Html.DisplayFor(modelItem => item.ActiveProject)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ActiveDate)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.BidDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new {  id=item.ProjectID  }) |
-            @Html.ActionLink("Details", "Detail", new {  id=item.ProjectID  }) |
+            @Html.ActionLink("Edit", "Edit", new {  id=item.ProjectID }) |
+            @Html.ActionLink("Details", "Detail", new { id=item.ProjectID  }) |
             @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
         </td>
     </tr>

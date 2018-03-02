@@ -1,0 +1,7 @@
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\bin\Debug\Publicworks.Conversion.exe.config
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\bin\Debug\Publicworks.Conversion.exe
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\bin\Debug\Publicworks.Conversion.pdb
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\obj\Debug\Publicworks.Conversion.csprojResolveAssemblyReference.cache
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\obj\Debug\Publicworks.Conversion.csproj.CoreCompileInputs.cache
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\obj\Debug\Publicworks.Conversion.exe
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\obj\Debug\Publicworks.Conversion.pdb

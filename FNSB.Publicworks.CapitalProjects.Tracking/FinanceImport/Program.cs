@@ -21,10 +21,10 @@ namespace FNSB.PW.Finance.Import
 
             //KeyObjectFinanceBuilder calls the Data.FinanceKeyData class to query the database to 
             //select the keys, objects, budget, encumbrance, actual, description, fiscal year
-            var keyObjectFinanceBuilder = new KeyObjectFinanceBuilder();
-            var budgetActualData = keyObjectFinanceBuilder.OneSolutionBudgetActualsList;      //full budact data package in List<OneSolutionBudgetActualDataList> 
-            var glKeyList = keyObjectFinanceBuilder.GeneralLedgerKeyList;        //distinct key list
+            var builder = new KeyObjectFinanceBuilder();
 
+            var budgetActualData = builder.OneSolutionBudgetActualsList;      //full budact data package in List<OneSolutionBudgetActualDataList> 
+            var glKeyList = builder.GeneralLedgerKeyList;        //distinct key list
 
 
             //BUDGET
@@ -95,5 +95,8 @@ namespace FNSB.PW.Finance.Import
 
 
         }
+
+
+
     }
 }

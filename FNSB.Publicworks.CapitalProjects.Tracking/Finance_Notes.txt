@@ -1,0 +1,40 @@
+
+initialize object: 
+builder = KeyObjectFinanceBuilder()
+	
+new OneSolutionBudActDataList<FY,Key,Object,JLKey,Status,Desc,Budget(),Encumbrances(),Actual(),Budget()> == OSL1
+
+new Import.Data.OneSolutionBudActPersist()
+	new OneSolutionBudActDataList<FY,Key,Object,JLKey,Status,Desc,Budget(),Encumbrances(),Actual(),Budget()> == OSL2
+	Sql connection to PSQL database (LINKED to OneSolution Production)
+	exec() sp "Publicworks.SelectProjectTrackingBudgetActualEncumbrance" --raw list of OS BudAct data that matches the publicworks Projects criteria from past but includes inactive keys
+	loops data to Add to OneSolutionBudgetActualDataList
+
+OSL1 gets passed the OS2 list
+
+KeyObjectFinanceBuilder.GeneralLedgerKeyList = OS1.Keys.Distinct()
+----------------------------------------------------------------------------------------------------
+Above routines provide real-time glkey list from OS db based on the original adhoc report criteria
+----------------------------------------------------------------------------------------------------
+
+	
+
+
+
+
+
+
+
+
+
+glKeyList = builder.GeneralLedgerKeyList<string>()
+
+
+
+
+
+
+
+
+
+

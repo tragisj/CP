@@ -21,7 +21,7 @@ namespace Publicworks.Entities.Projects.ViewModels
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime ActiveDate { get; set; }
 
-        [Display(Name = "CompletedProject")]
+        [Display(Name = "Completed Project")]
         public bool CompletedProject { get; set; }
 
         [StringLength(20)]
@@ -92,7 +92,6 @@ namespace Publicworks.Entities.Projects.ViewModels
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? ClosedDate { get; set; }
 
-
         [Display(Name = "Contract Amount")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal? ContractAmount { get; set; }
@@ -109,11 +108,10 @@ namespace Publicworks.Entities.Projects.ViewModels
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal? ConsultantFees { get; set; }
 
-
         [Display(Name = "% Design Complete")]
         public int PercentDesignComplete { get; set; }
 
-        [Display(Name = "% Construction Complete")]
+        [Display(Name = "% Const. Complete")]
         public int PercentConstructionComplete { get; set; }
 
         [Display(Name = "Project Type")]

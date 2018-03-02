@@ -33,8 +33,6 @@ namespace FNSB.PW.Finance.Import.Domain.Helpers
             ////Use distinct key list to get key part detail on the project tracking keys
             //KeyPartDetailDictionary = new Dictionary<string, List<KeyPartDetail>>();
             //KeyPartDetailDictionary = koData.KeyPartData(GeneralLedgerKeyList);
-
-
         }
 
 

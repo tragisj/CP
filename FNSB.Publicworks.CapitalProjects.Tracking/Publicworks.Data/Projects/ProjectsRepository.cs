@@ -14,7 +14,7 @@ namespace Publicworks.Data.Projects
     public class ProjectsRepository
     {
 
-        public List<ProjectViewModel> GetProjects()
+        public List<ProjectViewIndexModel> GetProjects()
         {
             using (var context = new ApplicationDbContext())
             {
@@ -23,20 +23,18 @@ namespace Publicworks.Data.Projects
 
                 if (projects != null)
                 {
-                    List<ProjectViewModel> projectsDisplay = new List<ProjectViewModel>();
+                    List<ProjectViewIndexModel> projectsDisplay = new List<ProjectViewIndexModel>();
 
                     foreach (var x in projects)
                     {
-                        var projectDisplay = new ProjectViewModel()
+                        var projectDisplay = new ProjectViewIndexModel()
                         {
                             ProjectID = x.ProjectID,
                             ProjectName = x.ProjectName,
                             ProjectNumber = x.ProjectNumber,
                             ActiveProject = x.ActiveProject,
-                            StatusDescription = x.StatusDescription,
-                            ProjectScope = x.ProjectScope,
-                            BidOpening = x.BidDate,
                             ActiveDate = x.Activated
+                            
                         };
 
                         projectsDisplay.Add(projectDisplay);
@@ -54,35 +52,49 @@ namespace Publicworks.Data.Projects
             {
                 using (var context = new ApplicationDbContext())
                 {
-                    var Project = context.Projects.AsNoTracking()
+                    var project = context.Projects.AsNoTracking()
                         .Where(x => x.ProjectID == projectId)
                         .SingleOrDefault();
 
-                    if (Project != null)
+                    if (project != null)
                     {
                         var projectEditVm = new ProjectViewModel()
                         {
-                            ProjectName = Project.ProjectName.Trim(),
-                            ProjectNumber = Project.ProjectNumber.Trim(),
-                            ActiveProject = Project.ActiveProject,
-                            StatusDescription = Project.StatusDescription.Trim(),
-                            ProjectManager = $"{Project.ProjectManager.FirstName} {Project.ProjectManager.LastName}",
-                            ArchitectEngineer = $"{Project.ArchitectEngineer.FirstName} {Project.ArchitectEngineer.LastName}",
-                            Secretary = $"{Project.Secretary.FirstName} {Project.Secretary.LastName}",
-                            ProjectUser = $"{Project.ProjectUser.FirstName} {Project.ProjectUser.LastName}",
-                            Consultant = $"{Project.Consultant.ConsultantName}",
-                            ConsultantDesc = Project.Consultant.Description,
-                            Contractor = $"{Project.Contractor.ContractorName}",
-                            ProjectType = Project.ProjectType.Name,
-                            ActiveDate = Project.Activated,
-                            BidOpening = Project.BidDate,
-                            ProjectScope = Project.ProjectScope,
-                            AgendaSetting = Project.AgendaSetting,
-                            BidOpening = Project.BidOpening,
-                            ConstructionBidAward = Project.ConstructionBidAward,
-                            DesignCompleted = Project.DesignCompleted,
-                            OriginalBidDate = Project.OriginalBidDate,
-                            PercentDesignComplete = Project.PercentDesignComplete
+                            ProjectID = project.ProjectID,
+                            ProjectName = project.ProjectName.Trim(),
+                            ProjectNumber = project.ProjectNumber.Trim(),
+                            ActiveProject = project.ActiveProject,
+                            StatusDescription = project.StatusDescription.Trim(),
+                            ProjectManager = $"{project.ProjectManager.FirstName} {project.ProjectManager.LastName}",
+                            ArchitectEngineer = $"{project.ArchitectEngineer.FirstName} {project.ArchitectEngineer.LastName}",
+                            Secretary = $"{project.Secretary.FirstName} {project.Secretary.LastName}",
+                            ProjectUser = $"{project.ProjectUser.FirstName} {project.ProjectUser.LastName}",
+                            Consultant = $"{project.Consultant.ConsultantName}",
+                            ConsultantDesc = project.Consultant.Description,
+                            Contractor = $"{project.Contractor.ContractorName}",
+                            ProjectType = project.ProjectType.Name,
+                            ActiveDate = project.Activated,
+                            BidOpening = project.BidOpening,
+                            ProjectScope = project.ProjectScope,
+                            AgendaSetting = project.AgendaSetting,
+                            ConstructionBidAward = project.ConstructionBidAward,
+                            DesignCompleted = project.DesignCompleted,
+                            OriginalBidDate = project.OriginalBidDate,
+                            PercentDesignComplete = project.PercentDesignComplete,
+                            ChangeOrders = project.ChangeOrders,
+                            ClosedDate = project.ClosedDate,
+                            ConsultantFees = project.ConsultantFees,
+                            ContractAmount = project.ContractAmount,
+                            FinalInspection = project.FinalInspection,
+                            SubstantialCompletion = project.SubstantialCompletion,
+                            WarrantyPeriodEnds = project.WarrantyPeriodEnds,
+                            AdvertiseForBid = project.AdvertiseForBid,
+                            AssemblyApproval = project.AssemblyApproval,
+                            CompletedProject = project.CompletedProject,
+                            ConsultantBidAward = project.ConsultantBidAward,
+                            ContractAmendments = project.ContractAmendments,
+                            NoticeToProceed = project.NoticeToProceed,
+                            PercentConstructionComplete = project.PercentConstructionComplete
                         };
 
                         return projectEditVm;
@@ -95,8 +107,7 @@ namespace Publicworks.Data.Projects
 
 
 
-
-        public bool UpdateProject(ProjectUserEditViewModel model)
+        public bool UpdateProject(ProjectEditViewModel model)
         {
             throw new NotImplementedException();
         }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -45,8 +46,35 @@ namespace FNSB.PW.Finance.Import.Data
             }
         }
 
+        public List<string> GetProjectConnectedFunds()
+        {
 
-        //public List<string> PublicWorksProjectFundGlKeys()
+            using (SqlConnection sqlConn = new SqlConnection(Settings.Default.PSQL_DB))
+            using (SqlCommand sqlCmd = sqlConn.CreateCommand())
+            {
+
+                sqlConn.Open();
+                sqlCmd.CommandText = @"SELECT [GLkey],[MediumDesc] FROM [Publicworks].[GlKeysToProjects]";
+                sqlCmd.CommandType = CommandType.Text;
+
+                List<string> glkeys = new List<string>();
+
+                using (var reader = sqlCmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        glkeys.Add(reader[0].ToString().TrimEnd());
+                    }
+                }
+
+                return glkeys;
+            }
+        }
+    }
+}
+
+
+//public List<string> PublicWorksProjectFundGlKeys()
         //{
         //    using (SqlConnection sqlConn = new SqlConnection(Settings.Default.PSQL_DB))
         //    using (SqlCommand sqlCmd = sqlConn.CreateCommand())
@@ -69,6 +97,4 @@ namespace FNSB.PW.Finance.Import.Data
 
         //    }
 
-        //}
-    }
-}
+        //

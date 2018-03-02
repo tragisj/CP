@@ -1,6 +1,6 @@
 ﻿namespace FNSB.PW.Finance.Import.Domain
 {
-    public class Encumbrances
+    public class Encumbrance
     {
         public decimal En01 { get; set; }
         public decimal En02 { get; set; }

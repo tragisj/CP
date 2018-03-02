@@ -4,22 +4,42 @@
     ViewBag.Title = "Detail";
 }
 
-<h2>Details</h2>
+<h2>Detail</h2>
 
 <div>
     <h4>ProjectViewModel</h4>
-
     <hr />
-    
-    <div title="@Model.ConsultantDesc">@Model.Consultant</div>
-
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.ProjectStatus)
+            @Html.DisplayNameFor(model => model.ProjectID)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ProjectStatus)
+            @Html.DisplayFor(model => model.ProjectID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveProject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveProject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompletedProject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompletedProject)
         </dd>
 
         <dt>
@@ -55,19 +75,27 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ActiveDate)
+            @Html.DisplayNameFor(model => model.AgendaSetting)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ActiveDate)
+            @Html.DisplayFor(model => model.AgendaSetting)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BidDate)
+            @Html.DisplayNameFor(model => model.AssemblyApproval)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BidDate)
+            @Html.DisplayFor(model => model.AssemblyApproval)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AdvertiseForBid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AdvertiseForBid)
         </dd>
 
         <dt>
@@ -79,11 +107,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BidOpen)
+            @Html.DisplayNameFor(model => model.BidOpening)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BidOpen)
+            @Html.DisplayFor(model => model.BidOpening)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsultantBidAward)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsultantBidAward)
         </dd>
 
         <dt>
@@ -95,19 +131,83 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DesignComplete)
+            @Html.DisplayNameFor(model => model.DesignCompleted)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DesignComplete)
+            @Html.DisplayFor(model => model.DesignCompleted)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.AgendaSetting)
+            @Html.DisplayNameFor(model => model.NoticeToProceed)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.AgendaSetting)
+            @Html.DisplayFor(model => model.NoticeToProceed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubstantialCompletion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubstantialCompletion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalInspection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalInspection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WarrantyPeriodEnds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WarrantyPeriodEnds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClosedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClosedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ContractAmendments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ContractAmendments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChangeOrders)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChangeOrders)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsultantFees)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsultantFees)
         </dd>
 
         <dt>
@@ -116,6 +216,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.PercentDesignComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercentConstructionComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercentConstructionComplete)
         </dd>
 
         <dt>
@@ -140,6 +248,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.Consultant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConsultantDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConsultantDesc)
         </dd>
 
         <dt>

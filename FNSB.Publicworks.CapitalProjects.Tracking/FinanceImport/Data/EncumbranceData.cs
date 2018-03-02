@@ -19,9 +19,9 @@ namespace FNSB.PW.Finance.Import.Data
         /// <param name="fiscalyear">Fiscal Year</param>
         /// <param name="glkey">GL Key</param>
         /// <returns></returns>
-        List<Encumbrances> ValuesByGlKey(int fiscalyear, string glkey)
+        List<Encumbrance> ValuesByGlKey(int fiscalyear, string glkey)
         {
-            var result = new List<Encumbrances>();
+            var result = new List<Encumbrance>();
             using (SqlConnection sqlConnection = new SqlConnection(Settings.Default.PSQL_DB))
             using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
             {
@@ -36,7 +36,7 @@ namespace FNSB.PW.Finance.Import.Data
 
                     while (reader.Read())
                     {
-                        var en = new Encumbrances
+                        var en = new Encumbrance
                         {
                             En01 = (decimal)reader[0],
                             En02 = (decimal)reader[1],
@@ -77,40 +77,40 @@ namespace FNSB.PW.Finance.Import.Data
 
         //    switch (offset)
         //    {
-        //        case (int)Encumbrances.OffsetField.En01:
+        //        case (int)Encumbrance.OffsetField.En01:
         //            ens = encs.Select(d => d.En01).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En02:
+        //        case (int)Encumbrance.OffsetField.En02:
         //            ens = encs.Select(d => d.En02).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En03:
+        //        case (int)Encumbrance.OffsetField.En03:
         //            ens = encs.Select(d => d.En03).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En04:
+        //        case (int)Encumbrance.OffsetField.En04:
         //            ens = encs.Select(d => d.En04).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En05:
+        //        case (int)Encumbrance.OffsetField.En05:
         //            ens = encs.Select(d => d.En05).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En06:
+        //        case (int)Encumbrance.OffsetField.En06:
         //            ens = encs.Select(d => d.En06).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En07:
+        //        case (int)Encumbrance.OffsetField.En07:
         //            ens = encs.Select(d => d.En07).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En08:
+        //        case (int)Encumbrance.OffsetField.En08:
         //            ens = encs.Select(d => d.En08).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En09:
+        //        case (int)Encumbrance.OffsetField.En09:
         //            ens = encs.Select(d => d.En09).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En10:
+        //        case (int)Encumbrance.OffsetField.En10:
         //            ens = encs.Select(d => d.En10).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En11:
+        //        case (int)Encumbrance.OffsetField.En11:
         //            ens = encs.Select(d => d.En11).Sum();
         //            break;
-        //        case (int)Encumbrances.OffsetField.En12:
+        //        case (int)Encumbrance.OffsetField.En12:
         //            ens = encs.Select(d => d.En12).Sum();
         //            break;
         //        default:

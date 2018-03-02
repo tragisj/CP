@@ -57,19 +57,34 @@
     <Compile Include="Agents\AgentsRepository.cs" />
     <Compile Include="Context\Context.cs" />
     <Compile Include="Funds\FundsRepository.cs" />
+    <Compile Include="Migrations\201803020217412_InitPro.cs" />
+    <Compile Include="Migrations\201803020217412_InitPro.Designer.cs">
+      <DependentUpon>201803020217412_InitPro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Projects\ProjectsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Publicworks.Conversion\Publicworks.Conversion.csproj">
+      <Project>{b1aa7b70-9db6-47ac-ab69-1d46c2890e97}</Project>
+      <Name>Publicworks.Conversion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Publicworks.Entities\Publicworks.Entities.csproj">
       <Project>{0a05281d-3176-4fce-883f-430213208b9e}</Project>
       <Name>Publicworks.Entities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201803020217412_InitPro.resx">
+      <DependentUpon>201803020217412_InitPro.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

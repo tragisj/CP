@@ -65,7 +65,7 @@
     <Compile Include="Data\EncumbranceData.cs" />
     <Compile Include="Domain\Helpers\BudgetCalculations.cs" />
     <Compile Include="Domain\Helpers\BudgetVersions.cs" />
-    <Compile Include="Domain\Encumbrances.cs" />
+    <Compile Include="Domain\Encumbrance.cs" />
     <Compile Include="Domain\Helpers\EncumbranceBalance.cs" />
     <Compile Include="Domain\Helpers\CalendarCalculations.cs" />
     <Compile Include="Domain\Helpers\KeyObjectFinanceBuilder.cs" />

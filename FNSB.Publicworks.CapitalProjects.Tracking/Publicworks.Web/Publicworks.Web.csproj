@@ -221,8 +221,8 @@
     <Content Include="Views\Secretary\Edit.cshtml" />
     <Content Include="Views\Project\Edit.cshtml" />
     <Content Include="Views\ArchitectEngineer\Detail.cshtml" />
-    <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Project\Detail.cshtml" />
+    <Content Include="Views\Project\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -15,13 +15,16 @@ namespace Publicworks.Entities.Funds
 
         [Key]
         [Column(Order = 1)]
+
         public Guid GeneralLedgerKeyID { get; set; }
    
         [Required]
         public string GLKey { get; set; }
         public DateTime FinanceImportDate { get; set; }
+        public bool ActiveKey { get; set; }
 
-        private Guid ProjectID { get; set; }
+        public Guid ProjectID { get; set; }
+        [ForeignKey("ProjectID")]
         public virtual Project Project { get; set; }
 
     }

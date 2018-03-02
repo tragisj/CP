@@ -12,7 +12,7 @@ namespace FNSB.PW.Finance.Import.Domain
         public string MediumDesc { get; set; }
         public string LongDesc { get; set; }
         public Budget Budget { get; set; }
-        public Encumbrances Encumbrances { get; set; }
+        public Encumbrance Encumbrance { get; set; }
         public Actual Actuals { get; set; }
         public Budget Balances { get; set; }
 

@@ -50,3 +50,6 @@ D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\P
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.csproj.CoreCompileInputs.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.pdb
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\bin\Publicworks.Conversion.exe
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\bin\Publicworks.Conversion.pdb
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\bin\Publicworks.Conversion.exe.config

@@ -5,6 +5,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Publicworks.Data.Projects;
+using Publicworks.Entities.Projects.ViewModels;
 using Publicworks.Entities.Projects.ViewModels.Admin;
 
 namespace Publicworks.Web.Controllers
@@ -60,7 +61,7 @@ namespace Publicworks.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(ProjectUserEditViewModel model)
+        public ActionResult Edit(ProjectEditViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +69,7 @@ namespace Publicworks.Web.Controllers
                 var saved = repo.UpdateProject(model);
                 if (saved)
                 {
-                    bool isGuid = Guid.TryParse(model.ProjectUserID, out Guid projectUserId);
+                    bool isGuid = Guid.TryParse(model.ProjectID, out Guid projectUserId);
                     if (isGuid)
                     {
                         var modelUpdate = repo.GetProject(projectUserId);
