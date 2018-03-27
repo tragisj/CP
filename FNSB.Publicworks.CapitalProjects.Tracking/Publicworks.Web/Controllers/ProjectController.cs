@@ -17,7 +17,7 @@ namespace Publicworks.Web.Controllers
         {
 
             var repo = new ProjectsRepository();
-            var projects = repo.GetProjects();
+            var projects = repo.GetActiveProjects();
             return View(projects);
         }
 

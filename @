@@ -1,0 +1,30 @@
+Commit before new SeedMethods Intro
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Committer: John Tragis <tragisj@net1.fnsb>
+#
+# On branch master
+# Changes to be committed:
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/FNSB.Publicworks.CapitalProjects.Tracking.sln.DotSettings.user
+#	new file:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/Migrations/201803020226010_InitPro3.Designer.cs
+#	new file:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/Migrations/201803020226010_InitPro3.cs
+#	new file:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/Migrations/201803020226010_InitPro3.resx
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/Migrations/Configuration.cs
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/Publicworks.Data.csproj
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/bin/Debug/Publicworks.Data.dll
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/bin/Debug/Publicworks.Data.pdb
+#	renamed:    FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/obj/Debug/Publicworks.Data.Migrations.InitPro.resources -> FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/obj/Debug/Publicworks.Data.Migrations.InitPro3.resources
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/obj/Debug/Publicworks.Data.csproj.CoreCompileInputs.cache
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/obj/Debug/Publicworks.Data.csproj.FileListAbsolute.txt
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/obj/Debug/Publicworks.Data.csproj.GenerateResource.Cache
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/obj/Debug/Publicworks.Data.dll
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Data/obj/Debug/Publicworks.Data.pdb
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Web/bin/Publicworks.Data.dll
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Web/bin/Publicworks.Data.pdb
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Web/bin/Publicworks.Web.dll
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Web/bin/Publicworks.Web.pdb
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Web/obj/Debug/Publicworks.Web.csprojResolveAssemblyReference.cache
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Web/obj/Debug/Publicworks.Web.dll
+#	modified:   FNSB.Publicworks.CapitalProjects.Tracking/Publicworks.Web/obj/Debug/Publicworks.Web.pdb
+#

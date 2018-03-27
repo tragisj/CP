@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace FNSB.PW.Finance.Import.Domain
+﻿namespace Publicworks.Finance.OneSolution.Domain
 {
     public class OneSolutionBudgetActualDataList
     {

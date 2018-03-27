@@ -44,6 +44,36 @@ namespace Publicworks.Data.Projects
             }
             return null;
         }
+        public List<ProjectViewIndexModel> GetActiveProjects()
+        {
+            using (var context = new ApplicationDbContext())
+            {
+                List<Project> projects = new List<Project>();
+                projects = context.Projects.AsNoTracking().Where(p => p.ActiveProject).OrderByDescending(d => d.Activated).ToList();
+
+                if (projects != null)
+                {
+                    List<ProjectViewIndexModel> projectsDisplay = new List<ProjectViewIndexModel>();
+
+                    foreach (var x in projects)
+                    {
+                        var projectDisplay = new ProjectViewIndexModel()
+                        {
+                            ProjectID = x.ProjectID,
+                            ProjectName = x.ProjectName,
+                            ProjectNumber = x.ProjectNumber,
+                            ActiveProject = x.ActiveProject,
+                            ActiveDate = x.Activated
+                            
+                        };
+
+                        projectsDisplay.Add(projectDisplay);
+                    }
+                    return projectsDisplay;
+                }
+            }
+            return null;
+        }
 
 
         public object GetProject(Guid projectId)

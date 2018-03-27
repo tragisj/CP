@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FNSB.PW.Finance.Import.Domain;
-using FNSB.PW.Finance.Import.Properties;
+using Publicworks.Finance.OneSolution.Domain;
+using Publicworks.Finance.OneSolution.Properties;
 
-namespace FNSB.PW.Finance.Import.Data
+namespace Publicworks.Finance.OneSolution.Data
 {
     public class OneSolutionKeyPart
     {

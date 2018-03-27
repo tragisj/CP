@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using FNSB.PW.Finance.Import.Data;
+using Publicworks.Finance.OneSolution.Data;
 
-namespace FNSB.PW.Finance.Import.Domain.Helpers
+namespace Publicworks.Finance.OneSolution.Domain.Helpers
 {
     public class BudgetCalculations
     {

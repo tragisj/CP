@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace FNSB.PW.Finance.Import.Domain.Helpers
+namespace Publicworks.Finance.OneSolution.Domain.Helpers
 {
     public class EncumbrancesCalculations
     {

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using FNSB.PW.Finance.Import.Domain;
-using FNSB.PW.Finance.Import.Properties;
+using Publicworks.Finance.OneSolution.Domain;
+using Publicworks.Finance.OneSolution.Properties;
 
-namespace FNSB.PW.Finance.Import.Data
+namespace Publicworks.Finance.OneSolution.Data
 {
     public class OneSolutionBudActPersist
     {
@@ -43,7 +43,6 @@ namespace FNSB.PW.Finance.Import.Data
                                 Budget07 = (decimal) reader["bu07"],
                                 Budget08 = (decimal) reader["bu08"],
                                 Budget09 = (decimal) reader["bu09"],
-                                Budget10 = (decimal) reader["bu10"],
                                 Budget11 = (decimal) reader["bu11"],
                                 Budget12 = (decimal) reader["bu12"]
                             },

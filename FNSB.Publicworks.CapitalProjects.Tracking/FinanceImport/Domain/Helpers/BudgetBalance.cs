@@ -1,4 +1,4 @@
-﻿namespace FNSB.PW.Finance.Import.Domain.Helpers
+﻿namespace Publicworks.Finance.OneSolution.Domain.Helpers
 {
     public class BudgetBalance
     {

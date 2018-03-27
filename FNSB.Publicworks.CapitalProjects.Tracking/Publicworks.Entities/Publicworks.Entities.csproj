@@ -54,6 +54,8 @@
     <Compile Include="Admin\Secretary.cs" />
     <Compile Include="Admin\ArchitectEngineer.cs" />
     <Compile Include="Admin\ProjectManager.cs" />
+    <Compile Include="Funds\OneSolutionKeyPartDetail.cs" />
+    <Compile Include="Funds\OneSolutionFinance.cs" />
     <Compile Include="Projects.ViewModels\Admin\ArchitectEngineerViewModel.cs" />
     <Compile Include="Projects.ViewModels\Admin\ArchitectEngineerEditViewModel.cs" />
     <Compile Include="Projects.ViewModels\Admin\ProjectUserViewModel.cs" />
@@ -65,7 +67,9 @@
     <Compile Include="Projects.ViewModels\Agents\ContractorEditViewModel.cs" />
     <Compile Include="Projects.ViewModels\Admin\ProjectManagerViewModel.cs" />
     <Compile Include="Projects.ViewModels\Admin\ProjectManagerEditViewModel.cs" />
-    <Compile Include="Projects.ViewModels\Funds\FundKeysViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Funds\KeyDetailViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Funds\KeyStatusViewModel.cs" />
+    <Compile Include="Projects.ViewModels\Funds\KeyBackgroundViewModel.cs" />
     <Compile Include="Projects.ViewModels\ProjectViewIndexModel.cs" />
     <Compile Include="Projects.ViewModels\ProjectViewModel.cs" />
     <Compile Include="Projects.ViewModels\ProjectEditViewModel.cs" />

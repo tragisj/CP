@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FNSB.PW.Finance.Import.Domain
+﻿namespace Publicworks.Finance.OneSolution.Domain
 {
     public class ProjectTrackingFinance
     {
@@ -22,6 +16,7 @@ namespace FNSB.PW.Finance.Import.Domain
         public string GeneralLedgerDesc { get; set; }
         public decimal BudgetBalance { get; set; }
         public decimal ActualsBalance { get; set; }
+        public string KeyStatus { get; set; }
         public decimal EncumbranceBalance { get; set; }
         public KeyPartDetail KeyPart01 { get; set; }
         public KeyPartDetail KeyPart02 { get; set; }

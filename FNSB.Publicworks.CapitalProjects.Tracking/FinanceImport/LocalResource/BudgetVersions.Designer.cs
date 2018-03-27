@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FNSB.PW.Finance.Import.LocalResource {
+namespace Publicworks.Finance.OneSolution.LocalResource {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace FNSB.PW.Finance.Import.LocalResource {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FNSB.PW.Finance.Import.LocalResource.BudgetVersions", typeof(BudgetVersions).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Publicworks.Finance.OneSolution.LocalResource.BudgetVersions", typeof(BudgetVersions).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

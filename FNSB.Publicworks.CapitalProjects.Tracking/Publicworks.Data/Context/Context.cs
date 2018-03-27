@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using Publicworks.Entities;
 using System.Text;
@@ -29,6 +31,7 @@ namespace Publicworks.Data.Context
         public DbSet<ProjectManager> ProjectManagers { get; set; }
         public DbSet<Secretary> Secretaries { get; set; }
         public DbSet<ProjectUser> Users { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

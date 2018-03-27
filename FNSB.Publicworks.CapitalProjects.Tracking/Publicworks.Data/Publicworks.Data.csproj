@@ -57,24 +57,34 @@
     <Compile Include="Agents\AgentsRepository.cs" />
     <Compile Include="Context\Context.cs" />
     <Compile Include="Funds\FundsRepository.cs" />
-    <Compile Include="Migrations\201803020226010_InitPro3.cs" />
-    <Compile Include="Migrations\201803020226010_InitPro3.Designer.cs">
-      <DependentUpon>201803020226010_InitPro3.cs</DependentUpon>
+    <Compile Include="Migrations\201803132323586_initialize.cs" />
+    <Compile Include="Migrations\201803132323586_initialize.Designer.cs">
+      <DependentUpon>201803132323586_initialize.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Projects\ProjectsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Publicworks.Conversion\Publicworks.Conversion.csproj">
-      <Project>{b1aa7b70-9db6-47ac-ab69-1d46c2890e97}</Project>
-      <Name>Publicworks.Conversion</Name>
+    <ProjectReference Include="..\FinanceImport\Publicworks.Finance.OneSolution.csproj">
+      <Project>{55dddde5-2dbf-4c3e-b7a0-3464674fcd2a}</Project>
+      <Name>Publicworks.Finance.OneSolution</Name>
     </ProjectReference>
     <ProjectReference Include="..\Publicworks.Entities\Publicworks.Entities.csproj">
       <Project>{0a05281d-3176-4fce-883f-430213208b9e}</Project>
@@ -82,8 +92,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201803020226010_InitPro3.resx">
-      <DependentUpon>201803020226010_InitPro3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201803132323586_initialize.resx">
+      <DependentUpon>201803132323586_initialize.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

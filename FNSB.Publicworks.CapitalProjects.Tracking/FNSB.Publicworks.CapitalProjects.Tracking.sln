@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pubworks.Finance.Import", "FinanceImport\Pubworks.Finance.Import.csproj", "{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publicworks.Finance.OneSolution", "FinanceImport\Publicworks.Finance.OneSolution.csproj", "{55DDDDE5-2DBF-4C3E-B7A0-3464674FCD2A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publicworks.Entities", "Publicworks.Entities\Publicworks.Entities.csproj", "{0A05281D-3176-4FCE-883F-430213208B9E}"
 EndProject

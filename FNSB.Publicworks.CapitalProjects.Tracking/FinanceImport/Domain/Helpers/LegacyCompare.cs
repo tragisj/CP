@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Microsoft.VisualBasic.FileIO;
 
-namespace FNSB.PW.Finance.Import.Domain.Helpers
+namespace Publicworks.Finance.OneSolution.Domain.Helpers
 {
     public class LegacyCompare
     { 
