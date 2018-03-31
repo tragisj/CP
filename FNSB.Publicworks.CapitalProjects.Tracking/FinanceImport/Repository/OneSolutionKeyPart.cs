@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using Publicworks.Finance.OneSolution.Domain;
+using Publicworks.Finance.OneSolution.Entities;
 using Publicworks.Finance.OneSolution.Properties;
 
-namespace Publicworks.Finance.OneSolution.Data
+namespace Publicworks.Finance.OneSolution.Repository
 {
     public class OneSolutionKeyPart
     {
 
-        public List<KeyPartDetail> KeyPartData(string glKey)
+        private List<KeyPartDetail> KeyPartData(string glKey)
         {
             //Example layout
             //PartNo PartValue   GroupId GroupName   GroupLongDesc
@@ -24,7 +24,7 @@ namespace Publicworks.Finance.OneSolution.Data
             //08  ATF SUBS    Sub Section FAIRBANKS YOUTH SOCCER
 
             var keyPartDetails = new List<KeyPartDetail>();
-            using (SqlConnection sqlConn = new SqlConnection(Settings.Default.PSQL_DB))
+            using (SqlConnection sqlConn = new SqlConnection(Settings.Default.v13Pro))
             using (SqlCommand sqlCmd = sqlConn.CreateCommand())
             {
                 sqlConn.Open();

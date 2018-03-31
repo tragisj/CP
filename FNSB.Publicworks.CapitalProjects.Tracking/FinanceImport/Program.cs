@@ -1,107 +1,90 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
-using Publicworks.Finance.OneSolution.Data;
-using Publicworks.Finance.OneSolution.Domain;
-using Publicworks.Finance.OneSolution.Domain.Helpers;
-using BudgetVersion = Publicworks.Finance.OneSolution.Domain.Helpers.BudgetVersions;
+using Publicworks.Finance.OneSolution.Entities;
+using Publicworks.Finance.OneSolution.Repository;
 
 namespace Publicworks.Finance.OneSolution
 {
     public class Program
     {
-        public static List<BudgetVersion> BudgetVersions { get; set; }
 
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
 
-            List<ProjectTrackingFinance> financeKeys = CurrentActiveKeys();
-            //MatchProjectKeysToFinance(financeKeys);
+            BudgetData bd = new BudgetData();
+            EncumbranceData en = new EncumbranceData();
+            ActualsData ac = new ActualsData();
 
-
-            //This needs to load from the saved keys in the Projects database first that are assigned to 
-            //active projects to reverse the flow of data and only fetch active record finance content
-            //Console.WriteLine(record.ToString());
-        }
-
-
-
-        public List<string> ActiveProjectGlKeysList()
-        {
-
-            var proData = new PublicworksProjectData();
-            var keylist = new List<string>();
-            return keylist;
-
-        }
-
-        public static void InsertDatabaseNonZeroFinanceProjectRecords(List<ProjectTrackingFinance> projectRecords)
-        {
-
-            var zeroBaseProjects = projectRecords
-                .Where(r => r.ActualsBalance == 0 && r.BudgetBalance == 0 && r.EncumbranceBalance == 0)
-                .Select(k => k.GeneralLedgerKey).ToList();
-
-            foreach (var key in zeroBaseProjects)
+            List<string> kt = new List<string>
             {
-                projectRecords.RemoveAll(k => k.GeneralLedgerKey == key);
+                "S18TCU",
+                "S18TBQ",
+                "S18NFD",
+                "S18LPE",
+                "NRALWC",
+                "LTFNWT",
+                "LSCTTI",
+                "LSCTTH",
+                "LSCTTG",
+            };
+
+
+            List<ProjectTrackingFinance> tst  = new List<ProjectTrackingFinance>();
+
+            foreach (var x in kt)
+            {
+
+                List<BudgetBalance> blist = bd.GetBudgetBalanceForGlKey(x);
+                decimal enVal = en.GetEncubranceBalanceForGlKey(x);
+                decimal acVal = ac.GetActualsBalanceForGlKey(x);
+
+                var ptf = new ProjectTrackingFinance
+                {
+                    GeneralLedgerKey = x,
+                    JobLedgerProject = "TEST",
+                    GeneralLedgerDesc = "TEST DATA FOR KEY",
+                    BudgetBalance = blist.Sum(s => s.Amount),
+                    EncumbranceBalance = enVal,
+                    ActualsBalance = acVal
+
+                };
+
+                tst.Add(ptf);
             }
 
-            var proData = new PublicworksProjectData();
-            var data = proData.PublicInsertProjectFundingRecords(projectRecords);
+            //Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
 
+            foreach (var p in tst)
+            {
 
-        }
-
-        public static List<ProjectTrackingFinance> CurrentActiveKeys()
-        {
-            //KeyObject class is the primary class used to acquire the publicworks projects tracking import data
-            //KeyObjectFinanceBuilder calls the Data.FinanceKeyData class to query the database to 
-            //select the keys, objects, budget, encumbrance, actual, description, fiscal year
-            var builder = new KeyObjectFinanceBuilder();
-
-            var budgetActualData = builder.OneSolutionBudgetActualsList;      //full budact data package in List<OneSolutionBudgetActualDataList> 
-            var glKeyList = builder.GeneralLedgerKeyList;        //distinct key list
-
-            //Converts the RAW data to the computed values for the budget, actual, ecumbrances
-
-            //BUDGET
-            var budgetsCalcs = new BudgetCalculations(ref budgetActualData, ref glKeyList);
-            var balance = budgetsCalcs.BuildBudgetBalances(LocalResource.BudgetVersions.WorkingBudget, 2018);
-
-
-            //ACTUAL
-            var actualsCalcs = new ActualsCalculations(ref budgetActualData, ref glKeyList);
-            var actual = actualsCalcs.BuildActualsBalances();
-
-
-            //ENCUMBRANCE
-            var encumbranceCalcs = new EncumbrancesCalculations(ref budgetActualData, ref glKeyList);
-            var encumbrance = encumbranceCalcs.BuildEncumbranceBalances();
-
-
-
-            //list of the class that builds the PW payload back to app, report, etc.
-            var fileBuilderList = (from key in glKeyList
-                                   let keyObjectRecord = budgetActualData.First(k => k.Key == key)
-                                   let br = balance.Single(p => p.Key == key)
-                                   let ar = actual.Single(p => p.Key == key)
-                                   let er = encumbrance.Single(p => p.Key == key)
-
-                                   select new ProjectTrackingFinance
-                                   {
-                                       GeneralLedgerKey = keyObjectRecord.Key,
-                                       JobLedgerProject = keyObjectRecord.JobLedgerKey,
-                                       GeneralLedgerDesc = keyObjectRecord.LongDesc,
-                                       BudgetBalance = br.Value.Amount,
-                                       ActualsBalance = ar.Value.Amount,
-                                       EncumbranceBalance = er.Value.Amount
-                                   }).ToList();
-
-            //InsertDatabaseNonZeroFinanceProjectRecords(fileBuilderList);
-
-            return fileBuilderList;
+                Console.WriteLine($"{p.GeneralLedgerKey},{p.BudgetBalance}, {p.ActualsBalance}, {p.EncumbranceBalance}");
+                
+            }
 
         }
+
+
+        //Possible Container of data for UI delivery to view
+        //var fileBuilderList = (from key in glKeyList
+        //                       let keyObjectRecord = budgetActualData.First(k => k.Key == key)
+        //                       let br = balance.Single(p => p.Key == key)
+        //                       let ar = actual.Single(p => p.Key == key)
+        //                       let er = encumbrance.Single(p => p.Key == key)
+
+        //                       select new ProjectTrackingFinance
+        //                       {
+        //                           GeneralLedgerKey = keyObjectRecord.Key,
+        //                           JobLedgerProject = keyObjectRecord.JobLedgerKey,
+        //                           GeneralLedgerDesc = keyObjectRecord.LongDesc,
+        //                           BudgetBalance = br.Value.Amount,
+        //                           ActualsBalance = ar.Value.Amount,
+        //                           EncumbranceBalance = er.Value.Amount
+        //                       }).ToList();
+
+        //InsertDatabaseNonZeroFinanceProjectRecords(fileBuilderList);
+
+        //return fileBuilderList;
 
 
 

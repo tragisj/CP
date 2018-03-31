@@ -36,20 +36,11 @@ namespace Publicworks.Finance.OneSolution.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=dsql01;Initial Catalog=publicworks;Integrated Security=True")]
-        public string DSQL_DB {
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\Projectsv13;Initial Catalog=PubworksProjects;Integrated Sec" +
+            "urity=True")]
+        public string v13Pro {
             get {
-                return ((string)(this["DSQL_DB"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=tsql01;Initial Catalog=publicworks;Integrated Security=True")]
-        public string TSQL_DB {
-            get {
-                return ((string)(this["TSQL_DB"]));
+                return ((string)(this["v13Pro"]));
             }
         }
     }

@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publicworks.Data", "Publicw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publicworks.Web", "Publicworks.Web\Publicworks.Web.csproj", "{290928F4-71FF-4128-A4BD-4965B874915D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Publicworks.Conversion", "Publicworks.Conversion\Publicworks.Conversion.csproj", "{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,18 +69,6 @@ Global
 		{290928F4-71FF-4128-A4BD-4965B874915D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{290928F4-71FF-4128-A4BD-4965B874915D}.Release|x86.ActiveCfg = Release|Any CPU
 		{290928F4-71FF-4128-A4BD-4965B874915D}.Release|x86.Build.0 = Release|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Debug|x86.Build.0 = Debug|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Fireweed|Any CPU.ActiveCfg = Release|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Fireweed|Any CPU.Build.0 = Release|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Fireweed|x86.ActiveCfg = Release|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Fireweed|x86.Build.0 = Release|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Release|x86.ActiveCfg = Release|Any CPU
-		{B1AA7B70-9DB6-47AC-AB69-1D46C2890E97}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

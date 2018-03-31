@@ -1,29 +1,73 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Publicworks.Finance.OneSolution.Entities;
+using Publicworks.Finance.OneSolution.Helpers;
+using Publicworks.Finance.OneSolution.Properties;
 
-namespace Publicworks.Finance.OneSolution.Domain.Helpers
+namespace Publicworks.Finance.OneSolution.Repository
 {
-    public class ActualsCalculations
+    public class ActualsData
     {
 
-        private int SystemPeriod { get; }
-        private int CurrentFiscalYear { get; }
-        private List<OneSolutionBudgetActualDataList> KeyObjectFinanceList { get;  }
-        private List<string> GeneralLedgerKeyList { get; set; }
 
-        public ActualsCalculations(ref List<OneSolutionBudgetActualDataList> keyObjectList, ref List<string> uniqueKeyList)
+
+        public decimal GetActualsBalanceForGlKey(string glkey)
+        {
+            ActualsData ad = new ActualsData();
+            List<Actuals> acl = GetActualsValuesByGlKey(glkey);
+            return CalculateActualBalance(acl);
+
+        }
+
+
+        private List<Actuals> GetActualsValuesByGlKey(string glkey)
         {
 
-            KeyObjectFinanceList = keyObjectList;
-            GeneralLedgerKeyList = uniqueKeyList;
+            var result = new List<Actuals>();
+            using (SqlConnection sqlConnection = new SqlConnection(Settings.Default.v13Pro))
+            using (SqlCommand sqlCommand = sqlConnection.CreateCommand())
+            {
+                sqlConnection.Open();
+                sqlCommand.CommandText = "dbo.SelectActualsIndexByKeyForCurrentFiscalYear";
+                sqlCommand.CommandType = CommandType.StoredProcedure;
+                sqlCommand.Parameters.AddWithValue("GlKey", glkey);
 
-            //new instance of CalendarCalcs to get SystemPeriod integer and CurrentFiscalYear integer
-            var calCalcs = new CalendarCalculations();
+                using (var reader = sqlCommand.ExecuteReader())
+                {
 
-            //fiscal dates and periods
-            SystemPeriod = calCalcs.BudActSystemPeriod();
-            CurrentFiscalYear = calCalcs.CurrentFiscalYear();
+                    while (reader.Read())
+                    {
+                        var en = new Actuals
+                        {
+                            Actuals01 = (decimal)reader[0],
+                            Actuals02 = (decimal)reader[1],
+                            Actuals03 = (decimal)reader[2],
+                            Actuals04 = (decimal)reader[3],
+                            Actuals05 = (decimal)reader[4],
+                            Actuals06 = (decimal)reader[5],
+                            Actuals07 = (decimal)reader[6],
+                            Actuals08 = (decimal)reader[7],
+                            Actuals09 = (decimal)reader[8],
+                            Actuals10 = (decimal)reader[9],
+                            Actuals11 = (decimal)reader[10],
+                            Actuals12 = (decimal)reader[11],
+                            Actuals13 = (decimal)reader[12],
+                            Actuals14 = (decimal)reader[13],
+                            FiscalYear = (int)reader[14]
+                        };
+
+                        result.Add(en);
+                    }
+                }
+            }
+
+            return result;
+
         }
 
         /// <summary>
@@ -32,30 +76,19 @@ namespace Publicworks.Finance.OneSolution.Domain.Helpers
         /// and sum for each GlKey in the list
         /// </summary>
         /// <returns></returns>
-        public Dictionary<string, ActualsBalance> BuildActualsBalances()
+        public decimal CalculateActualBalance(List<Actuals> actuals)
         {
             try
             {
-                var result = new Dictionary<string, ActualsBalance>();
+                var calCalcs = new CalendarData();
+                int sp = calCalcs.BudActSystemPeriod();
+                int fy = calCalcs.CurrentFiscalYear();
+                decimal cfy = CalculateActuals(actuals.Where(f => f.FiscalYear == fy), sp);
+                decimal pfy = CalculateActuals(actuals.Where(f => f.FiscalYear < fy), 14);
 
-                //loop the unique GL keys list and 
-                foreach (var key in GeneralLedgerKeyList)
-                {
-                    var ab = new ActualsBalance();
 
-                    var cfyActuals = CalculateActuals(
-                        KeyObjectFinanceList.Where(k => k.Key == key && k.FiscalYear == CurrentFiscalYear)
-                            .Select(a => a.Actuals), SystemPeriod);
+                return (cfy + pfy);
 
-                    var pfyActuals = CalculateActuals(
-                        KeyObjectFinanceList.Where(k => k.Key == key && k.FiscalYear < CurrentFiscalYear)
-                            .Select(a => a.Actuals), 14);
-
-                    ab.Amount = cfyActuals + pfyActuals;
-                    result.Add(key, ab);
-                }
-
-                return result;
             }
             catch (Exception e)
             {
@@ -64,8 +97,7 @@ namespace Publicworks.Finance.OneSolution.Domain.Helpers
             }
         }
 
-
-        private static decimal CalculateActuals(IEnumerable<Actual> actuals, int sysPeriod)
+        private decimal CalculateActuals(IEnumerable<Actuals> actuals, int sysPeriod)
         {
             try
             {
@@ -134,5 +166,9 @@ namespace Publicworks.Finance.OneSolution.Domain.Helpers
                 throw;
             }
         }
+
+
+
+
     }
 }

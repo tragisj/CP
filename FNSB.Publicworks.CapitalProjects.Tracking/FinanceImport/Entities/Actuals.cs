@@ -1,6 +1,6 @@
-﻿namespace Publicworks.Finance.OneSolution.Domain
+﻿namespace Publicworks.Finance.OneSolution.Entities
 {
-   public class Actual
+   public class Actuals
    {
         public decimal Actuals01 { get; set; }
         public decimal Actuals02 { get; set; }
@@ -16,5 +16,6 @@
         public decimal Actuals12 { get; set; }
         public decimal Actuals13 { get; set; }
         public decimal Actuals14 { get; set; }
+        public int FiscalYear { get; set; }
     }
 }

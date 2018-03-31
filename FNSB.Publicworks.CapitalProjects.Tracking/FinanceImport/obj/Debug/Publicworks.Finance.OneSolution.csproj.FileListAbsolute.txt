@@ -1,3 +1,7 @@
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.LocalResource.BudgetVersions.resources
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.csproj.GenerateResource.cache
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.csproj.CoreCompileInputs.cache
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.csprojResolveAssemblyReference.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\bin\Debug\Publicworks.Finance.OneSolution.exe.config
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\bin\Debug\Publicworks.Finance.OneSolution.exe
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\bin\Debug\Publicworks.Finance.OneSolution.pdb
@@ -5,10 +9,6 @@ D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\F
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\bin\Debug\EntityFramework.SqlServer.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\bin\Debug\EntityFramework.xml
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\bin\Debug\EntityFramework.SqlServer.xml
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.csprojResolveAssemblyReference.cache
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.LocalResource.BudgetVersions.resources
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.csproj.GenerateResource.cache
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.csproj.CoreCompileInputs.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.csproj.CopyComplete
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.exe
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\FinanceImport\obj\Debug\Publicworks.Finance.OneSolution.pdb

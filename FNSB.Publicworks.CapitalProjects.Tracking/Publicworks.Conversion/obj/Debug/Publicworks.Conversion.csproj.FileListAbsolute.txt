@@ -16,6 +16,3 @@ D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\P
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\bin\Debug\Publicworks.Data.dll.config
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\bin\Debug\Publicworks.Data.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\obj\Debug\Publicworks.Conversion.csproj.CopyComplete
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\bin\Debug\Publicworks.Finance.OneSolution.exe
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\bin\Debug\Publicworks.Finance.OneSolution.pdb
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Conversion\bin\Debug\Publicworks.Finance.OneSolution.exe.config

@@ -1,4 +1,4 @@
-﻿namespace Publicworks.Finance.OneSolution.Domain
+﻿namespace Publicworks.Finance.OneSolution.Entities
 {
     public class ProjectTrackingFinance
     {

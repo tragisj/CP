@@ -1,3 +1,4 @@
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.csprojResolveAssemblyReference.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.csproj.CoreCompileInputs.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\bin\ApplicationInsights.config
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\bin\Publicworks.Web.dll.config
@@ -47,7 +48,6 @@ D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\P
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\bin\Microsoft.AI.WindowsServer.xml
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\bin\Microsoft.AI.Web.xml
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.csprojResolveAssemblyReference.cache
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.csproj.CopyComplete
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.pdb
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Web\obj\Debug\Publicworks.Web.csproj.CopyComplete

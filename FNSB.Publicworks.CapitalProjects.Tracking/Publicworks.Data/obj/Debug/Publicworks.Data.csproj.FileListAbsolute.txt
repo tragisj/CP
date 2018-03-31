@@ -1,4 +1,6 @@
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csprojResolveAssemblyReference.cache
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.Migrations.initialize.resources
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csproj.GenerateResource.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csproj.CoreCompileInputs.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Data.dll.config
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Data.dll
@@ -7,16 +9,14 @@ D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\P
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\EntityFramework.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\EntityFramework.SqlServer.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Entities.dll
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Finance.OneSolution.exe
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Finance.OneSolution.pdb
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Finance.OneSolution.exe.config
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Entities.pdb
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Entities.dll.config
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Antlr3.Runtime.pdb
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\EntityFramework.xml
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csproj.CopyComplete
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.pdb
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.Migrations.initialize.resources
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csproj.GenerateResource.Cache
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csproj.CopyComplete
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Finance.OneSolution.exe
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Finance.OneSolution.pdb
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Finance.OneSolution.exe.config

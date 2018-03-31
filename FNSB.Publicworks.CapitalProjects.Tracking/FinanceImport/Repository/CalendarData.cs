@@ -2,9 +2,9 @@
 using System.Data.SqlClient;
 using Publicworks.Finance.OneSolution.Properties;
 
-namespace Publicworks.Finance.OneSolution.Domain.Helpers
+namespace Publicworks.Finance.OneSolution.Repository
 {
-    public class CalendarCalculations
+    public class CalendarData
     {
   
         /// <summary>
@@ -17,8 +17,8 @@ namespace Publicworks.Finance.OneSolution.Domain.Helpers
             try
             {
                 int result = 0;
-                using (SqlConnection sqlConnection = new SqlConnection(Settings.Default.PSQL_DB))
-                using (SqlCommand sqlCommand = new SqlCommand("Publicworks.CurrentFiscalYear", sqlConnection))
+                using (SqlConnection sqlConnection = new SqlConnection(Settings.Default.v13Pro))
+                using (SqlCommand sqlCommand = new SqlCommand("dbo.CurrentFiscalYear", sqlConnection))
                 {
                     sqlConnection.Open();
 
@@ -45,8 +45,8 @@ namespace Publicworks.Finance.OneSolution.Domain.Helpers
         {
             try
             {
-                using (SqlConnection sqlConnection = new SqlConnection(Settings.Default.PSQL_DB))
-                using (SqlCommand sqlCommand = new SqlCommand("Publicworks.PayPeriodOffset", sqlConnection))
+                using (SqlConnection sqlConnection = new SqlConnection(Settings.Default.v13Pro))
+                using (SqlCommand sqlCommand = new SqlCommand("dbo.PayPeriodOffset", sqlConnection))
                 {
                     sqlConnection.Open();
                     var cmd = new SqlCommand(sqlCommand.CommandText, sqlConnection);

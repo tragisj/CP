@@ -7,6 +7,6 @@ D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\P
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\bin\Debug\EntityFramework.SqlServer.xml
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.csprojResolveAssemblyReference.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.csproj.CoreCompileInputs.cache
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.csproj.CopyComplete
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.pdb
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.csproj.CopyComplete
