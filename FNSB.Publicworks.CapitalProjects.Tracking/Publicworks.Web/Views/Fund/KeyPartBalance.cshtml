@@ -1,0 +1,39 @@
+﻿@model Publicworks.Entities.Projects.ViewModels.Funds.KeyDetailViewModel
+
+
+<div class="col-lg-4">
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Budget)
+        </dt>
+
+        <dd class="text-right">
+            @Html.DisplayFor(model => model.Budget)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Actual)
+        </dt>
+
+        <dd class="text-right">
+            @Html.DisplayFor(model => model.Actual)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Encumbrances)
+        </dt>
+
+        <dd class="text-right">
+            @Html.DisplayFor(model => model.Encumbrances)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd class="text-right">
+            @Html.DisplayFor(model => model.Balance)
+        </dd>
+
+    </dl>
+</div>

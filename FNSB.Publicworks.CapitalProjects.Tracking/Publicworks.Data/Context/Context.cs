@@ -7,10 +7,12 @@ using System.Linq;
 using Publicworks.Entities;
 using System.Text;
 using System.Threading.Tasks;
+using Publicworks.Data.Configurations;
 using Publicworks.Entities.Admin;
 using Publicworks.Entities.Agents;
 using Publicworks.Entities.Funds;
 using Publicworks.Entities.Projects;
+using Publicworks.Finance.OneSolution.Entities;
 
 namespace Publicworks.Data.Context
 {
@@ -35,9 +37,7 @@ namespace Publicworks.Data.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-
+            modelBuilder.Configurations.Add(new ActualsViewConfiguration());
         }
-
-
     }
 }

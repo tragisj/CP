@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Publicworks.Finance.OneSolution.Entities;
-using Publicworks.Finance.OneSolution.Helpers;
 using Publicworks.Finance.OneSolution.Properties;
 
-namespace Publicworks.Finance.OneSolution.Repository
+namespace Publicworks.Finance.OneSolution.Data
 {
     public class ActualsData
     {
@@ -19,13 +16,13 @@ namespace Publicworks.Finance.OneSolution.Repository
         public decimal GetActualsBalanceForGlKey(string glkey)
         {
             ActualsData ad = new ActualsData();
-            List<Actuals> acl = GetActualsValuesByGlKey(glkey);
+            List<Actuals> acl = QueryForActualsValuesByGlKey(glkey);
             return CalculateActualBalance(acl);
 
         }
 
 
-        private List<Actuals> GetActualsValuesByGlKey(string glkey)
+        private List<Actuals> QueryForActualsValuesByGlKey(string glkey)
         {
 
             var result = new List<Actuals>();
@@ -59,16 +56,29 @@ namespace Publicworks.Finance.OneSolution.Repository
                             Actuals13 = (decimal)reader[12],
                             Actuals14 = (decimal)reader[13],
                             FiscalYear = (int)reader[14]
+
                         };
 
                         result.Add(en);
                     }
                 }
             }
-
             return result;
+        }
+
+
+
+
+        private Dictionary<string, List<Actuals>> GetActualsValuesByActivePubworksProjects()
+        {
+
+            return null;
 
         }
+
+
+
+
 
         /// <summary>
         /// Returns the ActualBalances calculated from the KeyObjectFinanceList

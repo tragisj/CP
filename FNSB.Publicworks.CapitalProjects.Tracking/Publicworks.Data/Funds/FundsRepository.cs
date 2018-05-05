@@ -5,10 +5,14 @@ using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Publicworks.Data.Context;
 using Publicworks.Entities.Funds;
 using Publicworks.Entities.Projects.ViewModels.Funds;
+using Publicworks.Finance.OneSolution.Data;
+using Publicworks.Finance.OneSolution.Data.Repository;
+using Publicworks.Finance.OneSolution.Entities;
 
 namespace Publicworks.Data.Funds
 {
@@ -16,12 +20,10 @@ namespace Publicworks.Data.Funds
     {
         public List<KeyStatusViewModel> GetOneSolutionGeneralLedgerKeyStatusDesc(bool active)
         {
-
             List<KeyStatusViewModel> fundsViewData = new List<KeyStatusViewModel>();
 
             using (var context = new ApplicationDbContext())
             {
-
                 var proc = active ? "SelectOSActiveKeyStatusDesc" : "SelectOSKeyStatusDesc";
                 var spd = context.Database.SqlQuery<OneSolutionFinance>(proc);
 
@@ -40,12 +42,11 @@ namespace Publicworks.Data.Funds
             }
         }
 
+
         public List<KeyBackgroundViewModel> GetOneSolutionGeneralLedgerKeyPartDetail(string glkey)
         {
             using (var context = new ApplicationDbContext())
             {
-
-
                 List<KeyBackgroundViewModel> kdl = new List<KeyBackgroundViewModel>();
                 var glparam = new SqlParameter("@GLkey", SqlDbType.VarChar, 10) {Value = glkey};
 
@@ -77,21 +78,63 @@ namespace Publicworks.Data.Funds
 
         public KeyDetailViewModel GetOneSolutionBudgetActualDetail(string glkey)
         {
-            KeyDetailViewModel kd = new KeyDetailViewModel();
+            KeyDetailViewModel model = new KeyDetailViewModel();
+            PubworksRepository repository = new PubworksRepository();
+            ProjectTrackingFinance x = repository.GetGlKeyBalanceByKey(glkey);
+
+            model.Actual = x.Actuals.ToString("C");
+            model.Budget =  x.Budget.ToString("C");
+            model.Encumbrances = x.Encumbrance.ToString("C");
+            model.Balance = x.Balance.ToString("C");
+            model.GLKey = glkey;
+            return model;
+        }
 
 
+        public List<KeyDetailViewModel> GetGlKeyDataByProjectId(Guid projectId)
+        {
+            if (projectId != Guid.Empty)
+            {
+                using (var context = new ApplicationDbContext())
+                {
 
-            //var budgetsCalcs = new BudgetCalculations(ref budgetActualData, ref glKeyList);
-            //var balance = budgetsCalcs.BuildBudgetBalances("WB", 2018);
+                    var project = context.Projects.AsNoTracking()
+                        .Where(x => x.ProjectID == projectId).SingleOrDefault();
+
+                    if (project != null)
+                    {
+
+                        List<string> keys = new List<string>();
+                        foreach (var key in project.GeneralLedgerKeys)
+                        {
+                            keys.Add(key.GLKey);
+                        }
+
+                        List<KeyDetailViewModel> modelList = new List<KeyDetailViewModel>();
+                        PubworksRepository repository = new PubworksRepository();
+                        List<ProjectTrackingFinance> keyDetailList = repository.GetGlKeyBalanceByKeyList(keys);
 
 
+                        foreach (var x in keyDetailList)
+                        {
+                            KeyDetailViewModel k = new KeyDetailViewModel
+                            {
+                                Actual = x.Actuals.ToString("C"),
+                                Budget = x.Budget.ToString("C"),
+                                Encumbrances = x.Encumbrance.ToString("C"),
+                                Balance = x.Balance.ToString("C"),
+                                GLKey = x.GeneralLedgerKey
+                            };
 
+                            modelList.Add(k);
+                        }
 
-
+                        return modelList;
+                    }
+                }
+            }
 
             return null;
-
-
         }
     }
 }

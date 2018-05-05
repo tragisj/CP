@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 using Publicworks.Finance.OneSolution.Entities;
 using Publicworks.Finance.OneSolution.Properties;
 
-namespace Publicworks.Finance.OneSolution.Repository
+namespace Publicworks.Finance.OneSolution.Data
 {
     public class OneSolutionKeyPart
     {

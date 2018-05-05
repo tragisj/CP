@@ -3,6 +3,9 @@ D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\P
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\bin\Debug\Publicworks.Entities.pdb
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\bin\Debug\EntityFramework.dll
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\bin\Debug\EntityFramework.SqlServer.dll
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\bin\Debug\Publicworks.Finance.OneSolution.exe
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\bin\Debug\Publicworks.Finance.OneSolution.pdb
+D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\bin\Debug\Publicworks.Finance.OneSolution.exe.config
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\bin\Debug\EntityFramework.xml
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\bin\Debug\EntityFramework.SqlServer.xml
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Entities\obj\Debug\Publicworks.Entities.csprojResolveAssemblyReference.cache

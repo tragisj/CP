@@ -21,6 +21,23 @@ namespace Publicworks.Web.Controllers
             return View(projects);
         }
 
+        public ActionResult Summary(string id)
+        {
+
+            if (!String.IsNullOrWhiteSpace(id))
+            {
+                bool isGuid = Guid.TryParse(id, out Guid projectId);
+
+                if (isGuid && projectId != Guid.Empty)
+                {
+                    var repo = new ProjectsRepository();
+                    var model = repo.LoadProjectSummaryByGlKey(projectId);
+                    return View(model);
+                }
+            }
+            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
+
 
         public ActionResult Detail(string id)
         {
@@ -79,6 +96,14 @@ namespace Publicworks.Web.Controllers
                 }
             }
             return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        }
+
+        public ActionResult FundsIndex()
+        {
+
+            var repo = new ProjectsRepository();
+            var projects = repo.GetActiveProjects();
+            return View(projects);
         }
     }
 }

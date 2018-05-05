@@ -70,6 +70,7 @@
     <Compile Include="Projects.ViewModels\Funds\KeyDetailViewModel.cs" />
     <Compile Include="Projects.ViewModels\Funds\KeyStatusViewModel.cs" />
     <Compile Include="Projects.ViewModels\Funds\KeyBackgroundViewModel.cs" />
+    <Compile Include="Projects.ViewModels\ProjectSummaryViewIndexModel.cs" />
     <Compile Include="Projects.ViewModels\ProjectViewIndexModel.cs" />
     <Compile Include="Projects.ViewModels\ProjectViewModel.cs" />
     <Compile Include="Projects.ViewModels\ProjectEditViewModel.cs" />
@@ -83,6 +84,12 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FinanceImport\Publicworks.Finance.OneSolution.csproj">
+      <Project>{55dddde5-2dbf-4c3e-b7a0-3464674fcd2a}</Project>
+      <Name>Publicworks.Finance.OneSolution</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

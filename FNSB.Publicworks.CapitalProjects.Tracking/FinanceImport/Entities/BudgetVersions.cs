@@ -1,4 +1,4 @@
-﻿namespace Publicworks.Finance.OneSolution.Helpers
+﻿namespace Publicworks.Finance.OneSolution.Entities
 {
     public class BudgetVersions
     {

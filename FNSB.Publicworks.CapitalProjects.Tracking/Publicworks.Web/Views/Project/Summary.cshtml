@@ -1,0 +1,45 @@
+﻿@model Publicworks.Entities.Projects.ViewModels.ProjectSummaryViewIndexModel
+
+<div>
+    <h4>ProjectSummaryViewIndexModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ActiveProject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ActiveProject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectDesc)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using Publicworks.Finance.OneSolution.Data;
+using Publicworks.Finance.OneSolution.Data.Repository;
 using Publicworks.Finance.OneSolution.Entities;
-using Publicworks.Finance.OneSolution.Repository;
-
 namespace Publicworks.Finance.OneSolution
 {
     public class Program
@@ -12,55 +13,14 @@ namespace Publicworks.Finance.OneSolution
         public static void Main(string[] args)
         {
 
-            BudgetData bd = new BudgetData();
-            EncumbranceData en = new EncumbranceData();
-            ActualsData ac = new ActualsData();
+            var repo = new PubworksRepository();
+            //ProjectTrackingFinance pt = repo.GetGlKeyBalanceByKey("LSA04Z");
 
-            List<string> kt = new List<string>
-            {
-                "S18TCU",
-                "S18TBQ",
-                "S18NFD",
-                "S18LPE",
-                "NRALWC",
-                "LTFNWT",
-                "LSCTTI",
-                "LSCTTH",
-                "LSCTTG",
-            };
+            List<string> glkeys = new List<string> {"D46MGG", "LPB6WC", "LPB1SR", "LPB6TB", "LSACSS" };
 
+            List<ProjectTrackingFinance> ptl = repo.GetGlKeyBalanceByKeyList(glkeys);
+            Debug.WriteLine(ptl[0].Budget);
 
-            List<ProjectTrackingFinance> tst  = new List<ProjectTrackingFinance>();
-
-            foreach (var x in kt)
-            {
-
-                List<BudgetBalance> blist = bd.GetBudgetBalanceForGlKey(x);
-                decimal enVal = en.GetEncubranceBalanceForGlKey(x);
-                decimal acVal = ac.GetActualsBalanceForGlKey(x);
-
-                var ptf = new ProjectTrackingFinance
-                {
-                    GeneralLedgerKey = x,
-                    JobLedgerProject = "TEST",
-                    GeneralLedgerDesc = "TEST DATA FOR KEY",
-                    BudgetBalance = blist.Sum(s => s.Amount),
-                    EncumbranceBalance = enVal,
-                    ActualsBalance = acVal
-
-                };
-
-                tst.Add(ptf);
-            }
-
-            //Console.WriteLine($"Hello, {name}! Today is {date.DayOfWeek}, it's {date:HH:mm} now.");
-
-            foreach (var p in tst)
-            {
-
-                Console.WriteLine($"{p.GeneralLedgerKey},{p.BudgetBalance}, {p.ActualsBalance}, {p.EncumbranceBalance}");
-                
-            }
 
         }
 

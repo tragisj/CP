@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Publicworks.Data.Context;
+using Publicworks.Data.Funds;
 using Publicworks.Entities.Admin;
 using Publicworks.Entities.Projects;
 using Publicworks.Entities.Projects.ViewModels;
@@ -73,6 +74,47 @@ namespace Publicworks.Data.Projects
                 }
             }
             return null;
+        }
+
+        public ProjectSummaryViewIndexModel LoadProjectSummaryByGlKey(Guid projectId)
+        {
+
+            if (projectId != Guid.Empty)
+            {
+                using (var context = new ApplicationDbContext())
+                {
+
+                    FundsRepository repo = new FundsRepository();
+
+                    var project = context.Projects.AsNoTracking()
+                        .Where(x => x.ProjectID == projectId)
+                        .SingleOrDefault();
+
+                    if (project != null)
+                    {
+
+                        List<string> keys = new List<string>();
+                        foreach (var key in project.GeneralLedgerKeys)
+                        {
+                            keys.Add(key.GLKey);
+                        }
+
+                        var projectEditVm = new ProjectSummaryViewIndexModel()
+                        {
+                            ProjectID = project.ProjectID,
+                            ProjectName = project.ProjectName.Trim(),
+                            ProjectNumber = project.ProjectNumber.Trim(),
+                            ActiveProject = project.ActiveProject.ToString(),
+                            ProjectDesc = project.StatusDescription
+                        };
+                         
+
+                        return projectEditVm;
+                    }
+                }
+            }
+            return null;
+
         }
 
 

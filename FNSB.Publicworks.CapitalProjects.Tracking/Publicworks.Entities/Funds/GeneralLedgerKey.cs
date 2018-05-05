@@ -15,7 +15,6 @@ namespace Publicworks.Entities.Funds
 
         [Key]
         [Column(Order = 1)]
-
         public Guid GeneralLedgerKeyID { get; set; }
    
         [Required]

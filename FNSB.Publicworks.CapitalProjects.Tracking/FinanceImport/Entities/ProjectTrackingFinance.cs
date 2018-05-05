@@ -14,10 +14,11 @@
 
         public string GeneralLedgerKey { get; set; }
         public string GeneralLedgerDesc { get; set; }
-        public decimal BudgetBalance { get; set; }
-        public decimal ActualsBalance { get; set; }
+        public decimal Budget { get; set; }
+        public decimal Actuals { get; set; }
+        public decimal Encumbrance { get; set; }
+        public decimal Balance { get; set; }
         public string KeyStatus { get; set; }
-        public decimal EncumbranceBalance { get; set; }
         public KeyPartDetail KeyPart01 { get; set; }
         public KeyPartDetail KeyPart02 { get; set; }
         public KeyPartDetail KeyPart03 { get; set; }

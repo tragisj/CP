@@ -4,22 +4,18 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using Publicworks.Finance.OneSolution.Entities;
-using Publicworks.Finance.OneSolution.Helpers;
 using Publicworks.Finance.OneSolution.Properties;
 
-namespace Publicworks.Finance.OneSolution.Repository
+namespace Publicworks.Finance.OneSolution.Data
 {
     public class EncumbranceData
     {
-
-
+       
         public decimal GetEncubranceBalanceForGlKey(string glkey)
         {
             List<Encumbrance> ecl = GetEncumbrancesValuesByGlKey(glkey);
             return CalculateEncumbranceBalance(ecl);
         }
-
-
 
 
         /// <summary>

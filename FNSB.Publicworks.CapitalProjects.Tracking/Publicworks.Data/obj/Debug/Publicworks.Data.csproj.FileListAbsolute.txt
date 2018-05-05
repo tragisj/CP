@@ -1,6 +1,4 @@
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csprojResolveAssemblyReference.cache
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.Migrations.initialize.resources
-D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csproj.GenerateResource.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\obj\Debug\Publicworks.Data.csproj.CoreCompileInputs.cache
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Data.dll.config
 D:\projects\TeamCode\CapitalProjects\FNSB.Publicworks.CapitalProjects.Tracking\Publicworks.Data\bin\Debug\Publicworks.Data.dll

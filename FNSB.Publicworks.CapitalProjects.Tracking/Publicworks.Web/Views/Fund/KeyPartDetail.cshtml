@@ -1,34 +1,24 @@
-﻿@model IEnumerable<Publicworks.Entities.Projects.ViewModels.Funds.KeyBackgroundViewModel>
+﻿@model IEnumerable<Publicworks.Entities.Projects.ViewModels.Funds.KeyDetailViewModel>
 
-@{
-    ViewBag.Title = "KeyPartDetail";
-}
-
-<h2></h2>
-
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>*@
-
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+</p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.GlKey)
+            @Html.DisplayNameFor(model => model.GLKey)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PartNo)
+            @Html.DisplayNameFor(model => model.Budget)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.PartValue)
+            @Html.DisplayNameFor(model => model.Actual)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GroupId)
+            @Html.DisplayNameFor(model => model.Encumbrances)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GroupName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.GroupDescription)
+            @Html.DisplayNameFor(model => model.Balance)
         </th>
         <th></th>
     </tr>
@@ -36,22 +26,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.GlKey)
+            @Html.DisplayFor(modelItem => item.GLKey)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PartNo)
+            @Html.DisplayFor(modelItem => item.Budget)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PartValue)
+            @Html.DisplayFor(modelItem => item.Actual)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.GroupId)
+            @Html.DisplayFor(modelItem => item.Encumbrances)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.GroupName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.GroupDescription)
+            @Html.DisplayFor(modelItem => item.Balance)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |

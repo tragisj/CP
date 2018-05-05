@@ -29,6 +29,21 @@ namespace Publicworks.Web.Controllers
 
         }
 
+        public ActionResult KeyPartBalance(string glkey)
+        {
+            var repo = new FundsRepository();
+            var keydetail = repo.GetOneSolutionBudgetActualDetail(glkey);
+            return View(keydetail);
+        }
+
+        public ActionResult KeyPartDetail(Guid projectId)
+        {
+
+            var repo = new FundsRepository();
+            var keydetailList = repo.GetGlKeyDataByProjectId(projectId);
+            return View(keydetailList);
+        }
+
 
     }
 }

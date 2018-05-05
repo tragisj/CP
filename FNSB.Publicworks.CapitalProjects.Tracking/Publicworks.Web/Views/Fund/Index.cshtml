@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Publicworks.Entities.Projects.ViewModels.Funds.FundViewModel>
+﻿@model IEnumerable<Publicworks.Entities.Projects.ViewModels.Funds.KeyStatusViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -15,12 +15,8 @@
             @Html.DisplayNameFor(model => model.GLKey)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.GlKeyStatus)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.GeneralLedgerDescription)
         </th>
-        <th></th>
     </tr>
 
 @foreach (var item in Model) {
@@ -29,16 +25,11 @@
             @Html.DisplayFor(modelItem => item.GLKey)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.GlKeyStatus)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.GeneralLedgerDescription)
         </td>
-        <td>
-            @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
-            @Html.ActionLink("Key Parts", "KeyPartDetail", new {  glkey=item.GLKey })
-            @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-        </td>
+    </tr>
+    <tr>
+        @*@Html.Partial("ViewKeyBalancePartial", item)*@
     </tr>
 }
 
